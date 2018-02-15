@@ -183,8 +183,8 @@ body {
   text-align: center;
   font-size: 1rem;
   display: inline;
-  font-family: 'Caveat Brush';
-
+  font-family: 'Caveat Brush' black;
+  /* color: black; */
   animation-name: pulse;
   animation-duration: 6s;
   animation-iteration-count: infinite;
@@ -201,17 +201,17 @@ body {
 }
 
 #virtual_classrooms{
-  animation-delay: 4s;
-  animation-duration: 5s;
-
+  /* animation-delay: 4s;
+  animation-duration: 5s; */
+  padding-top: 10px;
 }
 
 #blended_learning{
-
+  padding-top: 20px;
 }
 
 #planspiele{
-
+  padding-top: 25px;
 }
 
 #serious_games{
