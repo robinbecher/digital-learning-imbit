@@ -232,7 +232,7 @@
 			</tr>
 			<tr>
 				<td align="left">
-					<a class="login" href="badges/badgeAbout.html">More about about open badges</a>
+					<a class="login" href="badges/badgeAbout.html">More about about our certificates</a>
 				</td>
 			</tr>
 		</table>
