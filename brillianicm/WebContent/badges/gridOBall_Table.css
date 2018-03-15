@@ -29,7 +29,7 @@ table td:nth-child(1) {
 
 body {
   display: grid;
-  grid-template-rows: 120px 1fr 950px 150px;
+  grid-template-rows: 180px 1fr 990px 150px;
   grid-template-columns: 8% 84% 8%;
   grid-template-areas:
     "placeholder1 badgeTitle emptySpace1"
