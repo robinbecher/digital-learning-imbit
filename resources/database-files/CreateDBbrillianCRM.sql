@@ -19,6 +19,10 @@ CREATE TABLE IF NOT EXISTS `group` (
   GROUP_ID int(11) NOT NULL AUTO_INCREMENT,
   GROUP_NAME varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   PROFESSOR_ID int(11) NOT NULL,
+  CERTIFICATE int(11) NOT NULL SET DEFAULT 0,
+  ORG varchar(256) COLLATE utf8_unicode_ci,
+  DESCRIPTION varchar(256) COLLATE utf8-unicode_ci,
+  URL varchar(256) COLLATE utf8_unicode_ci,
   PRIMARY KEY (GROUP_ID),
   KEY GROUP_ID (GROUP_ID),
   KEY PROFESSOR_ID (PROFESSOR_ID)
@@ -62,8 +66,8 @@ CREATE TABLE IF NOT EXISTS settings (
 
 -- <<Create initial table content>>
 -- 'group' Table Content
-INSERT INTO `group` (GROUP_ID, GROUP_NAME, PROFESSOR_ID) VALUES
-(3, 'WIBI11B', 17), (0, 'Public', 0);
+INSERT INTO `group` (GROUP_ID, GROUP_NAME, PROFESSOR_ID, CERTIFICATE, ORG, DESCRIPTION, URL) VALUES
+(3, 'WIMBIT', 17, 0, DHBW, DHBW Mannheim Studiengang IMBIT, http://www.imbit.dhbw-mannheim.de/), (0, 'Public', 0, 0, NULL, NULL, NULL);
 
 -- 'user' table content
 INSERT INTO user (USER_ID, EMAIL, FIRST_NAME, LAST_NAME, PASSWORD, ROLE, `GROUP`, REG_DATE, GENDER) VALUES
