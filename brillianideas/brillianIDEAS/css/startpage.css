@@ -17,6 +17,18 @@ body {
                         "launchbar";
 }
 
+<<<<<<< HEAD
+/*
+#title{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 5em;
+*/
+
+=======
+>>>>>>> 7a205845fbf1be3dde0a1dc110a06735425fdc54
 #title a {
     text-decoration: none;
     color: var(--text);
