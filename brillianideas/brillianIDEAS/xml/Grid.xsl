@@ -41,7 +41,7 @@
                         </xsl:element>
                     </xsl:for-each>
                 </xsl:when>
-                <!--
+                <!-- 
                 Die Zuweisung von Werten über "./Learning_Unit/Learning/Area_Abbreviation" ist eher ein 'Quick and Dirty' Ansatz.
                 Besser wäre in der IMBIT.xsl dem Area Element ein Attribut oder direktes Child zuzuweisen, dass den Area_Abbreviation Wert enthält.io
                 -->
@@ -97,11 +97,10 @@
 								<xsl:attribute name="allowfullscreen">allowfullscreen</xsl:attribute>
 							</xsl:element>
 							</xsl:when>
-							<xsl:otherwise>
+							<xsl:otherwise>							
 							</xsl:otherwise>
 							</xsl:choose>
-                            </xsl:attribute>
-                           							<xsl:element name="div">
+							<xsl:element name="div">
 								<xsl:attribute name="class">beschreibung</xsl:attribute>
 							 	<xsl:element name="p">
 							 		<xsl:value-of select="NewContent_Beschreibung"/>

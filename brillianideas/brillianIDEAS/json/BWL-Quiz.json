@@ -11,7 +11,7 @@
 					"titleTarget1": "Inbound Logistics",
 					"titleTarget2": "Operations",
 					"titleTarget3": "Outbound Logistics",
-					"titleTarget4": "Marketing & Sales"
+					"titleTarget4": "Marketing"
 
 				}, {
 					"id": "d1",
@@ -80,7 +80,7 @@
 					"titleTarget4": "Procurement"
 				}, {
 					"id": "d1",
-					"elementtext": "Buchhaltung",
+					"elementtext": "Buchhandlung",
 					"target": "target1"
 				}, {
 					"id": "d2",
@@ -134,7 +134,7 @@
 						"Arbeitsmarktpolitik und Forschung und Entwicklung"
 					]
 				}, {
-					"question": "Welcher der folgenden Punkte sind nicht Aufgaben der Betriebswirtschaft?",
+					"question": "Welcher der folgenden Prozesse ist nicht Teil der Sekundären Aktivitäten?",
 					"optionTrue": "Gegenstand der BWL ist das Aufstellen von Prognosen zur Entwicklung eines Wirtschaftsraums",
 					"optionFalse": [
 						"Gegenstand der BWL sind Sachverhalte und Vorgänge innerhalb eines Unternehmens",
