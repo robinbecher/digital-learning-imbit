@@ -1,0 +1,244 @@
+html{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+body {
+  height:100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: grid;
+  justify-content: center;
+
+/* grid-definition */
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 50px;
+  grid-template-areas: "content"
+                       "launchbar";
+}
+
+.launchbar{
+  /* style for launchbar */
+  grid-area: launchbar;
+}
+
+.contentcurriculum {
+  /* style for content */
+  display: grid;
+  height: 100%;
+  text-align: right;
+
+  /* influence the 'padding' of content to each side
+  launchbar is not affected by this
+  width + margin-left + margin-right = 100%*/
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  /* potential nested grid inside item content */
+  grid-template-rows: 100px 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+      "g1x1 g1x2 g1x3"
+      "g2x1 g2x2 g2x3"
+      "g3x1 g3x2 g3x3";
+}
+
+.letztesgrid{
+  display: grid;
+  height: 100%;
+  text-align: right;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+      "titel1 titel2 "
+      "inhalt-1 inhalt-2";
+}
+
+/* inner grid classes */
+.g1x1 {
+  grid-area: g1x1;
+  text-align: left;
+}
+
+
+.g1x2 {
+  grid-area: g1x2;
+}
+
+.g1x3 {
+  grid-area: g1x3;
+  text-align: right;
+}
+
+.modul{
+  color:black;
+  font-family: 'Caveat Brush';
+  font-size:2.5vmax;
+}
+
+.modul:hover{
+    cursor:pointer;
+    color:#991B33;
+    font-family: 'Caveat Brush';
+    font-size:3vmax;
+}
+.g2x1 {
+  grid-area: g2x1;
+  text-align: center;
+}
+
+.g2x2 {
+  grid-area: g2x2;
+  text-align: center;
+}
+
+.g2x3 {
+  grid-area: g2x3;
+  text-align: center;
+  }
+
+.g3x1 {
+  grid-area: g3x1;
+  text-align: center;
+}
+
+.g3x2 {
+  grid-area: g3x2;
+  text-align: center;
+}
+
+.g3x3 {
+  grid-area: g3x3;
+  text-align: center;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* inner grid classe of letztesgrid */
+
+.titel1 {
+  grid-area: titel1;
+  text-align: left;
+}
+
+.titel2 {
+  grid-area: titel2;
+  text-align: right;
+}
+
+.inhalt-1 {
+  grid-area: inhalt-1;;
+  text-align: center;
+}
+
+.inhalt-2 {
+  grid-area: inhalt-2;
+  text-align: center;
+}
+
+/* tentacle at top of page */
+
+#tentacle_img_large {
+  border-width:0px;
+  width:auto;
+  height:125%;
+  position: relative;
+  top: -20;
+  text-align: left;
+}
+
+
+/* #tentakelarm_links{
+  border-width: 0px;
+  width:auto;
+  height:150%;
+  position: relative;
+  top:-100;
+} */
+
+/* title */
+.titletext{
+  font-weight:700;
+  font-style:normal;
+  font-size:4vmax;
+  color:#991B33;
+  font-family: 'Caveat Brush';
+  position: relative;
+  top: 10px;
+}
+.subtitletext{
+  font-weight:700;
+  font-style:normal;
+  font-size:3vmax;
+  color:#991B33;
+  font-family: 'Caveat Brush';
+  position: relative;
+  top: 10px;
+}
+
+.modultitle{
+  font-weight:700;
+  font-style:normal;
+  font-size:2vmax;
+  color:#991B33;
+  font-family: 'Caveat Brush';
+  position: relative;
+  top: 10px;
+}
+
+/* styles for content of lowest level curriculum Grids */
+
+.MOOC_Tabelle {
+    color: blue;
+  }
+
+.Spalte1{
+  width: 15%;
+  align: middle;
+  align: center;
+}
+
+.ueberschriftLinks {
+  color: yellow;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+.bildLinks {
+  color: green;
+}
+
+.textLinks {
+  color: red;
+}
+
+
+/* RECHTE SEITE */
+.ueberschriftRechts {
+  color: purple;
+}
+
+.textRechts {
+  color: orange;
+}
+
+
+
+/* FOR FUTURE CLEAN UP: STYLE CLASSES */
+.bordered {
+  border: 1px solid black;
+}
+
+.pointerOnHover:hover {
+  cursor:pointer
+}
