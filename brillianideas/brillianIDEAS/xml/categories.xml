@@ -324,7 +324,7 @@ Genutzt werden virtuelle Welten unter anderem für Rollenspiele, Gruppenarbeiten
 	<NewContentItems>
 		<NewContent_Name>Ökonomisches Prinzip</NewContent_Name>
 		<NewContent_Video>axlpq-CMoI4</NewContent_Video>
-		<NewContent_Beschreibung>In dem folgenden Video Ökonomisches Prinzipwerden die zwei Ansätze anhand von Beispielen näher erläutert. Auch die Begriffe Effizienz und Effektivität werden behandelt.</NewContent_Beschreibung>
+		<NewContent_Beschreibung>In dem folgenden Video Ökonomisches Prinzip werden die zwei Ansätze anhand von Beispielen näher erläutert. Auch die Begriffe Effizienz und Effektivität werden behandelt.</NewContent_Beschreibung>
 		<jsonFileName>Oekonomisches-Prinzip.json</jsonFileName>
 		<ButtonClass>buttonToQuiz4</ButtonClass>
 		<ButtonID>quizOekonomischesPrinzip</ButtonID>
