@@ -72,7 +72,7 @@ html {
 
 .modulbeschreibung {
     grid-column: 10 / 15;
-    grid-row: 3 / 12;
+    grid-row: 3 / 13;
     padding-right: 5%;
     color: black;
     overflow: hidden;
@@ -80,12 +80,14 @@ html {
     font-size: 1.4em;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
     hyphens: auto;
 }
 
 .moocs {
     grid-column: 1 / 10;
-    grid-row: 3 / 12;
+    grid-row: 3 / 13;
     list-style: none;
     overflow: hidden;
     overflow-y: scroll;
