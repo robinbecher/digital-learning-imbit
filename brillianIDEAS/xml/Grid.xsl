@@ -100,8 +100,21 @@
 							<xsl:otherwise>
 							</xsl:otherwise>
 							</xsl:choose>
-                            </xsl:attribute>
-                           							<xsl:element name="div">
+              <xsl:element name="div">
+      								<xsl:attribute name="class">image</xsl:attribute>
+                                      	<xsl:value-of select="NewContent_Image"/>
+      							 	<xsl:element name="iframe">
+                                       <xsl:attribute name="width">560</xsl:attribute>
+      								<xsl:attribute name="height">315</xsl:attribute>
+                                       <xsl:attribute name="height">315</xsl:attribute>
+                                       <xsl:attribute name="src">/img/armStern.png<xsl:value-of select="NewContent_Image"/></xsl:attribute>
+                                       <xsl:attribute name="frameborder">0</xsl:attribute>
+      								<xsl:attribute name="allowfullscreen">allowfullscreen</xsl:attribute>
+
+      								</xsl:element>
+      							</xsl:element>
+							</xsl:element>
+							<xsl:element name="div">
 								<xsl:attribute name="class">beschreibung</xsl:attribute>
 							 	<xsl:element name="p">
 							 		<xsl:value-of select="NewContent_Beschreibung"/>

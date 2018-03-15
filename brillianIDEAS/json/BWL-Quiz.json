@@ -2,7 +2,7 @@
 	"DragDropGames": [{
 
 		"DragAndDropList": [{
-					"title": "Primäraktivitäten - Drag & Drop",
+					"title": "Primäraktivitäten  Drag & Drop",
 					"description": "Ziehe alle Elemente in das richtige Feld. Mit \"Eingabe prüfen\"  kannst du überprüfen, ob alle Elemente richtig sind. Falsche Elemente werden rot makiert",
 					"id": "d0",
 					"elementtext": "Wartung",
@@ -68,7 +68,7 @@
 		{
 
 "DragAndDropList": [{
-					"title": " Unterstützungsaktivitäten - Drag & Drop ",
+					"title": " Unterstützungsaktivitäten Drag & Drop ",
 					"description": "Ziehe alle Elemente in das richtige Feld. Mit \"Eingabe prüfen\"  kannst du überprüfen, ob alle Elemente richtig sind. Falsche Elemente werden rot makiert",
 					"id": "d0",
 					"elementtext": "Produktentwicklung",
