@@ -60,3 +60,8 @@ body{
 .onoffswitch-checkbox:checked+.onoffswitch-label:before {
     right: 0px;
 }
+
+a {
+  text-decoration: none;
+  color: #991B33;
+}
