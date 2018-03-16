@@ -40,6 +40,7 @@ JS as there is no or not sufficient CSS only solution. */
   width: 80%;
   padding-top: 15px;
   padding-bottom: 15px;
+  cursor: pointer;
 }
 
 .imbit{
