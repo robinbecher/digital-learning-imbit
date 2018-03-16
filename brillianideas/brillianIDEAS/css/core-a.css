@@ -406,7 +406,7 @@ and (max-device-width: 1024px) {
 
 .background_image{
 	position: absolute;
-    trasform: translateZ(-10px);
+  transform: translateZ(-10px);
 }
 
 /*#storer{
@@ -427,7 +427,6 @@ and (max-device-width: 1024px) {
 	right: 0px;
 	width: initial;
 	max-width: 75vw;
-    transform: rotateX(45deg);
 
 }
 
