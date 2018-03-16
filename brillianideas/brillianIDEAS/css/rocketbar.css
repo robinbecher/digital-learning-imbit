@@ -13,6 +13,7 @@ JS as there is no or not sufficient CSS only solution. */
 	max-height: 0px;
 
 	transition: all 1.5s;
+  z-index: 2;
 
 /* grid definition */
   display: grid;
