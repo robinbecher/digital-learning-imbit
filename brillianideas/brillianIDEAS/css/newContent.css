@@ -21,7 +21,7 @@ body {
 
     /* top level grid */
     display: grid;
-    grid-template-rows: 1fr 100px;
+    grid-template-rows: auto;
     grid-template-columns: 100%;
     grid-template-areas: "content"
                           "launchbar";
@@ -38,7 +38,7 @@ body {
   height: 100%;
   margin-left: 5%;
   margin-right: 5%;
-  
+
 }
 
 
