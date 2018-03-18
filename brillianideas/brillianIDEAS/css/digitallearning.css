@@ -451,20 +451,23 @@ body {
 }
 
 .modal_picture{
-  height: 16vh;
+  width: 12vw;
+  height: auto;
   padding-right: 10px;
   padding-bottom: 10px;
   float: left;
 }
 
 .modal_picture_small_size{
-  height: 5vh;
+  width: 12vw;
+  height: auto;
   padding-right: 10px;
   padding-bottom: 10px;
 }
 
 .modal_picture_middle_size{
-  height: 7vh;
+  width: 12vw;
+  height: auto;
   padding-right: 10px;
   padding-bottom: 10px;
 }
@@ -475,19 +478,18 @@ body {
 
 table {
     border-collapse: collapse;
-    width: 100%;
 }
 
 td:nth-child(1){
   width: 15%;
 }
 
-td:nth-child(3){
-  width: 15%;
-}
-
 td:nth-child(2){
   width: 35%;
+}
+
+td:nth-child(3){
+  width: 15%;
 }
 
 td:nth-child(4){
