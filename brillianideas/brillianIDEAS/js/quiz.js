@@ -95,8 +95,8 @@
 					color = amber;
 					break;
 				case 123:
-					ResultText = "Du scheinst noch unentschlossen zu sein.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>Hier </a>" + "findest du viele interessante, duale Studienangebote der DHBW Mannheim!";
-					color = amber;
+					ResultText = "Die Idee des dualen Studiums scheint dir zu gefallen.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/bewerbung-und-immatrikulation.html target=_blank>Hier </a>" + "kannst du dich über die Erwartungen an duale Studierende informieren!";
+					color = green;
 					break;
 				case 131:
 					ResultText = "Die Idee des dualen Studiums scheint dir zu gefallen.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/bewerbung-und-immatrikulation.html target=_blank>Hier </a>" + "kannst du dich über die Erwartungen an duale Studierende informieren!";
@@ -104,7 +104,7 @@
 					break;
 				case 132:
 					ResultText = "Die finanziellen Möglichkeiten, die dir das duale Studium bietet, scheinen dir zu gefallen.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/bewerbung-und-immatrikulation.html target=_blank>Hier </a>" + "kannst du dich über die Erwartungen an duale Studierende informieren!";
-					color = amber;
+					color = green;
 					break;
 				case 133:
 					ResultText = "Du und das duale Studium, das passt!<br>Welche Studiengänge dich an der DHBW Mannheim erwarten, siehst du " + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>hier</a>" + "!";
@@ -135,8 +135,8 @@
 					color = green;
 					break;
 				case 231:
-					ResultText = "Du bist noch unentschlossen?<br>" + "<a href=https://www.wegweiser-duales-studium.de/ target=_blank>Hier </a>" + "bekommst du Antworten auf deine Fragen.";
-					color = amber;
+					ResultText = "Die finanziellen Möglichkeiten, die dir das duale Studium bietet, scheinen dir zu gefallen.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/bewerbung-und-immatrikulation.html target=_blank>Hier </a>" + "kannst du dich über die Erwartungen an duale Studierende informieren!";
+					color = green;
 					break;
 				case 232:
 					ResultText = "Klasse! Dir scheint ein duales Studium zu gefallen.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>Hier </a>" + "findest du die verschiedenen dualen Studiengänge der DHBW Mannheim.";
@@ -152,7 +152,7 @@
 					break;
 				case 312:
 					ResultText = "Die finanziellen Möglichkeiten, die dir das duale Studium bietet, scheinen dich nicht besonders zu interessieren.<br>Vielleicht begeistern dich die " + "<a href=http://www.dhbw.de/around-the-world.html target=_blank>Urlaube</a>" + ", die mit diesem Geld finanziert wurden?";
-					color = amber;
+					color = green;
 					break;
 				case 313:
 					ResultText = "Sehr gut!<br>Du bringst viele wichtige Eigenschaften mit.<br>Finanziell scheinst du zwar abgesichert zu sein, aber das Gefühl selbstständig Geld zu verdienen, bekommst du nur " + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>hier!</a>";

@@ -29,20 +29,13 @@ table td:nth-child(1) {
 
 body {
   display: grid;
-  grid-template-rows: 120px 1fr 950px;
+  grid-template-rows: 180px auto;
   grid-template-columns: 8% 84% 8%;
   grid-template-areas:
     "placeholder1 badgeTitle emptySpace1"
-    "placeholder2 badgeCriteriaGeneral badgeImages"
-    "placeholder3 badgeCriteriaTable empty1"
-  /*              "placeholder4 badgeImageBRA badgeCriteriaBRA"
-              "placeholder5 badgeImageCHN badgeCriteriaCHN"
-              "placeholder6 badgeImageESP badgeCriteriaESP"
-              "placeholder7 badgeImageGER badgeCriteriaGER"
-              "placeholder8 badgeImageIND badgeCriteriaIND"
-              "placeholder9 badgeImageSWE badgeCriteriaSWE"
-              "placeholder10 badgeImageTUR badgeCriteriaTUR"
-              "placeholder11 badgeImageUSA badgeCriteriaUSA";*/
+    "placeholder2 badgeCriteriaGeneral empty1"
+    "placeholder3 badgeCriteriaTable empty2"
+    "placeholder4 badgeImages empty3"
 }
 
 .badgeTitle {
@@ -68,4 +61,12 @@ body {
 
 .badgeCriteriaTable {
   grid-area: badgeCriteriaTable;
+}
+
+.badgeImages{
+  grid-area: badgeImages;
+}
+
+.badgeImages img {
+  margin: 5px;
 }

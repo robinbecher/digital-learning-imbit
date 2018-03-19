@@ -27,7 +27,8 @@
     font-family: Caveat, serif;
 }
  #bodyContent {
-    font-family: Tinos, serif; text-align: justify;
+    font-family: Tinos, serif;
+	text-align: justify;
  }
  p.section1 {
     color: red;
@@ -62,7 +63,7 @@
 }
 
 a 	{
-	color: #ffffff;
+	color: #8b1831;
 	text-decoration: none;
 }
 
