@@ -18,16 +18,16 @@
 					answerValue = answerValue + Number(checkboxNo[i].value);
 				}
 			}
-			
-			
+
+
 		// change NaNs to zero
 			if (isNaN(answerValue)) {
 				answerValue = 0;
-			}		
+			}
 			return answerValue;
 		}
 
-		
+
 
 
 	// categorization Q1 Interests Box
@@ -62,10 +62,10 @@
 		if (answerScore('q3') >= 6 && answerScore('q3') !== 20) {
 			var SoftSkills = 3;
 		}
-		if (answerScore('q3') >= 20) {
+		if (answerScore('q3') == 20) {
 			var SoftSkills = 4;
 		}
-		
+
 
 	//Create Index
 		var AnswerIndexString = String(Interests+""+""+Finance+""+SoftSkills);
