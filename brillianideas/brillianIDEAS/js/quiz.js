@@ -109,6 +109,10 @@
 					ResultText = "Die Idee des dualen Studiums scheint dir zu gefallen.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/bewerbung-und-immatrikulation.html target=_blank>Hier </a>" + "kannst du dich über die Erwartungen an duale Studierende informieren!";
 					color = green;
 					break;
+				case 124:
+					ResultText = "Die Idee des dualen Studiums scheint dir zu gefallen.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/bewerbung-und-immatrikulation.html target=_blank>Hier </a>" + "kannst du dich über die Erwartungen an duale Studierende informieren!";
+					color = green;
+					break;
 				case 131:
 					ResultText = "Die Idee des dualen Studiums scheint dir zu gefallen.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/bewerbung-und-immatrikulation.html target=_blank>Hier </a>" + "kannst du dich über die Erwartungen an duale Studierende informieren!";
 					color = amber;
@@ -118,6 +122,10 @@
 					color = green;
 					break;
 				case 133:
+					ResultText = "Du und das duale Studium, das passt!<br>Welche Studiengänge dich an der DHBW Mannheim erwarten, siehst du " + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>hier</a>" + "!";
+					color = green;
+					break;
+				case 134:
 					ResultText = "Du und das duale Studium, das passt!<br>Welche Studiengänge dich an der DHBW Mannheim erwarten, siehst du " + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>hier</a>" + "!";
 					color = green;
 					break;
@@ -133,6 +141,10 @@
 					ResultText = "Duales Studium? Das passt!<br>Die finanziellen Möglichkeiten, die ein duales Studium bietet, nutzen viele Studierende um neue Orte, sowohl beruflich als auch privat, kennenzulernen:<br>" + "<a href=http://www.dhbw.de/around-the-world.html target=_blank>Gute Gründe für ein Duales Studium</a>";
 					color = green;
 					break;
+				case 214:
+					ResultText = "Duales Studium? Das passt!<br>Die finanziellen Möglichkeiten, die ein duales Studium bietet, nutzen viele Studierende um neue Orte, sowohl beruflich als auch privat, kennenzulernen:<br>" + "<a href=http://www.dhbw.de/around-the-world.html target=_blank>Gute Gründe für ein Duales Studium</a>";
+					color = green;
+					break;
 				case 221:
 					ResultText = "Du bist noch unentschlossen?<br>" + "<a href=https://www.dhbw-mannheim.de/ target=_blank> Hier </a>" + "findest du Antworten auf deine Fragen!";
 					color = amber;
@@ -142,6 +154,10 @@
 					color = green;
 					break;
 				case 223:
+					ResultText = "Super!<br>Du scheinst wie gemacht zu sein für ein duales Studium!<br>Deinen zukünftigen Arbeitgeber findest du bei deinem Studiengang: " + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>Zukunft planen</a>" + "!";
+					color = green;
+					break;
+				case 224:
 					ResultText = "Super!<br>Du scheinst wie gemacht zu sein für ein duales Studium!<br>Deinen zukünftigen Arbeitgeber findest du bei deinem Studiengang: " + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>Zukunft planen</a>" + "!";
 					color = green;
 					break;
@@ -157,6 +173,10 @@
 					ResultText = "Super!<br>Du scheinst wie gemacht zu sein für ein duales Studium!<br>Melde dich doch an unserer " + "<a href=http://www.partner.dhbw-mannheim.de/bewerberboerse.html target=_blank>Partnerbörse</a>" + " an und lass dich finden!";
 					color = green;
 					break;
+				case 234:
+					ResultText = "Super!<br>Du scheinst wie gemacht zu sein für ein duales Studium!<br>Melde dich doch an unserer " + "<a href=http://www.partner.dhbw-mannheim.de/bewerberboerse.html target=_blank>Partnerbörse</a>" + " an und lass dich finden!";
+					color = green;
+					break;
 				case 311:
 					ResultText = "Du bist noch unentschlossen?" + "<a href=https://www.dhbw-mannheim.de/ target=_blank> Hier </a>" + "bekommst du Antworten auf deine Fragen.";
 					color = amber;
@@ -166,6 +186,10 @@
 					color = green;
 					break;
 				case 313:
+					ResultText = "Sehr gut!<br>Du bringst viele wichtige Eigenschaften mit.<br>Finanziell scheinst du zwar abgesichert zu sein, aber das Gefühl selbstständig Geld zu verdienen, bekommst du nur " + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>hier!</a>";
+					color = green;
+					break;
+				case 314:
 					ResultText = "Sehr gut!<br>Du bringst viele wichtige Eigenschaften mit.<br>Finanziell scheinst du zwar abgesichert zu sein, aber das Gefühl selbstständig Geld zu verdienen, bekommst du nur " + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>hier!</a>";
 					color = green;
 					break;
@@ -181,6 +205,10 @@
 					ResultText = "Super! Du bringst viele wichtige Eigenschaften mit!<br>Melde dich gleich an unserer " + "<a href=http://www.partner.dhbw-mannheim.de/bewerberboerse.html target=_blank>Partnerbörse</a>" + " an und lass dich finden!";
 					color = green;
 					break;
+				case 324:
+					ResultText = "Super! Du bringst viele wichtige Eigenschaften mit!<br>Melde dich gleich an unserer " + "<a href=http://www.partner.dhbw-mannheim.de/bewerberboerse.html target=_blank>Partnerbörse</a>" + " an und lass dich finden!";
+					color = green;
+					break;
 				case 331:
 					ResultText = "Super! Du scheinst für das duale Studium sehr geeignet zu sein!<br>Melde dich gleich an unserer " + "<a href=http://www.partner.dhbw-mannheim.de/bewerberboerse.html target=_blank>Partnerbörse</a>" + " an und lass dich finden!";
 					color = green;
@@ -190,6 +218,10 @@
 					color = green;
 					break;
 				case 333:
+					ResultText = "Wahnsinn! Deine Vorstellungen passen genau zum dualen Studium.<br>Registriere dich an unserer "  + "<a href=http://www.partner.dhbw-mannheim.de/bewerberboerse.html target=_blank>Partnerbörse</a>" + " und lass dich von deinem künftigen Ausbildungsunternehmen finden!";
+					color = green;
+					break;
+				case 334:
 					ResultText = "Wahnsinn! Deine Vorstellungen passen genau zum dualen Studium.<br>Registriere dich an unserer "  + "<a href=http://www.partner.dhbw-mannheim.de/bewerberboerse.html target=_blank>Partnerbörse</a>" + " und lass dich von deinem künftigen Ausbildungsunternehmen finden!";
 					color = green;
 					break;
