@@ -4,7 +4,7 @@
 		console.log('submitted');
 
 
-	//Scroll down
+//Scroll down
 	window.setTimeout('scrollBy(0,10000)',0);
 
 
@@ -18,13 +18,16 @@
 					answerValue = answerValue + Number(checkboxNo[i].value);
 				}
 			}
-			// change NaNs to zero
+			
+			
+		// change NaNs to zero
 			if (isNaN(answerValue)) {
 				answerValue = 0;
-			}
+			}		
 			return answerValue;
 		}
 
+		
 
 
 	// categorization Q1 Interests Box
@@ -34,39 +37,43 @@
 		if (answerScore('q1') >= 1 && answerScore('q1') <= 3) {
 			var Interests = 2;
 		}
-		if (answerScore('q1') >= 4 && answerScore('q1')<= 6) {
+		if (answerScore('q1') >= 4 && answerScore('q1') <= 6) {
 			var Interests = 3;
 		}
 
-			// categorization Q2 Finance Box
+	// categorization Q2 Finance Box
 		if (answerScore('q2') <= 0) {
 			var Finance = 1;
 		}
 		if (answerScore('q2') >= 1 && answerScore('q2') <= 3) {
 			var Finance = 2;
 		}
-		if (answerScore('q2') >= 4 && answerScore('q2')<= 6) {
+		if (answerScore('q2') >= 4 && answerScore('q2') <= 6) {
 			var Finance = 3;
 		}
 
-			// categorization Q3 SoftSkills Box
+	// categorization Q3 SoftSkills Box
 		if (answerScore('q3') <= 1) {
 			var SoftSkills = 1;
 		}
 		if (answerScore('q3') >= 2 && answerScore('q3') <= 5) {
 			var SoftSkills = 2;
 		}
-		if (answerScore('q3') >= 6 && answerScore('q3')<= 8) {
+		if (answerScore('q3') >= 6 && answerScore('q3') !== 20) {
 			var SoftSkills = 3;
 		}
+		if (answerScore('q3') >= 20) {
+			var SoftSkills = 4;
+		}
+		
 
-		//Create Index
+	//Create Index
 		var AnswerIndexString = String(Interests+""+""+Finance+""+SoftSkills);
 		var AnswerIndex = parseInt(AnswerIndexString);
-		// Assingn ResultText to AnswerIndex
+	// Assign ResultText to AnswerIndex
 		var ResultText = 123;
 
-		//var color;
+	//var color;
 		var color;
 			var green = document.getElementById("TrafficLightGreen");
 			var amber = document.getElementById("TrafficLightAmber");
@@ -83,15 +90,19 @@
 					color = red;
 					break;
 				case 113:
-					ResultText = "Du scheinst noch unentschlossen zu sein.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank> Hier</a>" + "findest du viele interessante, duale Studienangebote der DHBW Mannheim!";
+					ResultText = "Du scheinst noch unentschlossen zu sein.<br>" + "<a href=https://www.dhbw-mannheim.de/duales-studium/studienangebot.html target=_blank>Hier </a>" + "findest du viele interessante, duale Studienangebote der DHBW Mannheim!";
 					color = amber;
+					break;
+				case 114:
+					ResultText = "Dein Studium ist dir zu theoretisch?<br>" + "<a href=http://www.imbit.dhbw-mannheim.de/fileadmin/ms/wirtschaft/imbit/IMBIT_Praxisphasen.pdf target=_blank>Hier </a>" + "findest du Informationen zu den Praxiseinsätzen während des dualen Studiums!";
+					color = green;
 					break;
 				case 121:
 					ResultText = "Das duale Studium scheint deinen Interessen und Wünschen nicht zu entsprechen.<br>Du solltest dich nach Alternativen umschauen!";
 					color = red;
 					break;
 				case 122:
-					ResultText = "Du bist noch unentschlossen?<br>" + "<a href=https://www.wegweiser-duales-studium.de/ target=_blank>Hier </a>" + "bekommst du Antworten auf deine Fragen!";
+					ResultText = "Du bist noch unentschlossen?<br>" + "<a href=https://www.dhbw-mannheim.de/ target=_blank>Hier </a>" + "bekommst du Antworten auf deine Fragen!";
 					color = amber;
 					break;
 				case 123:
@@ -123,7 +134,7 @@
 					color = green;
 					break;
 				case 221:
-					ResultText = "Du bist noch unentschlossen?<br>" + "<a href=https://www.wegweiser-duales-studium.de target=_blank> Hier </a>" + "findest du Antworten auf deine Fragen!";
+					ResultText = "Du bist noch unentschlossen?<br>" + "<a href=https://www.dhbw-mannheim.de/ target=_blank> Hier </a>" + "findest du Antworten auf deine Fragen!";
 					color = amber;
 					break;
 				case 222:
@@ -147,7 +158,7 @@
 					color = green;
 					break;
 				case 311:
-					ResultText = "Du bist noch unentschlossen?" + "<a href=https://www.wegweiser-duales-studium.de target=_blank> Hier </a>" + "bekommst du Antworten auf deine Fragen.";
+					ResultText = "Du bist noch unentschlossen?" + "<a href=https://www.dhbw-mannheim.de/ target=_blank> Hier </a>" + "bekommst du Antworten auf deine Fragen.";
 					color = amber;
 					break;
 				case 312:
@@ -179,13 +190,13 @@
 					color = green;
 					break;
 				case 333:
-					ResultText = "Wahnsinn! Deine Vorstellungen passen genau zum dualen Studium.<br>Registriere dich an unserer "  + "<a href=http://www.partner.dhbw-mannheim.de/bewerberboerse.html target=_blank>Partnerbörse</a>" + " und lass dich von deinem künftigen Arbeitgeber finden!";
+					ResultText = "Wahnsinn! Deine Vorstellungen passen genau zum dualen Studium.<br>Registriere dich an unserer "  + "<a href=http://www.partner.dhbw-mannheim.de/bewerberboerse.html target=_blank>Partnerbörse</a>" + " und lass dich von deinem künftigen Ausbildungsunternehmen finden!";
 					color = green;
 					break;
 			}
 
 
-		// Show TrafficLight
+	// Show TrafficLight
 
 		red.className='hidden';
 		amber.className='hidden';
