@@ -16,14 +16,12 @@ The learning platform consists of four distinct parts:
 As part of the project, the backend/ infrastructure team provides a documentation about several relevant aspects as for example how to install all necessary tools on your lokal machine and how to prepare the webserver for deployment.
 
 Please find more information in our guides about...
-  ...the development setup you need locally to develop and test on your computer:
-* [DevSetupGuide](https://github.com/MariaBiosciences/digital-learning-imbit/tree/master/resources/documentation/DevelopmentSetupGuide.md)
 
-  ...the detailled installation and setup guide for the webserver, either test or production server:
-* [ServerSetupGuide](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/ServerSetUpGuide.md)
+  ...the development setup you need locally to develop and test on your computer: [DevSetupGuide](https://github.com/MariaBiosciences/digital-learning-imbit/tree/master/resources/documentation/DevelopmentSetupGuide.md)
 
-  ...the MediaWiki Installation and Configuration:
-* [MediaWiki Installation](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/MediaWiki.md)
+  ...the detailled installation and setup guide for the webserver, either test or production server: [ServerSetupGuide](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/ServerSetUpGuide.md)
+
+  ...the MediaWiki Installation and Configuration: [MediaWiki Installation](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/MediaWiki.md)
 
 * [OpenBadges Technical Documentation](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/OpenBadges.md)
 * [JenkinsConfiguration](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/JenkinsConfig.md)
