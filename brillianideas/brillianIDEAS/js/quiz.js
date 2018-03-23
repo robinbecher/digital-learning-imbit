@@ -59,10 +59,10 @@
 		if (answerScore('q3') >= 2 && answerScore('q3') <= 5) {
 			var SoftSkills = 2;
 		}
-		if (answerScore('q3') >= 6 && answerScore('q3') !== 20) {
+		if (answerScore('q3') >= 6 && answerScore('q3') <= 10 && answerScore('q3') !== 20) {
 			var SoftSkills = 3;
 		}
-		if (answerScore('q3') == 20) {
+		if (answerScore('q3') >= 11) {
 			var SoftSkills = 4;
 		}
 
