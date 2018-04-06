@@ -10,13 +10,14 @@ For brillianICM, a badge is earned after completion of any of the countries. If 
 
 ### Useful links:
 
-- JWS Verifier	http://kjur.github.io/jsjws/tool_verifyanalyze.html 
-- OpenBadges Validator	https://badgecheck.io & http://validator.openbadges.org 
-- Assertion Information	https://github.com/mozilla/openbadges-backpack/wiki/assertion-information-for-the-uninitiated
-- Developer Information	https://openbadges.org/developers 
 - Earn Example Badge	http://toolness.github.io/hackasaurus-parable/navigator-badge 
+- Developer Information	https://openbadges.org/developers
 - Issuer Information https://github.com/mozilla/openbadges-backpack/wiki/Open-Badges-Onboarding:-Issuers
+- Assertion Information	https://github.com/mozilla/openbadges-backpack/wiki/assertion-information-for-the-uninitiated
 - Badge Baking https://github.com/mozilla/openbadges-backpack/wiki/badge-baking
+- OpenBadges Validator	https://badgecheck.io & http://validator.openbadges.org 
+- JSON Web Signature (JWS) with RSA https://connect2id.com/products/nimbus-jose-jwt/examples/jws-with-rsa-signature
+- JWS Verifier	http://kjur.github.io/jsjws/tool_verifyanalyze.html
 
 ### Used classes/files:
 
