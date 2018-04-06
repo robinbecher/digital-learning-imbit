@@ -6,7 +6,7 @@ Open Badges are verifiable, portable digital badges with embedded metadata about
 
 Each Open Badge is associated with an image and information about the badge, its recipient, the issuer, and any supporting evidence. All this information may be packaged within a badge image file. [ELI5 Open Badge](https://openbadges.org/get-started/)
 
-For brillianICM, a badge is earned after the completion of any of the countrys. If a user is assigned to a group that has badge sending allowed he can send it to himself with a button on the result page. A lecturer can send them at any time via the lecturer page.
+For brillianICM, a badge is earned after completion of any of the countries. If a user is assigned to a group that has badge sending allowed he can send it to his email with a button on the result page. A lecturer can send them at any time via the lecturer page.
 
 ### Useful links:
 
