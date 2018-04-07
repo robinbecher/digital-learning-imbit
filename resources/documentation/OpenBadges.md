@@ -46,7 +46,7 @@ It is recommended to read or at least skim through the first four links before c
 
 - The assertion (metadata) is "baked" into the svg file as a Json-Object
 
-1. result.jsp -> press on button "send certificate and badge" to start the process => sendCertificate.java => MailClient.java -> sendCertificateMail() -> constructs the svg file thusly:
+1. result.jsp -> press on button "send certificate and badge" to start the process => sendCertificate.java => MailClient.java -> sendCertificateMail() -> constructs the .svg-file thusly:
 2. BadgeBakery.java -> bakeBadge(): This Method reads the .svg-file on the server in a buffered reader and inserts the assertion data into it after signing it.
   - Assertion data: JSONCreator.java -> createAssertion() -> creates the assertion data as a JSON and returns it as a String. Therefore, the user specific data gets extracted from the database (userRealm.java -> getBadgeAssertionID() bzw. newBadge()).
   
@@ -55,13 +55,14 @@ Example:
 {"uid":"19","recipient":"student@dhbw-mannheim.de","issuedOn":"2018-03-06","badge":{"name":"brillianICM Sweden","image":"http//:link_image_sweden","description":"Successful completion of the ICM Sweden serious game","criteria":"http//:link_criteria_page","issuer":{"name":"DHBW Mannheim Studiengang IMBIT","org":"DHBW Mannheim","description":"Duale Hochschule Baden-Württemberg Studiengang International Management for Business and Information Technology","url":"http://www.imbit.dhbw-mannheim.de/"}},"verify":{"url":"","type":"signed"}}
 ```
 
-  - Signing: BadgeBakery.java -> signBadge(): takes the JSON and encodes it with RSA-Encryption. Therefore a private key and a public key are hosted as .der-files. It is now a JWS(JSON Web Signature).
+  - Signing: BadgeBakery.java -> signBadge(): takes the JSON and encodes it with RSA-Encryption. Therefore a private key and a public key are hosted as .der/.pem-files. It is now a JWS(JSON Web Signature).
   
 Example:
   ```
   eyJhbGciOiJSUzI1NiJ9.SW4gUlNBIHdlIHRydXN0IQ.IRMQENi4nJyp4er2LmZq3ivwoAjqa1uUkSBKFIX7ATndFF5ivnokXZc8u0A
   ```
-
+ 3. MailClient.java -> sendCertificateMail(): constructs the rest of the e-mail and sends it.
+ 
 
 ## How to test?
 
