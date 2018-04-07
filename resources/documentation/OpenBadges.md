@@ -10,14 +10,16 @@ For brillianICM, a badge is earned after completion of any of the countries. If 
 
 ### Useful links:
 
-- Earn Example Badge	http://toolness.github.io/hackasaurus-parable/navigator-badge 
 - Developer Information	https://openbadges.org/developers
 - Issuer Information https://github.com/mozilla/openbadges-backpack/wiki/Open-Badges-Onboarding:-Issuers
 - Assertion Information	https://github.com/mozilla/openbadges-backpack/wiki/assertion-information-for-the-uninitiated
 - Badge Baking https://github.com/mozilla/openbadges-backpack/wiki/badge-baking
+- Earn Example Badge	http://toolness.github.io/hackasaurus-parable/navigator-badge 
 - OpenBadges Validator	https://badgecheck.io & http://validator.openbadges.org 
 - JSON Web Signature (JWS) with RSA https://connect2id.com/products/nimbus-jose-jwt/examples/jws-with-rsa-signature
 - JWS Verifier	http://kjur.github.io/jsjws/tool_verifyanalyze.html
+
+It is recommended to read or at least skim through the first four links before continuing with this documentation.
 
 ### Used classes/files:
 
@@ -42,6 +44,25 @@ For brillianICM, a badge is earned after completion of any of the countries. If 
 
 ## How does it work?
 
+- The assertion (metadata) is "baked" into the svg file as a Json-Object
+
+1. result.jsp -> press on button "send certificate and badge" to start the process => sendCertificate.java => MailClient.java -> sendCertificateMail() -> constructs the svg file thusly:
+2. BadgeBakery.java -> bakeBadge(): This Method reads the .svg-file on the server in a buffered reader and inserts the assertion data into it after signing it.
+  - Assertion data: JSONCreator.java -> createAssertion() -> creates the assertion data as a JSON and returns it as a String. Therefore, the user specific data gets extracted from the database (userRealm.java -> getBadgeAssertionID() bzw. newBadge()).
+  
+Example:
+```
+{"uid":"19","recipient":"student@dhbw-mannheim.de","issuedOn":"2018-03-06","badge":{"name":"brillianICM Sweden","image":"http//:link_image_sweden","description":"Successful completion of the ICM Sweden serious game","criteria":"http//:link_criteria_page","issuer":{"name":"DHBW Mannheim Studiengang IMBIT","org":"DHBW Mannheim","description":"Duale Hochschule Baden-Württemberg Studiengang International Management for Business and Information Technology","url":"http://www.imbit.dhbw-mannheim.de/"}},"verify":{"url":"","type":"signed"}}
+```
+
+  - Signing: BadgeBakery.java -> signBadge(): takes the JSON and encodes it with RSA-Encryption. Therefore a private key and a public key are hosted as .der-files. It is now a JWS(JSON Web Signature).
+  
+Example:
+  ```
+  eyJhbGciOiJSUzI1NiJ9.SW4gUlNBIHdlIHRydXN0IQ.IRMQENi4nJyp4er2LmZq3ivwoAjqa1uUkSBKFIX7ATndFF5ivnokXZc8u0A
+  ```
+
+
 ## How to test?
 
 - For the development setup you need locally to develop and test on your computer see: [DevSetupGuide](https://github.com/MariaBiosciences/digital-learning-imbit/tree/master/resources/documentation/DevelopmentSetupGuide.md)
@@ -49,7 +70,7 @@ For brillianICM, a badge is earned after completion of any of the countries. If 
 
 - You can set the user progress near to the end of a game to avoid playing trough it several minutes every time you want to test something. This is for 'brillianICM Sweden'.
 
-Connect to the MySQL database and execute the following statements:
+#### Connect to the MySQL database and execute the following statements:
 
 ! Attention ! This is for the user with the ID '20', if you want to set it for another user, change the delete-statement and the 20 in the brackets in the insert-statement. On some systems the ' near the beginning and end of the statement cause an error. Try replacing them with other apostrophes.
 
