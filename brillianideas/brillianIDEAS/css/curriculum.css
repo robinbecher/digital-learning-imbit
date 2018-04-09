@@ -1,10 +1,13 @@
-/* NEUES CSS */
+/* Standardeinstellungen für die gesamte Seite */
 
 html {
     font-family: "Tinos";
     font-size: 2vh;
     color: black;
 }
+
+
+/* Diese Klasse legt die Eigenschaften der Wortwolken in der 1. und 2. Ebene fest */
 
 .modul {
     font-size: 2.5em;
@@ -13,11 +16,17 @@ html {
     text-align: center;
 }
 
+
+/* Diese klasse erweitert die Klasse "modul" um Eigenschaften, die eintreten wenn man mit der Maus über die Objekte fährt */
+
 .modul:hover {
     transform: scale(1.1);
     cursor: pointer;
     color: #991B33;
 }
+
+
+/* Diese Klasse legt das "Raster" fest, auf dem in jeder Ansicht die Objekte angeordnet werden können */
 
 .gridlayout {
     display: none;
@@ -26,6 +35,9 @@ html {
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(14, 1fr);
 }
+
+
+/* Diese nachfolgengedn zwei Klassen legen die Eigenschaften des Bildes / der umschließenden Box des Tintenfischarms in der linken oberen Ecke fest */
 
 .tintenfischarm {
     grid-column: 1 / 8;
@@ -41,7 +53,12 @@ html {
     height: auto;
 }
 
+
+/* Diese Klasse legt die Grundeigenschaften des Überschriftenfeldes in der rechten, oberen Ecke fest. */
+
 .ueberschriftenfeld {
+    /* Hier wird die Position des Überschriftenfeldes festgelegt: Die Felder der Spalten 2 bis 14 und der Reihen 1 bis 3 des Gridlayouts. 
+    Dabei werden die jeweiligen "Trennlinien" als Start- bzw. Endpunkte angegeben, nicht die Nr. der Reihe / Spalte als solche. */
     grid-column: 2 / 15;
     grid-row: 1 / 4;
     text-align: right;
@@ -50,25 +67,43 @@ html {
     font-family: "Caveat Brush";
 }
 
+
+/* Die 1. Überschrift hat die Schriftgröße 2,5 em. */
+
 .ueberschriftenfeld li:nth-child(1n) {
     font-size: 2.5em;
 }
+
+
+/* Die 2. Überschrift hat die Schriftgröße 2,1 em.  */
 
 .ueberschriftenfeld li:nth-child(2n) {
     font-size: 2.1em;
 }
 
+
+/* Die 3. Überschrift hat die Schriftgröße 1,8 em. */
+
 .ueberschriftenfeld li:nth-child(3n) {
     font-size: 1.8em;
 }
+
+
+/* Hier wird der Style festgelegt, die die Überschriften annehmen wenn man mit der Maus über sie fährt. */
 
 .ueberschriftenfeld li:hover {
     cursor: pointer;
 }
 
+
+/* Hier wird festgelegt, dass ein "> " vor eine Überschrift steht, wenn man mit der Maus über sie fährt. */
+
 .ueberschriftenfeld li:hover::before {
     content: "> ";
 }
+
+
+/* Hier wird der Style festgelegt, den die Textabschnitte auf der rechten Seite der Modulbeschreibung haben. */
 
 .modulbeschreibung {
     grid-column: 10 / 15;
@@ -85,6 +120,9 @@ html {
     hyphens: auto;
 }
 
+
+/* Hier wird der Style festgelegt, den die Aufzählung der Moocs auf der linken Seite der Modulbeschreibung hat. */
+
 .moocs {
     grid-column: 1 / 10;
     grid-row: 3 / 13;
@@ -99,6 +137,9 @@ html {
     hyphens: auto;
 }
 
+
+/* Hier wird der Style der Symbolbilder in der Aufzählung der Moocs festgelegt. */
+
 .moocs img {
     float: left;
     padding-right: 1%;
@@ -106,10 +147,16 @@ html {
     height: auto;
 }
 
+
+/* Hier wird festgelegt, die Bilder alternierend auf der linken und auf der rechten Seite der List Items in der Liste der Moocs angezeigt werden. */
+
 .moocs li:nth-of-type(even) img {
     float: right;
     padding-left: 1%;
 }
+
+
+/* Hier werdern besondere Styles der List Items in der Liste der Moocs festgelegt. */
 
 .moocs li {
     clear: both;
@@ -117,32 +164,38 @@ html {
     margin: 0.05%
 }
 
+
+/* Hier wird der Style eines jeden zweiten Links in jedem List Item festgelegt. Dies ist der "Name" des Moocs. */
+
 .moocs li a:nth-child(2n) {
     color: #991B33;
     font-family: "Caveat Brush";
     text-decoration: none;
 }
 
+
+/* Hier wird festgelegt, dass List Items in der Liste der Ziele des Moduls in einer Reihe angezeigt werden. */
+
 .ziele li {
     display: inline;
 }
 
 
-/* waagrechte Listen */
+/* Hier wird festgelegt, dass zwischen jedem List Item ein trennender Bindestrich eingeführt wird. */
 
 .ziele li:not(:first-child):before {
     content: "- ";
 }
 
 
-/* allen Listeinträgen außer dem ersten wird ein Spiegelpunkt als Trennzeichen vorgestellt */
+/* Hier wird festgelegt dass Quelleneinträge keine Spiegelpunkte haben. */
 
 .quellen {
     list-style: none;
 }
 
 
-/* Quelleneinträge ohne Spiegelpunkte */
+/* Hier wird festgelegt, dass jeder 2. Quelleneintrag einen grauen Hintergrund hat. */
 
 .quellen li:nth-of-type(odd) {
     list-style: none;
@@ -150,19 +203,15 @@ html {
 }
 
 
-/* Quelleneinträge werden abwechselnd grau hinterlegt*/
-
-
-/* NEUES CSS ENDE */
+/* Hier wird der Style für die Launchbar festgelegt. */
 
 .launchbar {
-    /* style for launchbar */
     grid-area: launchbar;
     overflow: hidden;
 }
 
 
-/* FUTURE GRID */
+/* Hier wurde beim Testen nochmal das Grid Layout definiert. */
 
 .grid_layout {
     display: none;
@@ -173,7 +222,7 @@ html {
 }
 
 
-/* Grid Columns */
+/* Im folgenden werden hier Klassen definiert, mit denen alle möglichen bereiche des Grids angewählt werden können. Entweder über einzelne Zeilen bzw Spalten (grid_column_1 / grid_row_1 = 1. Zeile / Spalte) oder über mehrere Zeilen oder Spalten (grid_column_1_4 / grid_row_1_4 = Zeilen 1 - 4 / Spalten 1 - 4). */
 
 .grid_column_1 {
     grid-column: 2;
