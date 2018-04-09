@@ -2,9 +2,7 @@
 
 ## Description
 
-Open Badges are verifiable, portable digital badges with embedded metadata about skills and achievements. They comply with the Open Badges Specification and are shareable across the web.
-
-Each Open Badge is associated with an image and information about the badge, its recipient, the issuer, and any supporting evidence. All this information may be packaged within a badge image file. [ELI5 Open Badge](https://openbadges.org/get-started/)
+Open Badges are verifiable, portable digital badges with embedded metadata about skills and achievements. They comply with the Open Badges Specification and are shareable across the web. Each Open Badge is associated with an image and information about the badge, its recipient, the issuer, and any supporting evidence. All this information may be packaged within a badge image file. [ELI5 Open Badge](https://openbadges.org/get-started/)
 
 For brillianICM, a badge is earned after completion of any of the countries. If a user is assigned to a group that has badge sending allowed he can send it to his email with a button on the result page. A lecturer can send them at any time via the lecturer page.
 
@@ -39,12 +37,12 @@ It is recommended to read or at least skim through the first four links before c
 - gridOBall_Table.css
 
 ---
-- the badge .SVGs are located at brillianICM/WebContent/img/badges/
+- the badge .svg-files are located at brillianICM/WebContent/img/badges/
 - link to public key http://ec2-52-14-250-138.us-east-2.compute.amazonaws.com:8080/brillianICM/badges/public-key-badges.pem 
 
 ## How does it work?
 
-- The assertion (metadata) is "baked" into the svg file as a Json-Object
+- The assertion (metadata) is "baked" into a .svg-file as a JWS (JSON Web Signature)
 
 1. result.jsp -> press on button "send certificate and badge" to start the process => sendCertificate.java => MailClient.java -> sendCertificateMail() -> constructs the .svg-file thusly:
 2. BadgeBakery.java -> bakeBadge(): This Method reads the .svg-file on the server in a buffered reader and inserts the assertion data into it after signing it.
