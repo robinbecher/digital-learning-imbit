@@ -50,7 +50,7 @@ Put in a webmin password
 You can access webmin via the browser: https://<publicDNS>:10000/ 
 	
 ## Install LAMP
-In this step LAMP is installed. To see further information click [here](https://wiki.ubuntuusers.de/LAMP/)
+In this step LAMP is installed. It is a package of (Linux) Apache, MySQL, PHP, Perl, Python. To see further information click [here](https://wiki.ubuntuusers.de/LAMP/)
 
 Installing Lamp
 ```
@@ -64,8 +64,9 @@ mysql -u root
 sudo nano /etc/mysql/my.cnf
 ```
   ** MySQL-server: you need to set a password during LAMP installation
-	If you need to reset the root password for the mySQL database click [here](https://coderwall.com/p/j9btlg/reset-the-mysql-5-7-root-password-in-ubuntu-16-04-lts) 
-	
+	If you need to reset the root password for the mySQL database click [here](https://coderwall.com/p/j9btlg/reset-the-mysql-5-7-root-password-in-ubuntu-16-04-lts)
+
+--BEGINNING of reset MySQL password--	
 
 To Stop MySQL
 ```
@@ -107,12 +108,14 @@ Start the MySQL service normally.
 sudo service mysql start
 mysql -u root -p 
 ```
+--END of reset MySQL password--
 
-Download and Upload the following files from GitHub to Home
+
+Download and Upload the following files from GitHub /resources/database-files/* to Home (~). With the source command, the commands in the .sql files will be executed. These create the database, tables and contents:
+
 ```
 mysql -u root -p
 source ~/CreateDBbrillianCRM.sql;
-source ~/CreateDBbrillianICM.sql;
 source ~/CreateDBbrillianICM.sql;
 exit
 ```
@@ -124,9 +127,8 @@ exit
 
 Create the following .conf files in sites-available:
 brillianCRM.conf, brillianICM.conf, brillianIDEAS.conf, mediawiki.conf
-with sudo nano brillianCRM.conf and paste the content from GitHub 
+with sudo nano fileName.conf and paste the content from GitHub OR download from /resources/Apache-conf-files/* and copy to the folder
 
-// not in GitHub yet
 
 cd/etc/apache2/sites-available
 ```
@@ -153,7 +155,7 @@ sudo a2ensite <FILE>.conf
 sudo a2enmod proxy_http
 sudo service apache2 restart
 ```
-Create Ubunto User
+Create Ubuntu User
 ```
 sudo groupadd www
 ```
@@ -177,8 +179,9 @@ sudo chgrp -R www /var/www/html
 
 
 ## Install Tomcat
-In this step Tomcat is installed. To see further information click [here](https://medium.com/@shaaslam/how-to-install-oracle-java-9-in-ubuntu-16-04-671e598f0116)
+In this step Tomcat is installed. It is a container for Java Applications such as brillianICM and brillianCRM. To see further information click [here](https://medium.com/@shaaslam/how-to-install-oracle-java-9-in-ubuntu-16-04-671e598f0116)
 
+### Install JDK9 for Tomcat
 Open a terminal and add PPA using following command. You need sudo access to this
 ```
 sudo add-apt-repository ppa:webupd8team/java
@@ -220,10 +223,11 @@ export CATALINA_BASE=/opt/tomcat
 ```
 sudo update-java-alternatives -l
 ```
-To test
+To test the environment variables, use echo:
 ```
 echo $JAVA_HOME
 ```
+### Install Tomcat Server
 ```
 sudo groupadd tomcat
 ```
@@ -247,7 +251,9 @@ sudo adduser tomcat --ingroup tomcat
 sudo chown -R tomcat webapps/ work/ temp/ logs/
 ```
 
-Create service 
+Create service:
+A service is a kind of "registration" that can be used for start/stop/restart the service tomcat.
+
 ```
 sudo nano /etc/systemd/system/tomcat.service
 ```
@@ -284,7 +290,7 @@ sudo systemctl start tomcat
 sudo systemctl enable tomcat
 sudo ufw allow 8080
 ```
-Add Inbound rule in AWS security groups for port 8080
+Attention: In AWS, the ports need to be enabled in the security groups: add Inbound rule for port 8080
 ```
 sudo systemctl enable tomcat
 sudo nano /opt/tomcat/conf/tomcat-users.xml
@@ -334,22 +340,49 @@ Copy and insert: Add to the server.xml file:
                 keystoreFile="$CATALINA_HOME/conf/tomcat-keystore.jks"
                 keystoreType="JKS" keystorePass="imbit15"   />
 
-add the following to rc.local:
+add to rc.local: --> This configures a redirect of port 443 to 8443, ATTENTION needs to be removed when using https (port 443 too).
+```
 sudo nano /etc/rc.local
-vor exit:
+```
+the following before the line with "exit":
+```
 sudo iptables -t nat -I PREROUTING -p tcp --destination-port 443 -j REDIRECT --to-ports 8443 
 sudo service tomcat restart
-(
-o	Reverse Proxy: port 8080 auf port 8443 über localhost  anschließend 8080 auf ufw entfernen
+```
+Reverse Proxy: port 8080 to port 8443 via localhost --> subsequently remove port 8080 on ufw 
 
 ## Install PHP:
-o	sudo apt-get install php7.0-xsl 
-•	Persistent Logging:
-o	mkdir /var/log/journal
-o	systemd-tmpfiles --create --prefix /var/log/journal
-o	systemctl restart systemd-journald
-o	Folgende Rechte für Log-Files wurden geändert von systemd-network zu syslog:
+PHP is used by brillianIDEAS and needs to be configured to work with Apache:
 
+Install PHP:
+```
+sudo apt-get install php7.0-xsl libapache2-mod-php7.0
+```
+
+Edit your php.ini file (find it in PHP folder, eg. C:\xampp\php)
+Change short_open_tag from "Off" to On
+```
+short_open_tag=On
+```
+Remove semicolon before extension, where something like xsl or php_xsl is defined
+```
+extension=xsl
+```
+After these steps for enabling PHP for Apache:
+```
+sudo a2enmod php7
+sudo service apache2 reload
+```
+
+## Persistent Logging:
+
+```
+mkdir /var/log/journal
+systemd-tmpfiles --create --prefix /var/log/journal
+systemctl restart systemd-journald
+Folgende Rechte für Log-Files wurden geändert von systemd-network zu syslog:
+```
+```
 cd /var/log
 sudo chown syslog auth.log
 sudo chown syslog daemon.log
@@ -361,16 +394,22 @@ sudo chown syslog mail.log
 sudo chown syslog syslog
 sudo chown syslog user.log
 sudo chown syslog uucp.log
+```
 
-kopieren:
-•	Enable Ports: Folgende Ports werden für den Zugriff benötigt: Ports 22 (SSH), Port 80 (HTTP-Apache), Port 443 (HTTPS), Port 8080 (Tomcat)
-o	check “sudo netstat -plnt” for active Internet connections
+## Port Freigaben:
+
+Enable Ports: Folgende Ports werden für den Zugriff benötigt: 
+Ports 22 (SSH), Port 80 (HTTP-Apache), Port 443 (HTTPS), Port 8080 (Tomcat)
+
+check “sudo netstat -plnt” for active Internet connections
+```
 sudo iptables -P INPUT ACCEPT 
 sudo iptables -F
 sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT 
 sudo iptables -I INPUT -p tcp --dport 443 -j ACCEPT 
 sudo iptables -I INPUT -p tcp --dport 8080 -j ACCEPT 
 sudo iptables --list
+```
 
 //keine Ahnung
 •	SSL certificates
@@ -383,14 +422,14 @@ ssl_certificate_key /etc/nginx/ssl/brillianicm.key;
 ssl_session_cache shared:SSL:1m; ssl_session_timeout 5m; 
 ssl_ciphers HIGH:!aNULL:!MD5; 
 ssl_prefer_server_ciphers on;
-o	Um das vertrauenswürdige Zertifikat von geoTrust zu nutzen muss es zusammen mit dem Privatekey von 1und1.de in das PKCS12Format umgewandelt werden:
+Um das vertrauenswürdige Zertifikat von geoTrust zu nutzen muss es zusammen mit dem Privatekey von 1und1.de in das PKCS12Format umgewandelt werden:
 openssl pkcs12 –export in „TrustedCERT.crt“ inkey „PrivateKEY.key“ -out KEYSTORE.p12 -name "some alias"
 Keytool-importkeystore -srckeystore KEYSTORE.p12 -srcstoretype PKCS12 -destkeystore TOMCAT.keystore
-o	https://www.digitalocean.com/community/tutorials/how-to-encrypt-tomcat-8-connections-with-apache-or-nginx-on-ubuntu-16-04 
+https://www.digitalocean.com/community/tutorials/how-to-encrypt-tomcat-8-connections-with-apache-or-nginx-on-ubuntu-16-04 
 
-•	ConfirmRegistation:
-o	https://brillianCRM.com/app/ConfirmRegistration?email=c4312551@trbvm.com&ue=28152 brillianCRM.com muss hier dann durch den richtigen Servernamen ersetzt werden.
-•	Repositories hinzufügen??? nginx/mySQL,…
+ConfirmRegistation:
+https://brillianCRM.com/app/ConfirmRegistration?email=c4312551@trbvm.com&ue=28152 brillianCRM.com muss hier dann durch den richtigen Servernamen ersetzt werden.
+Repositories hinzufügen??? nginx/mySQL,…
 
 ## Start von Deployment
 1. Bei FTP Client anmelden (e.g. winSCP)
@@ -399,11 +438,28 @@ o	https://brillianCRM.com/app/ConfirmRegistration?email=c4312551@trbvm.com&ue=28
 
 ## Issues on productive system
 
-the following code needs to be commented on **server.xml**
-java.sql.SQLException: Cannot create JDBC driver of class '' for connect URL 'null'
-context path in META-INF/context.xml
-<!--        <Context docBase="brillianICM" path="/brillianICM" reloadable="true"
-                        source="org.eclipse.jst.jee.server:brillianICM"/>
-        <Context docBase="brillianCRM" path="/brillianCRM" reloadable="true"
-                        source="org.eclipse.jst.jee.server:brillianCRM"/>
--->
+The following code needs to be commented on **server.xml**
+```
+        <Host name="www.brillianicm.com"  unpackWARs="true" autoDeploy="true">
+                <Alias>www.brillianicm.com</Alias>
+                <Context path="" docBase="/opt/tomcat/webapps/brillianICM" debug="0" reloadable="true" />
+                <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+                   prefix="brillianICM_access_log" suffix=".txt"
+                   pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+        </Host>
+
+        <Host name="www.brilliancrm.com" unpackWARs="true" autoDeploy="true">
+                <Alias>www.brilliancrm.com</Alias>
+                <Context path="" docBase="/opt/tomcat/webapps/brillianCRM" debug="0" reloadable="true" />
+                <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+                   prefix="brillianCRM_access_log" suffix=".txt"
+                   pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+        </Host>
+```
+
+Context path in $CATALINA_HOME/webapps/brillianXXX/META-INF/context.xml:
+```
+<Context path="/brillianICM">
+```
+
+When configuration here is not correct, errors such as the following might ocurr: java.sql.SQLException: Cannot create JDBC driver of class '' for connect URL 'null'

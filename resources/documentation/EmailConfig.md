@@ -13,7 +13,7 @@ The following settings have to be made in appname/WEB-INF/web.xml
 * Mailpw (Mailuser's password): the password for the chosen email address
 * smtpauth: set as true
 * smtptls: set as true
- 
+ ```
     <!-- Context Parameter for Mail -->
     <context-param>
         <param-name>domain</param-name>
@@ -49,3 +49,4 @@ The following settings have to be made in appname/WEB-INF/web.xml
         <param-name>smtptls</param-name>
         <param-value>true</param-value>
     </context-param>
+```
