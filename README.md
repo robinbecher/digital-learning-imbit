@@ -4,12 +4,7 @@ This project is part of the study program "International Management for Business
 
 ## Description
 
-The learning platform consists of four distinct parts:
-* brillianIDEAS
-* brillianCRM
-* brillianICM
-* Mediawiki
-
+The learning platform consists of four distinct parts: brillianIDEAS, brillianCRM, brillianICM, Mediawiki
 
 ## Getting Started and Links to Documentation
 
