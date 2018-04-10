@@ -11,7 +11,7 @@ The learning platform consists of four distinct parts:
 * Mediawiki
 
 
-## Getting Started
+## Getting Started and Links to Documentation
 
 As part of the project, the backend/ infrastructure team provides a documentation about several relevant aspects as for example how to install all necessary tools on your lokal machine and how to prepare the webserver for deployment.
 
