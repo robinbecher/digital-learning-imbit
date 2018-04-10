@@ -17,25 +17,22 @@ As part of the project, the backend/ infrastructure team provides a documentatio
 
 Please find more information in our guides about...
 
-  ...the development setup you need locally to develop and test on your computer: [DevSetupGuide](https://github.com/MariaBiosciences/digital-learning-imbit/tree/master/resources/documentation/DevelopmentSetupGuide.md)
+  ...the development setup you need locally to develop and test on your computer: [DevSetupGuide](https://github.com/MariaBiosciences/digital-learning-imbit/tree/master/resources/documentation/DevelopmentSetupGuide.md) 
 
   ...the detailled installation and setup guide for the webserver, either test or production server: [ServerSetupGuide](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/ServerSetUpGuide.md)
 
   ...the MediaWiki Installation and Configuration: [MediaWiki Installation](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/MediaWiki.md)
 
-* [OpenBadges Technical Documentation](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/OpenBadges.md)
-* [JenkinsConfiguration](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/JenkinsConfig.md)
-* [EmailConfiguration](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/EmailConfig.md)
-
+  ...the detailled description the the Open Badges in brillianICM: [OpenBadges Technical Documentation](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/OpenBadges.md)
+  
+  ...the Jenkins Installation and Configuration: [JenkinsConfiguration](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/JenkinsConfig.md)
+  
+  ...the detailled Email Configuration for brillianICM / brillianCRM: [EmailConfiguration](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/EmailConfig.md)
+  
+  ...the How To Manual for Passwords: [Change Passwords](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/ChangePasswords.md)
+  
+  ...the description of SSL Configuration: [SSL Configuration](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/SSL-certificates.md)
+  
+  ...the description how to handle Git: [GitKnowledge](https://github.com/MariaBiosciences/digital-learning-imbit/blob/master/resources/documentation/GitWissen.md)
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Ebene 3
-
-What things you need to install the software and how to install them
-
-```
-Platzhalter
-```
-
-
