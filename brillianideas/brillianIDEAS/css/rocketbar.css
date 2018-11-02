@@ -5,15 +5,17 @@ JS as there is no or not sufficient CSS only solution. */
 
 .rocketbar{
 	width: 100%;
-	background-color: grey;
-  position: fixed;
-  bottom: 0px;
+	background-color: rgba(0, 0, 0, 0.5); /* was grey */
+/* 	opacity: 0.5;
+	filter: alpha(opacity=50); /* For IE8 and earlier */
+	position: fixed;
+	bottom: 0px;
 	left: 0px;
-  margin: 0px;
+  	margin: 0px;
 	max-height: 0px;
 
 	transition: all 1.5s;
-  z-index: 2;
+  	z-index: 2;
 
 /* grid definition */
   display: grid;
