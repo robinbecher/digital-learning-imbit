@@ -97,3 +97,23 @@ body {
 	overflow-x: scroll;
 	overflow-x: hidden;
 }
+
+/* Ab hier pulsierende Tentakel by A. Hager */
+
+
+#tentacle_img_small_launchbar {
+  animation: pulse 0.6s infinite;
+  animation-iteration-count: 8;
+  animation-direction: alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
