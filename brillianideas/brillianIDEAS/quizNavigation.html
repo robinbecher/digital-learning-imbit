@@ -53,8 +53,7 @@
 
     <!-- HIER BEGINNT Grid 1 -->
     <div class="gridlayout" id="Grid1" style="display:grid">
-        <!-- Jedes Grid bekommt eine einmalige ID, welche benötigt wird, um Grids sichtbar und unsichtbar zu machen. 
-        Das Grid mit der ID "Grid1" ist das Hauptmenü, welches bei erstmaligem Aufruf der Seite sichtbar ist ("display:grid"). -->
+        <!-- Jedes Grid bekommt eine einmalige ID, welche benötigt wird, um Grids sichtbar und unsichtbar zu machen. Das Grid mit der ID "Grid1" ist das Hauptmenü, welches bei erstmaligem Aufruf der Seite sichtbar ist ("display:grid"). -->
 
         <!-- Hier ist der Tentakel eingebettet, der sich auf der rechten Seite des Hauptmenüs befindet -->
 
@@ -71,8 +70,7 @@
                 <img src="img/tentakel_ltr.png" /></a>
         </div>
 
-        <!-- Dieses <ul>-Tag beinhalted die Überschriften, die in der oberen, rechten Ecke der Ansicht sichtbar sind. Im CSS Dokument ist deklariert, dass die Überschriften
-        unterschiedlich groß sind. -->
+        <!-- Dieses <ul>-Tag beinhalted die Überschriften, die in der oberen, rechten Ecke der Ansicht sichtbar sind. Im CSS Dokument ist deklariert, dass die Überschriften unterschiedlich groß sind. -->
 
         <!-- Heading IMBIT Curriculum-->
         <ul class="ueberschriftenfeld">
@@ -80,12 +78,9 @@
         </ul>
 
         <!-- Fächer im Hauptmenü - Im folgenden sind die "Wortwolken" deklariert, welche die Grids der entsprechenden Modulgruppen sichtbar machen.
-        Dies geschieht über das "onclick" Attribut. Dort ist definiert, dass bei einem Klick auf das entsprechende Wort die am Ende dieses Dokumentes
-        definierte JavaScript Funktion "changeVisible()" ausgeführt wird. Diese Funktion schaltet das aktuelle Grid unsichtbar und das als nächstes anzuzeigende Grid sichtbar. -->
+        Dies geschieht über das "onclick" Attribut. Dort ist definiert, dass bei einem Klick auf das entsprechende Wort die am Ende dieses Dokumentes definierte JavaScript Funktion "changeVisible()" ausgeführt wird. Diese Funktion schaltet das aktuelle Grid unsichtbar und das als nächstes anzuzeigende Grid sichtbar. -->
 
-        <!-- Klassen - Wie unten erkennbar, haben alle "Wortwolken" drei Klassen zugeordnet. Die letzte Klasse hat den Namen "modul", und verleiht den Wortwolken ihr Aussehen
-        (siehe CSS). Des weiteren sind jeder Wortwolke zwei weitere Klassen zugeordnet. Diese haben Namen wie "grid_row_x" und "grid_column_x" oder "grid_row_x_y" oder 
-        "grid_column_x_y". Mithilfe dieser Klassen kann die Position des Elements innerhalb des Grids bestimmt werden. Für weiter Informationen siehe das CSS Dokument.
+        <!-- Klassen - Wie unten erkennbar, haben alle "Wortwolken" drei Klassen zugeordnet. Die letzte Klasse hat den Namen "modul", und verleiht den Wortwolken ihr Aussehen (siehe CSS). Des weiteren sind jeder Wortwolke zwei weitere Klassen zugeordnet. Diese haben Namen wie "grid_row_x" und "grid_column_x" oder "grid_row_x_y" oder "grid_column_x_y". Mithilfe dieser Klassen kann die Position des Elements innerhalb des Grids bestimmt werden. Für weiter Informationen siehe das CSS Dokument.
 
         <!-- Informatik-->
         <span class="grid_row_4 grid_column_3_4 modul" onclick="changeVisible('Grid1', 'informatik')">Informatik</span>
@@ -112,11 +107,8 @@
 
     <!-- HIER BEGINNT Ebene 2 für Wirtschaftsinformatik -->
     <div class="gridlayout" id="wirtschaftsinformatik">
-        <!-- Hier beginnt das erste Grid, welches sich in der zweiten Ebene befindet. Es beinhaltet, so wie das erste Grid / Hauptmenü auch, eine Wortwolke mit 
-        Verlinkungen. In diesem Fall führen die Verlinkungen zu den Grids der dritten Ebene und in diesem ganz bestimmten Fall zu den Grids mit den Modul-
-        beschreibungen der Module des Fach Wirtschaftsinformatik.
-        Wichtig: dieses Grid-Element hat die ID "wirtschaftsinformatik", da es alle Module der Wirtschaftsinformatik beinhaltet. Für die vergabe von IDs an Grids 
-        der dritten Ebene, siehe bitte das erste Grid der dritten Ebene. -->
+        <!-- Hier beginnt das erste Grid, welches sich in der zweiten Ebene befindet. Es beinhaltet, so wie das erste Grid / Hauptmenü auch, eine Wortwolke mit Verlinkungen. In diesem Fall führen die Verlinkungen zu den Grids der dritten Ebene und in diesem ganz bestimmten Fall zu den Grids mit den Modul-beschreibungen der Module des Fach Wirtschaftsinformatik.
+        Wichtig: dieses Grid-Element hat die ID "wirtschaftsinformatik", da es alle Module der Wirtschaftsinformatik beinhaltet. Für die vergabe von IDs an Grids der dritten Ebene, siehe bitte das erste Grid der dritten Ebene. -->
 
         <!-- Tentakel Kopf_Home -->
         <a class="tintenfischarm" href="index.html">
