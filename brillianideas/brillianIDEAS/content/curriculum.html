@@ -3,17 +3,29 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="css/curriculum.css">
-<!-- Ein Blick in die Datei "curriculum.css" ist lohnenswert, da dort alle Klassen, die in diesem Dokument verwendet werden, deklariert sind. -->
-<link rel="stylesheet" type="text/css" href="css/rocketbar.css">
-<link href="https://fonts.googleapis.com/css?family=Caveat+Brush"
-	rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Tinos"
-	rel="stylesheet">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="css/curriculum.css">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/startpage.css">
+    <link rel="stylesheet" href="css/dots.css" />
+    <link rel="stylesheet" href="css/curriculum.css">
+    <link rel="stylesheet" href="css/ipad.css" />
+    <link rel="stylesheet" href="css/core-a.css">
+    <link rel="stylesheet" href="css/color-a.css">
+    <link rel="stylesheet" href="css/rocketbar.css" />
+<!--     <link rel="stylesheet" type="text/css" href="css/digitallearning.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/rocketbar.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
 </head>
 
 <body>
+
+	<!-- Bubbles, bubbles everywhere! ~RAHS -->
+	<video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0"> <source src="img/Background.mp4" type="video/mp4"> </video>
+	
 	<!-- Die Curriculum-Seite beinhaltet verschiedene Ansichten, die umgeschaltete werden können. Diese Ansichten werden im folgenden "Grids" genannt.
     Dies kommt daher, dass jede Ansicht aus einem umschließenden <div>-Tag besteht, welches den Inhalt der jeweiligen Ansicht enthält.
     Die Ansichten können umgeschaltet werden. Dies geschieht über eine JavaScript Funktion, welche beim Wechsel auf ein anderes Grid das bisher angezeigte Grid
@@ -50,8 +62,7 @@
 
 		<!-- Heading IMBIT Curriculum-->
 		<ul class="ueberschriftenfeld">
-			<li><a href="docs/IMBIT-Studienplan ab 2018.pdf"
-				style="text-decoration: none; color: #991B33" target="_blank">IMBIT-Curriculum</a></li>
+			<li><a href="docs/IMBIT-Studienplan ab 2018.pdf" class="ueberschrift">IMBIT-Curriculum</a></li>
 		</ul>
 
 		<!-- Fächer im Hauptmenü - Im folgenden sind die "Wortwolken" deklariert, welche die Grids der entsprechenden Modulgruppen sichtbar machen.
@@ -237,9 +248,7 @@
 			onclick="changeVisible('informatik', 'W3WI_105')">Datenbanken</span>
 
 		<!--Entwicklung verteilter Systeme -->
-		<span class="grid_column_10_13 grid_row_5 modul"
-			style="justify-self: right"
-			onclick="changeVisible('informatik', 'W3WI_110')">Entwicklung
+		<span class="grid_column_10_13 grid_row_5 modul" style="justify-self: right" onclick="changeVisible('informatik', 'W3WI_110')">Entwicklung
 			verteilter Systeme</span>
 
 		<!-- Grundlagen der IT -->
@@ -393,47 +402,15 @@
 		<div class="modulbeschreibung" style="display: none"
 			id="praxisphasen_info">
 			<ul style="list-style: none">
-				<li>DHBW-Studierende lernen in sechs dreimonatigen
-					Praxiseinsätzen ihre Aus­bil­dungs­unter­neh­men kennen und
-					durchlaufen in der Regel die wesentlichen Fachbereiche der
-					Unternehmen. Durch die Übertragung vielfältiger Aufgaben gewinnen
-					die Studierenden dabei die notwendige fachliche Breite. <br> <br>
-					Anhand dreier wissenschaftlicher Arbeiten weisen sie zudem nach,
-					dass und wie sie das Vorgehen bei den Praxiseinsätzen theoretisch
-					fundieren, aka­de­misch kritisch reflektieren und mit dem Stand der
-					Technik in Bezug setzen; die erste und zweite Projektarbeit sowie
-					die Bachelorarbeit greifen dazu jeweils Auf­ga­ben­stellungen der
-					Praxiseinsätze des ersten, zweiten und dritten Stu­dien­­jahres
-					auf. Sie können ein Thema aus einem der beiden Praxiseinsätze im
-					selben Stu­dien­jahr wählen; eingereicht, geschrieben und
-					wissenschaftlich betreut wird im vorgegebenen Zeitraum. Die
-					fachliche Betreuung der Arbeiten erfolgt durch das Unter­nehmen,
-					die wissenschaftliche Betreuung und die Bewertung stellt die DHBW.
-					Für erfolgreiche Praxiseinsätze, nachgewiesen durch die wiss.
-					Arbeiten, werden den Studierenden ECTS-Punkte angerechnet. Die
-					Bewertung der wiss. Arbeiten erfolgt in der Regel in der
-					darauffolgenden The­orie­phase. Bei Nichtbestehen können die erste
-					und zweite Arbeit überarbeitet werden; bei Wiederholung der
-					Bachelorarbeit ist ein neues Thema zu wählen. <br> Am Ende
-					eines jeden Studienjahres sowie gesammelt bei der Anmeldung zur
-					mündlichen Bachelorprüfung geben die Studierenden
-					Reflexionsberichte­ über ihre Praxiseinsätze ab. Die
-					Reflexionsberichte zählen wie PA1-, PA2- und BA-Arbeiten zu den
-					praxisbezogenen Prüfungsleistungen. <br> <br> Die
-					Ausbildungsunternehmen führen die Praxiseinsätze gemäß der
-					Aus­bil­dungs­pläne durch, die sie mit der DHBW vereinbart haben.
-					Diese sind spezifisch auf die jeweiligen Studiengänge
-					zugeschnitten; bei IMBIT gilt:
+				<li>DHBW-Studierende lernen in sechs dreimonatigen Praxiseinsätzen ihre Aus­bil­dungs­unter­neh­men kennen und
+					durchlaufen in der Regel die wesentlichen Fachbereiche der Unternehmen. Durch die Übertragung vielfältiger Aufgaben gewinnen die Studierenden dabei die notwendige fachliche Breite. <br> <br>	Anhand dreier wissenschaftlicher Arbeiten weisen sie zudem nach, dass und wie sie das Vorgehen bei den Praxiseinsätzen theoretisch fundieren, aka­de­misch kritisch reflektieren und mit dem Stand der Technik in Bezug setzen; die erste und zweite Projektarbeit sowie die Bachelorarbeit greifen dazu jeweils Auf­ga­ben­stellungen der Praxiseinsätze des ersten, zweiten und dritten Stu­dien­­jahres auf. Sie können ein Thema aus einem der beiden Praxiseinsätze im selben Stu­dien­jahr wählen; eingereicht, geschrieben und wissenschaftlich betreut wird im vorgegebenen Zeitraum. Die fachliche Betreuung der Arbeiten erfolgt durch das Unter­nehmen,	die wissenschaftliche Betreuung und die Bewertung stellt die DHBW. Für erfolgreiche Praxiseinsätze, nachgewiesen durch die wiss. Arbeiten, werden den Studierenden ECTS-Punkte angerechnet. Die Bewertung der wiss. Arbeiten erfolgt in der Regel in der darauffolgenden The­orie­phase. Bei Nichtbestehen können die erste und zweite Arbeit überarbeitet werden; bei Wiederholung der Bachelorarbeit ist ein neues Thema zu wählen. <br> Am Ende	eines jeden Studienjahres sowie gesammelt bei der Anmeldung zur	mündlichen Bachelorprüfung geben die Studierenden Reflexionsberichte­ über ihre Praxiseinsätze ab. Die Reflexionsberichte zählen wie PA1-, PA2- und BA-Arbeiten zu den praxisbezogenen Prüfungsleistungen. <br> <br> Die Ausbildungsunternehmen führen die Praxiseinsätze gemäß der Aus­bil­dungs­pläne durch, die sie mit der DHBW vereinbart haben. Diese sind spezifisch auf die jeweiligen Studiengänge zugeschnitten; bei IMBIT gilt:
 				</li>
 			</ul>
 
 			<ul class="quellen">
 				<li>Ein oder mehrere Praxiseinsätze finden im Ausland statt.</li>
-				<li>Mindestens eine wissenschaftliche Arbeit wird auf Englisch
-					geschrieben.</li>
-				<li>Die wissenschaftliche Betreuung aller drei Arbeiten wird
-					vom Studiengang gestellt; die Studierenden müssen diese nicht
-					selbst organisieren.</li>
+				<li>Mindestens eine wissenschaftliche Arbeit wird auf Englisch geschrieben.</li>
+				<li>Die wissenschaftliche Betreuung aller drei Arbeiten wird vom Studiengang gestellt; die Studierenden müssen diese nicht selbst organisieren.</li>
 			</ul>
 		</div>
 

@@ -4,6 +4,20 @@ html{
   display: flex;
 }
 
+/* Bubbles, bubbles everywhere! ~RAHS */
+#video_background {
+	position: fixed;
+	size: cover;
+	top: 0px;
+	right: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1000;
+	overflow: hidden;
+}
+
 body {
   height:100%;
   width: 100%;
@@ -200,7 +214,7 @@ body {
   font-weight:700;
   font-style:normal;
   font-size:1.2rem;
-  color:#991B33;
+  color: #991B33;
   font-family: 'Caveat Brush'
 }
 
@@ -504,7 +518,7 @@ a:link {
 
 a:hover {
    text-decoration: none;
-   color: #991B33;
+   color: #e53f5f;
 }
 
 /* label {
