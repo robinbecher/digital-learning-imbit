@@ -19,9 +19,9 @@ JS as there is no or not sufficient CSS only solution. */
 
 /* grid definition */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows:auto;
-  grid-template-areas: "imbit digitallearning icm crm wiki interactive impressum";
+  grid-template-areas: "imbit digitallearning icm crm wiki interactive video impressum";
   grid-column-gap: 60px;
 }
 
@@ -72,6 +72,11 @@ JS as there is no or not sufficient CSS only solution. */
 
 .interactive{
   grid-area: interactive;
+  text-align: center;
+}
+
+.video{
+  grid-area: video;
   text-align: center;
 }
 

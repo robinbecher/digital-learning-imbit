@@ -20,6 +20,34 @@ html {
 	overflow: hidden;
 }
 
+a:link {
+    text-decoration: none;
+    color: #991b33;
+    cursor: pointer;
+}
+
+a:hover, a:visited {
+   text-decoration: none;
+   color: #e53f5f;
+}
+
+/* 
+a[href^="//"]:after {
+    text-decoration: none;
+}
+
+a[href^="http://"]:after, a[href^="https://"]:after {
+    content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
+    margin: 0 0 0 0.5em;
+} 
+
+a.ext {
+    content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
+    margin: 0 0 0 0.5em;
+}
+
+*/
+
 /* Diese Klasse legt die Eigenschaften der Wortwolken in der 1. und 2. Ebene fest */
 /* em is used to  */
 
