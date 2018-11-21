@@ -9,10 +9,10 @@ JS as there is no or not sufficient CSS only solution. */
 /* 	opacity: 0.5;
 	filter: alpha(opacity=50); /* For IE8 and earlier */
 	position: fixed;
-	bottom: 0px;
-	left: 0px;
-  margin: 0px;
-	max-height: 0px;
+	bottom: 0;
+	left: 0;
+  margin: 0;
+	max-height: 0;
 
 	transition: all 1.5s;
   z-index: 2;
@@ -22,26 +22,27 @@ JS as there is no or not sufficient CSS only solution. */
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows:auto;
   grid-template-areas: "imbit digitallearning icm crm wiki interactive video impressum";
-  grid-column-gap: 60px;
+  /* grid-column-gap: 2vw; */
 }
 
 .rocketbar.open {
-  max-height: 175px;
+  max-height: 20vh;
 }
 
 /* tentacle on top of rocketbar */
 #tentacle_img_small_launchbar{
   position: absolute;
   top:-47px;
-  left:100px;
+  left: 5vw;
 	cursor: pointer;
 }
 
 /* grid classes */
 .icon{
-  width: 80%;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  max-height: 16vh;
+  max-width: 80%;
+  padding-top: 10%;
+  padding-bottom: 10%;
   cursor: pointer;
 }
 
