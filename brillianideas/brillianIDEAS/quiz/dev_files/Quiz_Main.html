@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+
+    <link rel="stylesheet" type="text/css" href="Quiz_checkbox.css"/>
+    <link rel="stylesheet" type="text/css" href="Quiz_Drag.css"/>
+    <link rel="stylesheet" type="text/css" href="Quiz_Radiobutton.css"/>
+    <link rel="stylesheet" type="text/css" href="Quiz_Text.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+
+            //data ist die ID des Elements, das verschoben wird
+            var data = ev.dataTransfer.getData("text");
+
+            ev.target.appendChild(document.getElementById(data));
+
+            console.log("ev: "+ev);
+            console.log("data: "+data);
+            console.log("target: "+ev.target);
+        }
+    </script>
+
+
+    <script>
+        var count = 0;
+
+        $(document).ready(function () {
+
+            $(".questionclass").hide();
+            showTheQuestion(count);
+
+        });
+
+        //When clicking the "next"-button, the "question number" is counted upwards.
+        //the divs containing the questions are shown/hidden accordingly. To add questions, you have to create
+        function nextButtonClick() {
+            count++;
+            showTheQuestion(count);
+        }
+
+        //When clicking the "back"-button, the question number is counted downwards. All the questions are hidden except the previous question
+        function backButtonClick() {
+            count--;
+            showTheQuestion(count);
+        }
+
+        //This function shows the question on the screen that the user has to answer next
+        function showTheQuestion(count) {
+            var score = 0;
+            var checked_test_answer1 = $('#multipleChoice1_answer1');
+            var checked_test_answer2 = $('#multipleChoice1_answer2');
+            var checked_test_answer3 = $('#multipleChoice1_answer3');
+            var checked_test_answer4 = $('#multipleChoice1_answer4');
+            var dragAndDrop1_drag1 = $('#dragAndDrop1_drag1');
+            var dragAndDrop1_drag2 = $('#dragAndDrop1_drag2');
+            var dragAndDrop1_drag3 = $('#dragAndDrop1_drag3');
+            var dragAndDrop1_drag4 = $('#dragAndDrop1_drag4');
+            var div1 = $('#dragAndDrop1_div1');
+            var div2 = $('#dragAndDrop1_div2');
+            var div3 = $('#dragAndDrop1_div3');
+            var div4 = $('#dragAndDrop1_div4');
+            var singularChoice1_answer1 = $('#singularChoice1_answer1');
+            var singularChoice1_answer2 = $('#singularChoice1_answer2');
+            var singularChoice1_answer3 = $('#singularChoice1_answer3');
+            var singularChoice1_answer4 = $('#singularChoice1_answer4');
+            var text1_answer1 = $('#text1_answer1');
+            var text1_answer2 = $('#text1_answer2');
+            var text1_answer3 = $('#text1_answer3');
+            var text1_answer4 = $('#text1_answer4');
+            var text1_word1 = $('#text1_word1');
+            var text1_word2 = $('#text1_word2');
+            var text1_word3 = $('#text1_word3');
+            var text1_word4 = $('#text1_word4');
+
+
+            // console.log("Screen number: "+count);
+            // console.log("checked answer1: "+checked_test_answer1.is(':checked'));
+            // console.log("checked answer2: "+checked_test_answer2.is(':checked'));
+            // console.log("parent node of dragAndDrop1_drag1: "+dragAndDrop1_drag1.closest('div'));
+
+            //Hides all the questions. The show() function of the questions has to be called again to make them visible
+            $(".questionclass").hide();
+
+            if (count === 0) {
+                //Show the first Question. It is a Multiple Choice Test
+                $('#multipleChoice1').show();
+                //Change the Question Text
+                $('#question').html("Frage 1");
+                //Hide the back button, because it is the first page
+                $('#back_button_div').hide();
+            }
+            if (count === 1) {
+                $('#dragAndDrop1').show();
+                $('#question').html("Frage 2");
+                //Show the back button, because it is not the first page
+                $('#back_button_div').show();
+                //Show the next button, because it is not the last page
+                $('#next_button_div').show();
+            }
+            else if (count === 2) {
+                $('#singularChoice1').show();
+                $('#question').html("Frage 3");
+                $('#back_button_div').show();
+                $('#next_button_div').show();
+            }
+            else if (count === 3) {
+                $('#text1').show();
+                $('#question').html("Frage 4");
+                $('#back_button_div').show();
+                $('#next_button_div').show();
+            }
+            else if (count === 4) {
+                $('#gz').show();
+
+                //Evaluation for a Multiple Choice Test
+                //If the first and second box are checked, add 1 to the score, else don't add anything
+                if (checked_test_answer1.is(':checked') && checked_test_answer2.is(':checked') && !checked_test_answer3.is(':checked') && !checked_test_answer4.is(':checked')){
+                    score++;
+                }
+
+                //Evaluation of the Drag and Drop Test
+                //If the first drag-Element is in the first box, add 1 to the score
+                if(dragAndDrop1_drag1.closest('div').is(div1)){
+                    score++;
+                }
+                //If the second drag-Element is in the second box, add 1 to the score
+                //...
+                if(dragAndDrop1_drag2.closest('div').is(div2)){
+                    score++;
+                }
+                if(dragAndDrop1_drag3.closest('div').is(div3)){
+                    score++;
+                }
+                if(dragAndDrop1_drag4.closest('div').is(div4)){
+                    score++;
+                }
+
+                //Evaluation of the Singular Choice Test
+                //If answer 2 is checked, add 1 to the score
+                if(singularChoice1_answer2.is(':checked')){
+                    score++;
+                }
+
+                //Evaluation of the Text Test
+                //If the text entered in answer1 is the same as the text in word1, add 1 to the score
+                //...
+                if(text1_answer1.val() === text1_word1.text()){
+                    score++;
+                }
+                if(text1_answer2.val() === text1_word2.text()){
+                    score++;
+                }
+                if(text1_answer3.val() === text1_word3.text()){
+                    score++;
+                }
+                if(text1_answer4.val() === text1_word4.text()){
+                    score++;
+                }
+
+                //Change the text of the last page. Also show score
+                $('#supergeil').html("Gratuliere! Sie haben "+score+" Punkte!");
+
+                //Hide both buttons, because it is the last page
+                $('#next_button_div').hide();
+                $('#back_button_div').hide();
+
+            }
+
+        }
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+<video id="video_background" autoplay muted loop>
+    <source src="img/Background.mp4" type="video/mp4">
+</video>
+
+
+<div id="content">
+
+    <!--Dieses DIV ist ein Multiple Choice test. -->
+
+    <div id="multipleChoice1" class="questionclass">
+
+        <div class="header">
+
+            <p class="question">Frage 1</p>
+
+        </div>
+
+        <label class="container_check">Antwort 1
+            <input type="checkbox" id="multipleChoice1_answer1">
+            <span class="checkmark_check"></span>
+        </label>
+
+        <label class="container_check">Antwort 2
+            <input type="checkbox" id="multipleChoice1_answer2">
+            <span class="checkmark_check"></span>
+        </label>
+
+        <label class="container_check">Antwort 3
+            <input type="checkbox" id="multipleChoice1_answer3">
+            <span class="checkmark_check"></span>
+        </label>
+
+        <label class="container_check">Antwort 4
+            <input type="checkbox" id="multipleChoice1_answer4">
+            <span class="checkmark_check"></span>
+        </label>
+    </div>
+
+    <!--Dieses DIV ist eine Drag und Drop Aufgabe. -->
+    <div id="dragAndDrop1" class="questionclass">
+
+        <div class="header">
+
+            <p class="question">Frage 2</p>
+
+        </div>
+
+        <div id="answers">
+            <p id="dragAndDrop1_drag1" class="drag" draggable="true" ondragstart="drag(event)">Test1</p>
+            <p id="dragAndDrop1_drag2" class="drag" draggable="true" ondragstart="drag(event)">Test2</p>
+            <p id="dragAndDrop1_drag3" class="drag" draggable="true" ondragstart="drag(event)">Test3</p>
+            <p id="dragAndDrop1_drag4" class="drag" draggable="true" ondragstart="drag(event)">Test4</p>
+        </div>
+
+        <div id="dragAndDrop1_div1" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">Box1</p>
+        </div>
+        <div id="dragAndDrop1_div2" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">Box2</p>
+        </div>
+        <div id="dragAndDrop1_div3" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">Box3</p>
+        </div>
+        <div id="dragAndDrop1_div4" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">Box4</p>
+        </div>
+    </div>
+
+    <!--Dieses DIV ist ein Single Choice test. -->
+    <div id="singularChoice1" class="questionclass">
+
+        <div class="header">
+
+            <p class="question">Frage 3</p>
+
+        </div>
+
+        <label class="container">Question One
+            <input type="radio" checked="checked" name="radio" id="singularChoice1_answer1">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Question Two
+            <input type="radio" name="radio" id="singularChoice1_answer2">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Question Three
+            <input type="radio" name="radio" id="singularChoice1_answer3">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Question Four
+            <input type="radio" name="radio" id="singularChoice1_answer4">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+
+    <!--Dieses DIV ist ein Lückentext. -->
+    <div id="text1" class="questionclass">
+
+        <div class="header">
+
+            <p class="question">Frage 4</p>
+
+        </div>
+
+        <p id="text">
+            Lorem ipsum dolor sit amet, <input class="text_input" type="text" name="answer_one" id="text1_answer1"> consetetur sadipscing
+            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+            vero eos et accusam et justo duo dolores et ea rebum. Stet clita <input class="text_input" type="text"
+                                                                                    name="answer_two" id="text1_answer2"> kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet. <input class="text_input" type="text"
+                                                                           name="answer_three" id="text1_answer3"> ipsum dolor sit amet,
+            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore <input
+                class="text_input" type="text" name="answer_four" id="text1_answer4"> aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.
+        </p>
+        <div>
+            <p class="text_to_input" id="text1_word1">Antwort1</p>
+            <p class="text_to_input" id="text1_word2">Antwort2</p>
+            <p class="text_to_input" id="text1_word3">Antwort3</p>
+            <p class="text_to_input" id="text1_word4">Antwort4</p>
+        </div>
+    </div>
+
+    <div id="gz" class="questionclass">
+        <p id="supergeil"></p>
+    </div>
+
+</div>
+<div id="next_button_div">
+    <button style="vertical-align:middle" class="button" type="button"><a href="#" id="next_button"
+                                                                          onclick="nextButtonClick()">Weiter</a>
+    </button>
+</div>
+
+<div id="back_button_div">
+    <button style="vertical-align:middle" class="button" type="button"><a href="#" id="back_button"
+                                                                          onclick="backButtonClick()">Zurück</a>
+    </button>
+</div>
+
+<div id="tl">
+    <img id="tentakel_l" src="img/tentakel_ltr.png">
+</div>
+<div id="tr">
+    <img id="tentakel_r" src="img/tentakel_rtl.png">
+</div>
+
+</body>
+</html>
