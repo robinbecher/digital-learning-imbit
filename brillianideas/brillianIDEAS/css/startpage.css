@@ -17,18 +17,6 @@ body {
                         "launchbar";
 }
 
-<<<<<<< HEAD
-/*
-#title{
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 5em;
-*/
-
-=======
->>>>>>> 7a205845fbf1be3dde0a1dc110a06735425fdc54
 #title a {
     text-decoration: none;
     color: var(--text);
@@ -67,8 +55,8 @@ body {
 }
 
 #start_bg_rtl{
-	bottom: 0px;
-	right: 0px;
+	bottom: 0;
+	right: -1vw;
 	width: initial;
 	max-width: 75vw;
 }
@@ -96,4 +84,24 @@ body {
 	z-index: 3;
 	overflow-x: scroll;
 	overflow-x: hidden;
+}
+
+/* Ab hier pulsierende Tentakel by A. Hager */
+
+
+#tentacle_img_small_launchbar {
+  animation: pulse 0.6s infinite;
+  animation-iteration-count: 8;
+  animation-direction: alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
 }

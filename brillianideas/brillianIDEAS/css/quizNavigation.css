@@ -3,10 +3,16 @@
 html {
     font-family: "Tinos";
     font-size: 2vh;
-    color: white;
+    color: black;
 }
 
-/* Bubbles, bubbles everywhere! ~RAHS */
+body {
+	background-image: "img/Background.mp4";
+}
+
+
+/* Diese Klasse legt die Eigenschaften der Wortwolken in der 1. und 2. Ebene fest */
+
 #video_background {
 	position: fixed;
 	size: cover;
@@ -20,40 +26,9 @@ html {
 	overflow: hidden;
 }
 
-a:link {
-    text-decoration: none;
-    color: #991b33;
-    cursor: pointer;
-}
-
-a:hover, a:visited {
-   text-decoration: none;
-   color: #e53f5f;
-}
-
-/* 
-a[href^="//"]:after {
-    text-decoration: none;
-}
-
-a[href^="http://"]:after, a[href^="https://"]:after {
-    content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
-    margin: 0 0 0 0.5em;
-} 
-
-a.ext {
-    content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
-    margin: 0 0 0 0.5em;
-}
-
-*/
-
-/* Diese Klasse legt die Eigenschaften der Wortwolken in der 1. und 2. Ebene fest */
-/* em is used to  */
-
 .modul {
     font-size: 2.5em;
-    color: white;
+    color: black;
     font-family: "Caveat Brush";
     text-align: center;
 }
@@ -64,7 +39,7 @@ a.ext {
 .modul:hover {
     transform: scale(1.1);
     cursor: pointer;
-    color: #e53f5f;
+    color: #991B33;
 }
 
 
@@ -107,15 +82,7 @@ a.ext {
     padding-right: 2.5%;
     list-style: none;
     font-family: "Caveat Brush";
-    color: #991b33;
 }
-
-/* class for headings */
-a.ueberschrift {
-	color: #991b33 !important;
-	text-decoration: none;
-	target: blank;
-	}
 
 
 /* Die 1. Überschrift hat die Schriftgröße 2,5 em. */
@@ -150,7 +117,6 @@ a.ueberschrift {
 
 .ueberschriftenfeld li:hover::before {
     content: "> ";
-    /* color: "#991b33" !important; */
 }
 
 
@@ -160,9 +126,9 @@ a.ueberschrift {
     grid-column: 10 / 15;
     grid-row: 3 / 13;
     padding-right: 5%;
-    color: white;
+    color: black;
     overflow: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     font-size: 1.4em;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
@@ -172,10 +138,6 @@ a.ueberschrift {
 }
 
 
-span.quellen {
-	color: rgba(255, 255, 255, .5) !important;
-}
-
 /* Hier wird der Style festgelegt, den die Aufzählung der Moocs auf der linken Seite der Modulbeschreibung hat. */
 
 .moocs {
@@ -183,9 +145,9 @@ span.quellen {
     grid-row: 3 / 13;
     list-style: none;
     overflow: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     clear: both;
-    color: white;
+    color: black;
     font-size: 1.4em;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
@@ -223,7 +185,7 @@ span.quellen {
 /* Hier wird der Style eines jeden zweiten Links in jedem List Item festgelegt. Dies ist der "Name" des Moocs. */
 
 .moocs li a:nth-child(2n) {
-    color: #e53f5f;
+    color: #991B33;
     font-family: "Caveat Brush";
     text-decoration: none;
 }
@@ -249,23 +211,14 @@ span.quellen {
     list-style: none;
 }
 
-/* Hier wird festgelegt, dass jeder ungerade Quelleneintrag einen grauen Hintergrund hat. */
+
+/* Hier wird festgelegt, dass jeder 2. Quelleneintrag einen grauen Hintergrund hat. */
 
 .quellen li:nth-of-type(odd) {
     list-style: none;
-    color: rgba(255, 255, 255, 0.8);
-    /* background-color: rgba(255, 255, 255, .5); */
+    background-color: #eeeeee;
 }
 
-/* Hier wird festgelegt, dass jeder gerade Quelleneintrag einen grauen Hintergrund hat. */
-
-.quellen li:nth-of-type(even) {
-    list-style: none;
-    color: rgba(255, 255, 255, 0.65);
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    /* background-color: rgba(255, 255, 255, 0.2); */
-}
 
 /* Hier wird der Style für die Launchbar festgelegt. */
 
