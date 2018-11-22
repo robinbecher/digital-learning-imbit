@@ -80,7 +80,9 @@ function createDD(frage, antworten, container, richtig) {
 		p.id = "question" + n + "_answer" + i;
 		p.className = "drag";
 		p.draggable = "true";
-		p.ondragstart = "drag(event)";
+		p.addEventListener('dragstart', function() {
+			drag(event)
+		});
 		var pText = document.createTextNode(antworten[i]);
 		p.appendChild(pText);
 		answersDiv.appendChild(p);
@@ -90,8 +92,10 @@ function createDD(frage, antworten, container, richtig) {
 		var box = document.createElement("div");
 		box.id = "question" + n + "_box" + i;
 		box.className = "drop";
-		box.ondrop = "drop(event)";
-		box.ondragover = "allowDrop(event)";
+		box.addEventListener('drop', function() {
+			drop(event)
+		});
+		box.addEventListener('dragover',function(){allowDrop(event)});
 		var p = document.createElement("p");
 		p.className = "box_text";
 		var pText = document.createTextNode(container[i]);
@@ -99,6 +103,7 @@ function createDD(frage, antworten, container, richtig) {
 		box.appendChild(p);
 		questiondiv.appendChild(box);
 	}
+
 	var contentdiv = document.getElementById("content");
 	contentdiv.append(questiondiv);
 
