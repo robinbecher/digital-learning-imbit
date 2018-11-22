@@ -1,266 +1,417 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <title>Quiz</title>
-    <link rel="stylesheet" type="text/css" href="main.css"/>
+<link
+	rel="shortcut icon"
+	href="img/favicon.ico"
+	type="image/x-icon">
+<meta charset="UTF-8">
+<title>Quiz</title>
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="main.css" />
 
-    <link rel="stylesheet" type="text/css" href="Quiz_checkbox.css"/>
-    <link rel="stylesheet" type="text/css" href="Quiz_Drag.css"/>
-    <link rel="stylesheet" type="text/css" href="Quiz_Radiobutton.css"/>
-    <link rel="stylesheet" type="text/css" href="Quiz_Text.css"/>
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="Quiz_checkbox.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="Quiz_Drag.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="Quiz_Radiobutton.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="Quiz_Text.css" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="helper.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	type="text/javascript"
+	src="helper.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Caveat+Brush"
+	rel="stylesheet">
 
-    <script>
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
+<script>
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
 
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
+	function drag(ev) {
+		ev.dataTransfer.setData("text", ev.target.id);
+	}
 
-        function drop(ev) {
-            ev.preventDefault();
+	function drop(ev) {
+		ev.preventDefault();
 
-            //data ist die ID des Elements, das verschoben wird
-            var data = ev.dataTransfer.getData("text");
+		//data ist die ID des Elements, das verschoben wird
+		var data = ev.dataTransfer.getData("text");
 
-            ev.target.appendChild(document.getElementById(data));
+		ev.target.appendChild(document.getElementById(data));
 
-            console.log("ev: " + ev);
-            console.log("data: " + data);
-            console.log("target: " + ev.target);
-        }
-    </script>
-
-
-    <script>
-        var count = 1;
-        var score = 0;
-
-        //***********************
-        //Hier bitte Werte eintragen!
-        var anzahlFragen = 3;
-        var maxScore = 10;
-        //***********************
-
-        $(document).ready(function () {
-
-            createMC("TEST?", ["A", "B", "C"], [1, 1, 0]);
-            createMC("TEST2?", ["D", "E", "F"], [0, 1, 1]);
-            createDD("ABCDEF", ["Test1", "Test2"], ["Box1", "Box2", "Box3"], [[1, 1], [2, 3]]);
-
-
-
-            showTheQuestion(count);
-
-        });
-
-        //When clicking the "next"-button, the "question number" is counted upwards.
-        //the divs containing the questions are shown/hidden accordingly. To add questions, you have to create
-        function nextButtonClick() {
-            count++;
-            showTheQuestion(count);
-        }
-
-        //When clicking the "back"-button, the question number is counted downwards. All the questions are hidden except the previous question
-        function backButtonClick() {
-            count--;
-            showTheQuestion(count);
-        }
-
-        //This function shows the question on the screen that the user has to answer next
-        function showTheQuestion(count) {
+		console.log("ev: " + ev);
+		console.log("data: " + data);
+		console.log("target: " + ev.target);
+	}
+</script>
 
 
+<script>
+	var count = 1;
+	var score = 0;
 
-            //Hides all the questions. The show() function of the questions has to be called again to make them visible
-            $(".questionclass").hide();
+	//***********************
+	//Hier bitte Werte eintragen!
+	var anzahlFragen = 5;
+	var maxScore = 10;
+	//***********************
 
-            $('#question' + count).show();
+	$(document)
+			.ready(
+					function() {
 
-            if (count === 1) {
-                $('#back_button_div').hide();
-            }
-            else if (count <= anzahlFragen) {
-                $('#back_button_div').show();
-                $('#next_button_div').show();
-            }
-            else
-            {
-                evaluate();
-                $('#next_button_div').hide();
-                $('#back_button_div').hide();
-                $('#gz').show();
+						createMC("TEST?", [ "A", "B", "C" ], [ 1, 1, 0 ]);
+						createMC("TEST2?", [ "D", "E", "F" ], [ 0, 1, 1 ]);
+						createSC("Meine SC Frage", [ "G", "H", "I" ],
+								[ 0, 1, 0 ]);
+						createDD("ABCDEF", [ "Test1", "Test2" ], [ "Box1",
+								"Box2", "Box3" ], [ [ 1, 1 ], [ 2, 3 ] ]);
+						 createTQ(
+								"Meine TQ Frage",
+								[
+										"Lorem ipsum dolor sit amet",
+										"",
+										"consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita",
+										"",
+										"kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+										"",
+										"ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore",
+										"",
+										"aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." ],
+								[ "Antwort1", "Antwort2", "Antwort3",
+										"Antwort4" ], 1); 
 
-                $('#supergeil').html("Gratuliere! Sie haben " + score + " von " + maxScore + " Punkten!");
-            }
-        }
+						showTheQuestion(count);
 
+					});
 
-    </script>
+	//When clicking the "next"-button, the "question number" is counted upwards.
+	//the divs containing the questions are shown/hidden accordingly. To add questions, you have to create
+	function nextButtonClick() {
+		count++;
+		showTheQuestion(count);
+	}
+
+	//When clicking the "back"-button, the question number is counted downwards. All the questions are hidden except the previous question
+	function backButtonClick() {
+		count--;
+		showTheQuestion(count);
+	}
+
+	//This function shows the question on the screen that the user has to answer next
+	function showTheQuestion(count) {
+
+		//Hides all the questions. The show() function of the questions has to be called again to make them visible
+		$(".questionclass").hide();
+
+		$('#question' + count).show();
+
+		if (count === 1) {
+			$('#back_button_div').hide();
+		} else if (count <= anzahlFragen) {
+			$('#back_button_div').show();
+			$('#next_button_div').show();
+		} else {
+			evaluate();
+			$('#next_button_div').hide();
+			$('#back_button_div').hide();
+			$('#gz').show();
+
+			$('#supergeil').html(
+					"Gratuliere! Sie haben " + score + " von " + maxScore
+							+ " Punkten!");
+		}
+	}
+</script>
 
 
 </head>
 <body>
 
-<video id="video_background" autoplay muted loop>
-    <source src="img/Background.mp4" type="video/mp4">
-</video>
+	<video
+		id="video_background"
+		autoplay
+		muted
+		loop>
+		<source
+			src="img/Background.mp4"
+			type="video/mp4">
+	</video>
 
 
-<div id="content">
+	<div id="content">
 
-    <!--Dieses DIV ist ein Multiple Choice test. -->
+		<!--Dieses DIV ist ein Multiple Choice test. -->
 
-    <div id="multipleChoice1" class="questionclass">
+		<div
+			id="multipleChoice1"
+			class="questionclass">
 
-        <div class="header">
+			<div class="header">
 
-            <p class="question">Frage 1</p>
+				<p class="question">Frage 1</p>
 
-        </div>
+			</div>
 
-        <label class="container_check">Antwort 1
-            <input type="checkbox" id="multipleChoice1_answer1">
-            <span class="checkmark_check"></span>
-        </label>
+			<label class="container_check">
+				Antwort 1
+				<input
+					type="checkbox"
+					id="multipleChoice1_answer1">
+				<span class="checkmark_check"></span>
+			</label>
 
-        <label class="container_check">Antwort 2
-            <input type="checkbox" id="multipleChoice1_answer2">
-            <span class="checkmark_check"></span>
-        </label>
+			<label class="container_check">
+				Antwort 2
+				<input
+					type="checkbox"
+					id="multipleChoice1_answer2">
+				<span class="checkmark_check"></span>
+			</label>
+			<label class="container_check">
+				Antwort 3
+				<input
+					type="checkbox"
+					id="multipleChoice1_answer3">
+				<span class="checkmark_check"></span>
+			</label>
+			<label class="container_check">
+				Antwort 4
+				<input
+					type="checkbox"
+					id="multipleChoice1_answer4">
+				<span class="checkmark_check"></span>
+			</label>
+		</div>
 
-        <label class="container_check">Antwort 3
-            <input type="checkbox" id="multipleChoice1_answer3">
-            <span class="checkmark_check"></span>
-        </label>
+		<!--Dieses DIV ist eine Drag und Drop Aufgabe. -->
+		<div
+			id="dragAndDrop1"
+			class="questionclass">
 
-        <label class="container_check">Antwort 4
-            <input type="checkbox" id="multipleChoice1_answer4">
-            <span class="checkmark_check"></span>
-        </label>
-    </div>
+			<div class="header">
 
-    <!--Dieses DIV ist eine Drag und Drop Aufgabe. -->
-    <div id="dragAndDrop1" class="questionclass">
+				<p class="question">Frage 2</p>
 
-        <div class="header">
+			</div>
 
-            <p class="question">Frage 2</p>
+			<div id="answers">
+				<p
+					id="dragAndDrop1_drag1"
+					class="drag"
+					draggable="true"
+					ondragstart="drag(event)">Test1</p>
+				<p
+					id="dragAndDrop1_drag2"
+					class="drag"
+					draggable="true"
+					ondragstart="drag(event)">Test2</p>
+				<p
+					id="dragAndDrop1_drag3"
+					class="drag"
+					draggable="true"
+					ondragstart="drag(event)">Test3</p>
+				<p
+					id="dragAndDrop1_drag4"
+					class="drag"
+					draggable="true"
+					ondragstart="drag(event)">Test4</p>
+			</div>
 
-        </div>
+			<div
+				id="dragAndDrop1_div1"
+				class="drop"
+				ondrop="drop(event)"
+				ondragover="allowDrop(event)">
+				<p class="box_text">Box1</p>
+			</div>
+			<div
+				id="dragAndDrop1_div2"
+				class="drop"
+				ondrop="drop(event)"
+				ondragover="allowDrop(event)">
+				<p class="box_text">Box2</p>
+			</div>
+			<div
+				id="dragAndDrop1_div3"
+				class="drop"
+				ondrop="drop(event)"
+				ondragover="allowDrop(event)">
+				<p class="box_text">Box3</p>
+			</div>
+			<div
+				id="dragAndDrop1_div4"
+				class="drop"
+				ondrop="drop(event)"
+				ondragover="allowDrop(event)">
+				<p class="box_text">Box4</p>
+			</div>
+		</div>
 
-        <div id="answers">
-            <p id="dragAndDrop1_drag1" class="drag" draggable="true" ondragstart="drag(event)">Test1</p>
-            <p id="dragAndDrop1_drag2" class="drag" draggable="true" ondragstart="drag(event)">Test2</p>
-            <p id="dragAndDrop1_drag3" class="drag" draggable="true" ondragstart="drag(event)">Test3</p>
-            <p id="dragAndDrop1_drag4" class="drag" draggable="true" ondragstart="drag(event)">Test4</p>
-        </div>
+		<!--Dieses DIV ist ein Single Choice test. -->
+		<div
+			id="singularChoice1"
+			class="questionclass">
 
-        <div id="dragAndDrop1_div1" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">
-            Box1</p>
-        </div>
-        <div id="dragAndDrop1_div2" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">
-            Box2</p>
-        </div>
-        <div id="dragAndDrop1_div3" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">
-            Box3</p>
-        </div>
-        <div id="dragAndDrop1_div4" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">
-            Box4</p>
-        </div>
-    </div>
+			<div class="header">
 
-    <!--Dieses DIV ist ein Single Choice test. -->
-    <div id="singularChoice1" class="questionclass">
+				<p class="question">Frage 3</p>
 
-        <div class="header">
+			</div>
 
-            <p class="question">Frage 3</p>
-
-        </div>
-
-        <label class="container">Question One
-            <input type="radio" checked="checked" name="radio" id="singularChoice1_answer1">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Question Two
-            <input type="radio" name="radio" id="singularChoice1_answer2">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Question Three
-            <input type="radio" name="radio" id="singularChoice1_answer3">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Question Four
-            <input type="radio" name="radio" id="singularChoice1_answer4">
-            <span class="checkmark"></span>
-        </label>
-    </div>
+			<label class="container">
+				Question One
+				<input
+					type="radio"
+					checked="checked"
+					name="radio"
+					id="singularChoice1_answer1">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">
+				Question Two
+				<input
+					type="radio"
+					name="radio"
+					id="singularChoice1_answer2">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">
+				Question Three
+				<input
+					type="radio"
+					name="radio"
+					id="singularChoice1_answer3">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">
+				Question Four
+				<input
+					type="radio"
+					name="radio"
+					id="singularChoice1_answer4">
+				<span class="checkmark"></span>
+			</label>
+		</div>
 
 
-    <!--Dieses DIV ist ein Lückentext. -->
-    <div id="text1" class="questionclass">
+		<!--Dieses DIV ist ein Lückentext. -->
+		<div
+			id="text1"
+			class="questionclass">
 
-        <div class="header">
+			<div class="header">
 
-            <p class="question">Frage 4</p>
+				<p class="question">Frage 4</p>
 
-        </div>
+			</div>
 
-        <p id="text">
-            Lorem ipsum dolor sit amet, <input class="text_input" type="text" name="answer_one" id="text1_answer1">
-            consetetur sadipscing
-            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-            vero eos et accusam et justo duo dolores et ea rebum. Stet clita <input class="text_input" type="text"
-                                                                                    name="answer_two"
-                                                                                    id="text1_answer2"> kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet. <input class="text_input" type="text"
-                                                                           name="answer_three" id="text1_answer3"> ipsum
-            dolor sit amet,
-            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore <input
-                class="text_input" type="text" name="answer_four" id="text1_answer4"> aliquyam erat, sed diam voluptua.
-            At vero eos et
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-            dolor sit amet.
-        </p>
-        <div>
-            <p class="text_to_input" id="text1_word1">Antwort1</p>
-            <p class="text_to_input" id="text1_word2">Antwort2</p>
-            <p class="text_to_input" id="text1_word3">Antwort3</p>
-            <p class="text_to_input" id="text1_word4">Antwort4</p>
-        </div>
-    </div>
+			<p id="text">
+				Lorem ipsum dolor sit amet,
+				<input
+					class="text_input"
+					type="text"
+					name="answer_one"
+					id="text1_answer1">
+				consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+				ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+				eos et accusam et justo duo dolores et ea rebum. Stet clita
+				<input
+					class="text_input"
+					type="text"
+					name="answer_two"
+					id="text1_answer2">
+				kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+				amet.
+				<input
+					class="text_input"
+					type="text"
+					name="answer_three"
+					id="text1_answer3">
+				ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+				eirmod tempor invidunt ut labore et dolore
+				<input
+					class="text_input"
+					type="text"
+					name="answer_four"
+					id="text1_answer4">
+				aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+				duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+				sanctus est Lorem ipsum dolor sit amet.
+			</p>
+			<div>
+				<p
+					class="text_to_input"
+					id="text1_word1">Antwort1</p>
+				<p
+					class="text_to_input"
+					id="text1_word2">Antwort2</p>
+				<p
+					class="text_to_input"
+					id="text1_word3">Antwort3</p>
+				<p
+					class="text_to_input"
+					id="text1_word4">Antwort4</p>
+			</div>
+		</div>
 
-    <div id="gz" class="questionclass">
-        <p id="supergeil"></p>
-    </div>
+		<div
+			id="gz"
+			class="questionclass">
+			<p id="supergeil"></p>
+		</div>
 
-</div>
-<div id="next_button_div">
-    <button style="vertical-align:middle" class="button" type="button"><a href="#" id="next_button"
-                                                                          onclick="nextButtonClick()">Weiter</a>
-    </button>
-</div>
+	</div>
+	<div id="next_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="next_button"
+				onclick="nextButtonClick()">Weiter</a>
+		</button>
+	</div>
 
-<div id="back_button_div">
-    <button style="vertical-align:middle" class="button" type="button"><a href="#" id="back_button"
-                                                                          onclick="backButtonClick()">Zurück</a>
-    </button>
-</div>
+	<div id="back_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="back_button"
+				onclick="backButtonClick()">Zurück</a>
+		</button>
+	</div>
 
-<div id="tl">
-    <img id="tentakel_l" src="img/tentakel_ltr.png">
-</div>
-<div id="tr">
-    <img id="tentakel_r" src="img/tentakel_rtl.png">
-</div>
+	<div id="tl">
+		<img
+			id="tentakel_l"
+			src="img/tentakel_ltr.png">
+	</div>
+	<div id="tr">
+		<img
+			id="tentakel_r"
+			src="img/tentakel_rtl.png">
+	</div>
 
 </body>
 </html>
