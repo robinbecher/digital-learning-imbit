@@ -22,7 +22,6 @@ function createMC(frage, antworten, richtig) {
 	var n = findQuestionNumber();
 
     var questiondiv = createHeader(frage, n);
-    // questiondiv.attr("data-questiontype","mc");
     questiondiv.setAttribute("data-type","mc");
 	var questiondiv = createHeader(frage, n);
 
@@ -99,8 +98,7 @@ function createSC(frage, antworten, richtig) {
  * @param container
  *            Container in die gedropt werden soll als Array aus Strings
  * @param richtig
- *            Lösung als zweidimensionales Array mit einem Eintrag pro
- *            Antwortmöglichkeit der form [x,y] mit Frage x muss in Container y
+ *            Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
  * @returns ein <div> tag mit der Frage
  */
 function createDD(frage, antworten, container, richtig) {
@@ -108,7 +106,6 @@ function createDD(frage, antworten, container, richtig) {
 	var n = findQuestionNumber();
 
     var questiondiv = createHeader(frage, n);
-    // questiondiv.attr("data-questiontype","dd");
     questiondiv.setAttribute("data-type","dd");
 
     var answersDiv = document.createElement("div");
@@ -126,7 +123,6 @@ function createDD(frage, antworten, container, richtig) {
         p.id = "question" + n + "_answer" + i;
         p.className = "drag";
         p.draggable = "true";
-        // p.ondragstart = "drag(event)";
         p.setAttribute("ondragstart","drag(event)");
         var pText = document.createTextNode(antworten[i]);
         p.appendChild(pText);
@@ -166,7 +162,7 @@ function createDD(frage, antworten, container, richtig) {
  * @param antworten
  *            Antwortmöglichkeiten als Array aus Strings
  * @param richtig
- *            Noch zu definieren
+ *            Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
  * @returns ein <div> tag mit der Frage
  */
 function createTQ(frage, text, antworten, richtig) {
