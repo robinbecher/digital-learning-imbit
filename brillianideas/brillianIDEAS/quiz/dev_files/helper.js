@@ -13,18 +13,18 @@ var richtigArray = [];
  */
 function createMC(frage, antworten, richtig) {
 
-	for (var i = 0; i < richtig.length; i++) {
-		richtigArray.push(richtig[i]);
-	}
+	// for (var i = 0; i < richtig.length; i++) {
+	// 	richtigArray.push(richtig[i]);
+	// }
+    richtigArray.push(richtig);
 
 	console.log(richtigArray);
 
 	var n = findQuestionNumber();
 
     var questiondiv = createHeader(frage, n);
-    // questiondiv.attr("data-questiontype","mc");
+
     questiondiv.setAttribute("data-type","mc");
-	var questiondiv = createHeader(frage, n);
 
 	var i;
 	for (i = 0; i < antworten.length; i++) {
@@ -60,13 +60,15 @@ function createMC(frage, antworten, richtig) {
  */
 function createSC(frage, antworten, richtig) {
 
-	for (var i = 0; i < richtig.length; i++) {
-		richtigArray.push(richtig[i]);
-	}
+	// for (var i = 0; i < richtig.length; i++) {
+	// 	richtigArray.push(richtig[i]);
+	// }
+    richtigArray.push(richtig);
 
 	var n = findQuestionNumber();
 
 	var questiondiv = createHeader(frage, n);
+    questiondiv.setAttribute("data-type","sc");
 
 	var i;
 	for (i = 0; i < antworten.length; i++) {
@@ -105,19 +107,17 @@ function createSC(frage, antworten, richtig) {
  */
 function createDD(frage, antworten, container, richtig) {
 
+    richtigArray.push(richtig);
+
 	var n = findQuestionNumber();
 
     var questiondiv = createHeader(frage, n);
-    // questiondiv.attr("data-questiontype","dd");
     questiondiv.setAttribute("data-type","dd");
 
     var answersDiv = document.createElement("div");
     answersDiv.id = "dd"+n+"_answers";
     questiondiv.appendChild(answersDiv);
-	var questiondiv = createHeader(frage, n);
-	var answersDiv = document.createElement("div");
-	answersDiv.id = "answers";
-	questiondiv.appendChild(answersDiv);
+
 
 
     var i;
@@ -171,13 +171,15 @@ function createDD(frage, antworten, container, richtig) {
  */
 function createTQ(frage, text, antworten, richtig) {
 
-	for (var i = 0; i < richtig.length; i++) {
-		richtigArray.push(richtig[i]);
-	}
+	// for (var i = 0; i < richtig.length; i++) {
+	// 	richtigArray.push(richtig[i]);
+	// }
+    richtigArray.push(richtig);
 
 	var n = findQuestionNumber();
 
 	var questiondiv = createHeader(frage, n);
+    questiondiv.setAttribute("data-type","tq");
 
 	var TextP = document.createElement("p");
 	TextP.id = "question" + n + "text";
@@ -268,37 +270,21 @@ function findQuestionNumber() {
 function evaluate() {
 
     for (var i = 1; i < anzahlFragen; i++) {
-        // var childrenInput = $("#question" + i).find("input").toArray();
-        // console.log(childrenInput);
-        // var gibMirPunkte = true;
-        // if (childrenInput !== null) {
-        //     for (var j = 0; j < childrenInput.length; j++) {
-        //         var richtig = richtigArray.shift();
-        //         var child = childrenInput[j];
-        //         console.log(child);
-        //         console.log(child.checked);
-        //         console.log(richtig);
-        //         if (!(child.checked && (richtig === 1)|| !child.checked && (richtig === 0))) {
-        //             gibMirPunkte = false;
-        //         }
-        //     }
-        //     if(gibMirPunkte){
-        //         score++;
-        //     }
+
         var question = document.getElementById("question" + i);
         console.log(question);
-        if (question.getAttribute("data-type") === "mc") {
+        if (question.getAttribute("data-type").localeCompare("mc") === 0) {
             var childrenInput = $("#question" + i).find("input").toArray();
-            console.log(childrenInput);
+            var richtig = richtigArray.shift();
+
             var gibMirPunkte = true;
             if (childrenInput !== null) {
                 for (var j = 0; j < childrenInput.length; j++) {
-                    var richtig = richtigArray.shift();
                     var child = childrenInput[j];
                     console.log(child);
                     console.log(child.checked);
                     console.log(richtig);
-                    if (!(child.checked && (richtig === 1) || !child.checked && (richtig === 0))) {
+                    if (!(child.checked && (richtig[j] === 1) || !child.checked && (richtig[j] === 0))) {
                         gibMirPunkte = false;
                     }
                 }
@@ -307,48 +293,76 @@ function evaluate() {
                 }
             }
         }
-        else if (question.getAttribute("data-type") === "dd") {
-            var draggables = $("#dd" + i + "_answers").find("p").toArray();
+        else if (question.getAttribute("data-type").localeCompare("dd") === 0) {
+            var draggables = $("#question" + i).find(".drag").toArray();
+            var gibMirPunkte=true;
+            var anzahlAntworten = draggables.length;
+            // var draggables = $(".drag").toArray();
             console.log(draggables);
             var richtig = richtigArray.shift();
-            var boxes = question.find("div").toArray();
+            //Use jQuery Object of Question for these operations
+            var question = $('#question'+i);
+            // var boxes = question.find("div").toArray();
+            var boxes = $("#question"+i).find(".drop").toArray();
 
-            for (var i = 0; i < draggables.length; i++) {
-                if (draggables[i].closest("div").is(boxes[richtig[i]])) {
-                    alert("Richtige Box für Draggable!");
+            for (var k = 0; k < draggables.length; k++) {
+                // var closest = draggables[k].closest("div");
+                var father = document.getElementById("question"+i+"_answer"+k).parentNode;
+                if (!father.isSameNode(boxes[richtig[k]-1])) {
+                    gibMirPunkte=false;
                 }
+
             }
+
+            if (gibMirPunkte){
+                score++;
+            }
+
+            //set the variable question to be the DOM representation of the element again (instead of jQuery)
+            var question = document.getElementById("question" + i);
+        }else if (question.getAttribute("data-type").localeCompare("sc") === 0) {
+            gibMirPunkte=true;
+
+
+
+
+            var richtig = richtigArray.shift();
+
+
+        }else if (question.getAttribute("data-type").localeCompare("tq") === 0) {
+
+            var richtig = richtigArray.shift();
+
 
         }
 
-        console.log(childrenInput);
 
     }
 
-	for (var i = 1; i < anzahlFragen; i++) {
-		var children = $("#question" + i).find("input").toArray();
-		console.log(children);
-		var gibMirPunkte = true;
-		if (children !== null) {
-			for (var j = 0; j < children.length; j++) {
-				var richtig = richtigArray.shift();
-				var child = children[j];
-				console.log(child);
-				console.log(child.checked);
-				console.log(richtig);
-				if (!(child.checked && (richtig === 1) || !child.checked
-						&& (richtig === 0))) {
-					gibMirPunkte = false;
-				}
-			}
-
-		}
-		if (gibMirPunkte) {
-			score++;
-		}
-		console.log(children);
-
-	}
+	// for (var i = 1; i < anzahlFragen; i++) {
+	// 	var children = $("#question" + i).find("input").toArray();
+	// 	console.log(children);
+	// 	var gibMirPunkte = true;
+	// 	if (children !== null) {
+	// 		for (var j = 0; j < children.length; j++) {
+	// 			var richtig = richtigArray.shift();
+	// 			var child = children[j];
+	// 			console.log(child);
+	// 			console.log(child.checked);
+	// 			console.log(richtig);
+	// 			if (!(child.checked && (richtig === 1) || !child.checked
+	// 					&& (richtig === 0))) {
+	// 				gibMirPunkte = false;
+	// 			}
+	// 		}
+    //
+	// 	}
+	// 	if (gibMirPunkte) {
+	// 		score++;
+	// 	}
+	// 	console.log(children);
+    //
+	// }
 
 }
 
