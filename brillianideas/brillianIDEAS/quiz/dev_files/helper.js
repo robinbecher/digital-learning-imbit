@@ -132,19 +132,6 @@ function createDD(frage, antworten, container, richtig) {
         p.appendChild(pText);
         answersDiv.appendChild(p);
     }
-	var i;
-	for (i = 0; i < antworten.length; i++) {
-		var p = document.createElement("p");
-		p.id = "question" + n + "_answer" + i;
-		p.className = "drag";
-		p.draggable = "true";
-		p.addEventListener('dragstart', function() {
-			drag(event)
-		});
-		var pText = document.createTextNode(antworten[i]);
-		p.appendChild(pText);
-		answersDiv.appendChild(p);
-	}
 
 	for (i = 0; i < container.length; i++) {
 		var box = document.createElement("div");
