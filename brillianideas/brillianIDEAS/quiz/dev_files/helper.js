@@ -1,5 +1,16 @@
 var richtigArray = [];
-
+/**
+ * eine Multiple Choice Frage anlegen
+ * 
+ * @param frage
+ *            Frage als String
+ * @param antworten
+ *            Antworten als Array aus Strings
+ * @param richtig
+ *            Lösung als Array aus Strings. Für jede Antwortmöglichkeit ein
+ *            Eintrag 0 oder 1 wobei 1 für richtig und 0 für falsch steht
+ * @returns ein <div> tag mit der Frage
+ */
 function createMC(frage, antworten, richtig) {
 
 	for (var i = 0; i < richtig.length; i++) {
@@ -32,7 +43,18 @@ function createMC(frage, antworten, richtig) {
 	contentdiv.append(questiondiv);
 
 }
-
+/**
+ * eine Single Choice Frage anglegen
+ * 
+ * @param frage
+ *            Frage als String
+ * @param antworten
+ *            Antworten als Array aus Strings
+ * @param richtig
+ *            Lösung als Array aus Strings. Für jede Antwortmöglichkeit ein
+ *            Eintrag 0 oder 1 wobei 1 für richtig und 0 für falsch steht
+ * @returns ein <div> tag mit der Frage
+ */
 function createSC(frage, antworten, richtig) {
 
 	for (var i = 0; i < richtig.length; i++) {
@@ -64,7 +86,20 @@ function createSC(frage, antworten, richtig) {
 	contentdiv.append(questiondiv);
 
 }
-
+/**
+ * Eine Drag&Drop Frage anlegen
+ * 
+ * @param frage
+ *            Frage als String
+ * @param antworten
+ *            Antwortmöglichkeiten als Array aus Strings
+ * @param container
+ *            Container in die gedropt werden soll als Array aus Strings
+ * @param richtig
+ *            Lösung als zweidimensionales Array mit einem Eintrag pro
+ *            Antwortmöglichkeit der form [x,y] mit Frage x muss in Container y
+ * @returns ein <div> tag mit der Frage
+ */
 function createDD(frage, antworten, container, richtig) {
 
 	var n = findQuestionNumber();
@@ -95,7 +130,9 @@ function createDD(frage, antworten, container, richtig) {
 		box.addEventListener('drop', function() {
 			drop(event)
 		});
-		box.addEventListener('dragover',function(){allowDrop(event)});
+		box.addEventListener('dragover', function() {
+			allowDrop(event)
+		});
 		var p = document.createElement("p");
 		p.className = "box_text";
 		var pText = document.createTextNode(container[i]);
@@ -108,7 +145,20 @@ function createDD(frage, antworten, container, richtig) {
 	contentdiv.append(questiondiv);
 
 }
-
+/**
+ * Eine Lückentext Frage anlegen
+ * 
+ * @param frage
+ *            Frage als String
+ * @param text
+ *            Text mit Lücken als Array aus Strings wobei ein leerer String ""
+ *            eine Lücke darstellt
+ * @param antworten
+ *            Antwortmöglichkeiten als Array aus Strings
+ * @param richtig
+ *            Noch zu definieren
+ * @returns ein <div> tag mit der Frage
+ */
 function createTQ(frage, text, antworten, richtig) {
 
 	for (var i = 0; i < richtig.length; i++) {
@@ -127,7 +177,7 @@ function createTQ(frage, text, antworten, richtig) {
 	for (i = 0; i < text.length; i++) {
 		if (text[i] !== "") {
 			var TQText = document.createTextNode(text[i]);
-			TextP.append(TQText);
+			TextP.appendChild(TQText);
 		} else {
 			var TQinput = document.createElement("input");
 			TQinput.className = "text_input";
@@ -135,7 +185,7 @@ function createTQ(frage, text, antworten, richtig) {
 			TQinput.name = "question" + n + "_blanc" + j;
 			TQinput.id = "question" + n + "_blanc" + j;
 			j++;
-			TextP.append(TQinput)
+			TextP.appendChild(TQinput)
 		}
 	}
 	questiondiv.appendChild(TextP);
@@ -244,4 +294,67 @@ function evaluateSC() {
 
 function evaluateTQ() {
 
+}
+
+// When clicking the "next"-button, the "question number" is counted upwards.
+// the divs containing the questions are shown/hidden accordingly. To add
+// questions, you have to create
+function nextButtonClick() {
+	count++;
+	showTheQuestion(count);
+}
+
+// When clicking the "back"-button, the question number is counted downwards.
+// All the questions are hidden except the previous question
+function backButtonClick() {
+	count--;
+	showTheQuestion(count);
+}
+
+// This function shows the question on the screen that the user has to answer
+// next
+function showTheQuestion(count) {
+
+	// Hides all the questions. The show() function of the questions has to be
+	// called again to make them visible
+	$(".questionclass").hide();
+
+	$('#question' + count).show();
+
+	if (count === 1) {
+		$('#back_button_div').hide();
+	} else if (count <= anzahlFragen) {
+		$('#back_button_div').show();
+		$('#next_button_div').show();
+	} else {
+		evaluate();
+		$('#next_button_div').hide();
+		$('#back_button_div').hide();
+		$('#gz').show();
+
+		$('#supergeil').html(
+				"Gratuliere! Sie haben " + score + " von " + maxScore
+						+ " Punkten!");
+	}
+}
+
+function allowDrop(ev) {
+	ev.preventDefault();
+}
+
+function drag(ev) {
+	ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+	ev.preventDefault();
+
+	// data ist die ID des Elements, das verschoben wird
+	var data = ev.dataTransfer.getData("text");
+
+	ev.target.appendChild(document.getElementById(data));
+
+	console.log("ev: " + ev);
+	console.log("data: " + data);
+	console.log("target: " + ev.target);
 }
