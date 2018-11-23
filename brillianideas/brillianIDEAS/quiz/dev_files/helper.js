@@ -420,6 +420,7 @@ function findQuestionNumber() {
  */
 function evaluate() {
 
+<<<<<<< HEAD
 	// läuft durch alle Fragen
 	for (var i = 1; i <= anzahlFragen; i++) {
 
@@ -446,6 +447,74 @@ function evaluate() {
 				}
 			}
 		}
+=======
+    for (var i = 1; i < anzahlFragen; i++) {
+
+        var question = document.getElementById("question" + i);
+        console.log(question);
+        if (question.getAttribute("data-type").localeCompare("mc") === 0 || question.getAttribute("data-type").localeCompare("sc") === 0) {
+            var childrenInput = $("#question" + i).find("input").toArray();
+            var richtig = richtigArray.shift();
+
+            var gibMirPunkte = true;
+            if (childrenInput !== null) {
+                for (var j = 0; j < childrenInput.length; j++) {
+                    var child = childrenInput[j];
+                    console.log(child);
+                    console.log(child.checked);
+                    console.log(richtig);
+                    if (!(child.checked && (richtig[j] === 1) || !child.checked && (richtig[j] === 0))) {
+                        gibMirPunkte = false;
+                    }
+                }
+                if (gibMirPunkte) {
+                    score++;
+                }
+            }
+        }
+        else if (question.getAttribute("data-type").localeCompare("dd") === 0) {
+            var draggables = $("#question" + i).find(".drag").toArray();
+            var gibMirPunkte=true;
+            var anzahlAntworten = draggables.length;
+            // var draggables = $(".drag").toArray();
+            console.log(draggables);
+            var richtig = richtigArray.shift();
+            //Use jQuery Object of Question for these operations
+            var question = $('#question'+i);
+            // var boxes = question.find("div").toArray();
+            var boxes = $("#question"+i).find(".drop").toArray();
+
+            for (var k = 0; k < draggables.length; k++) {
+                // var closest = draggables[k].closest("div");
+                var father = document.getElementById("question"+i+"_answer"+k).parentNode;
+                if (!father.isSameNode(boxes[richtig[k]-1])) {
+                    gibMirPunkte=false;
+                }
+
+            }
+
+            if (gibMirPunkte){
+                score++;
+            }
+
+            //set the variable question to be the DOM representation of the element again (instead of jQuery)
+            var question = document.getElementById("question" + i);
+        }
+
+        else if (question.getAttribute("data-type").localeCompare("tq") === 0) {
+
+            var richtig = richtigArray.shift();
+
+
+        }
+
+
+    }
+
+}
+
+function evaluateDD() {
+>>>>>>> evaluation of singular choice quizzes does now work
 
 		// Falls die Frage eine Drag&Drop Aufgabe ist wird dieser Teil
 		// durchlaufen.
