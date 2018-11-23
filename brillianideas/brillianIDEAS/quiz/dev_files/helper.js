@@ -1,7 +1,7 @@
 var richtigArray = [];
 /**
  * eine Multiple Choice Frage anlegen
- * 
+ *
  * @param frage
  *            Frage als String
  * @param antworten
@@ -21,6 +21,9 @@ function createMC(frage, antworten, richtig) {
 
 	var n = findQuestionNumber();
 
+    var questiondiv = createHeader(frage, n);
+    // questiondiv.attr("data-questiontype","mc");
+    questiondiv.setAttribute("data-type","mc");
 	var questiondiv = createHeader(frage, n);
 
 	var i;
@@ -45,7 +48,7 @@ function createMC(frage, antworten, richtig) {
 }
 /**
  * eine Single Choice Frage anglegen
- * 
+ *
  * @param frage
  *            Frage als String
  * @param antworten
@@ -88,7 +91,7 @@ function createSC(frage, antworten, richtig) {
 }
 /**
  * Eine Drag&Drop Frage anlegen
- * 
+ *
  * @param frage
  *            Frage als String
  * @param antworten
@@ -104,11 +107,31 @@ function createDD(frage, antworten, container, richtig) {
 
 	var n = findQuestionNumber();
 
+    var questiondiv = createHeader(frage, n);
+    // questiondiv.attr("data-questiontype","dd");
+    questiondiv.setAttribute("data-type","dd");
+
+    var answersDiv = document.createElement("div");
+    answersDiv.id = "dd"+n+"_answers";
+    questiondiv.appendChild(answersDiv);
 	var questiondiv = createHeader(frage, n);
 	var answersDiv = document.createElement("div");
 	answersDiv.id = "answers";
 	questiondiv.appendChild(answersDiv);
 
+
+    var i;
+    for (i = 0; i < antworten.length; i++) {
+        var p = document.createElement("p");
+        p.id = "question" + n + "_answer" + i;
+        p.className = "drag";
+        p.draggable = "true";
+        // p.ondragstart = "drag(event)";
+        p.setAttribute("ondragstart","drag(event)");
+        var pText = document.createTextNode(antworten[i]);
+        p.appendChild(pText);
+        answersDiv.appendChild(p);
+    }
 	var i;
 	for (i = 0; i < antworten.length; i++) {
 		var p = document.createElement("p");
@@ -147,7 +170,7 @@ function createDD(frage, antworten, container, richtig) {
 }
 /**
  * Eine Lückentext Frage anlegen
- * 
+ *
  * @param frage
  *            Frage als String
  * @param text
@@ -210,7 +233,7 @@ function createTQ(frage, text, antworten, richtig) {
 }
 /**
  * Erstellt den Header einer Frage und den div für die Antwortmöglichkeiten
- * 
+ *
  * @param frage
  *            Text der Frage als String
  * @param n
@@ -256,6 +279,64 @@ function findQuestionNumber() {
 }
 
 function evaluate() {
+
+    for (var i = 1; i < anzahlFragen; i++) {
+        // var childrenInput = $("#question" + i).find("input").toArray();
+        // console.log(childrenInput);
+        // var gibMirPunkte = true;
+        // if (childrenInput !== null) {
+        //     for (var j = 0; j < childrenInput.length; j++) {
+        //         var richtig = richtigArray.shift();
+        //         var child = childrenInput[j];
+        //         console.log(child);
+        //         console.log(child.checked);
+        //         console.log(richtig);
+        //         if (!(child.checked && (richtig === 1)|| !child.checked && (richtig === 0))) {
+        //             gibMirPunkte = false;
+        //         }
+        //     }
+        //     if(gibMirPunkte){
+        //         score++;
+        //     }
+        var question = document.getElementById("question" + i);
+        console.log(question);
+        if (question.getAttribute("data-type") === "mc") {
+            var childrenInput = $("#question" + i).find("input").toArray();
+            console.log(childrenInput);
+            var gibMirPunkte = true;
+            if (childrenInput !== null) {
+                for (var j = 0; j < childrenInput.length; j++) {
+                    var richtig = richtigArray.shift();
+                    var child = childrenInput[j];
+                    console.log(child);
+                    console.log(child.checked);
+                    console.log(richtig);
+                    if (!(child.checked && (richtig === 1) || !child.checked && (richtig === 0))) {
+                        gibMirPunkte = false;
+                    }
+                }
+                if (gibMirPunkte) {
+                    score++;
+                }
+            }
+        }
+        else if (question.getAttribute("data-type") === "dd") {
+            var draggables = $("#dd" + i + "_answers").find("p").toArray();
+            console.log(draggables);
+            var richtig = richtigArray.shift();
+            var boxes = question.find("div").toArray();
+
+            for (var i = 0; i < draggables.length; i++) {
+                if (draggables[i].closest("div").is(boxes[richtig[i]])) {
+                    alert("Richtige Box für Draggable!");
+                }
+            }
+
+        }
+
+        console.log(childrenInput);
+
+    }
 
 	for (var i = 1; i < anzahlFragen; i++) {
 		var children = $("#question" + i).find("input").toArray();
