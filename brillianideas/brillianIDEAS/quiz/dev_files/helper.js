@@ -104,6 +104,7 @@ function createDD(frage, antworten, container, richtig) {
 
 	var questiondiv = createHeader(frage, n);
 	questiondiv.setAttribute("data-type", "dd");
+<<<<<<< HEAD
 
 	var answersDiv = document.createElement("div");
 	answersDiv.id = "dd" + n + "_answers";
@@ -138,6 +139,24 @@ function createDD(frage, antworten, container, richtig) {
         var pText = document.createTextNode(container[i]);
         p.appendChild(pText);
         textBox.appendChild(p);
+=======
+
+	var answersDiv = document.createElement("div");
+	answersDiv.id = "dd" + n + "_answers";
+	questiondiv.appendChild(answersDiv);
+
+	var i;
+	for (i = 0; i < antworten.length; i++) {
+		var p = document.createElement("p");
+		p.id = "question" + n + "_answer" + i;
+		p.className = "drag";
+		p.draggable = "true";
+		p.setAttribute("ondragstart", "drag(event)");
+		var pText = document.createTextNode(antworten[i]);
+		p.appendChild(pText);
+		answersDiv.appendChild(p);
+	}
+>>>>>>> Auswertung Lückentext ergänzt
 
         //box
 		var box = document.createElement("div");
@@ -421,6 +440,9 @@ function findQuestionNumber() {
 function evaluate() {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Auswertung Lückentext ergänzt
 	// läuft durch alle Fragen
 	for (var i = 1; i <= anzahlFragen; i++) {
 
@@ -447,6 +469,7 @@ function evaluate() {
 				}
 			}
 		}
+<<<<<<< HEAD
 =======
     for (var i = 1; i < anzahlFragen; i++) {
 
@@ -510,9 +533,38 @@ function evaluate() {
 
 
     }
+=======
+>>>>>>> Auswertung Lückentext ergänzt
 
-}
+		// Falls die Frage eine Drag&Drop Aufgabe ist wird dieser Teil
+		// durchlaufen.
+		else if (question.getAttribute("data-type").localeCompare("dd") === 0) {
+			var draggables = $("#question" + i).find(".drag").toArray();
+			var gibMirPunkte = true;
+			var anzahlAntworten = draggables.length;
+			var richtig = richtigArray.shift();
+			var question = $('#question' + i);
+			var boxes = $("#question" + i).find(".drop").toArray();
 
+			for (var k = 0; k < draggables.length; k++) {
+				var father = document.getElementById("question" + i + "_answer"
+						+ k).parentNode;
+				if (!father.isSameNode(boxes[richtig[k] - 1])) {
+					gibMirPunkte = false;
+				}
+
+			}
+
+			if (gibMirPunkte) {
+				score++;
+			}
+
+			// set the variable question to be the DOM representation of the
+			// element again (instead of jQuery)
+			var question = document.getElementById("question" + i);
+		}
+
+<<<<<<< HEAD
 function evaluateDD() {
 >>>>>>> evaluation of singular choice quizzes does now work
 
@@ -602,10 +654,16 @@ function evaluateDD() {
 		// Falls die Frage ein Lückentext ist wird dieser Teil durchlaufen.
 		else if (question.getAttribute("data-type").localeCompare("tq") === 0) {
 
+=======
+		// Falls die Frage ein Lückentext ist wird dieser Teil durchlaufen.
+		else if (question.getAttribute("data-type").localeCompare("tq") === 0) {
+
+>>>>>>> Auswertung Lückentext ergänzt
 			var question = document.getElementById("question" + i);
 
 			// lade die Lösungen zu dieser Frage in richtig
 			var richtig = richtigArray.shift();
+<<<<<<< HEAD
 
 			// finde alle <p> Kinder der Frage
 			var antworten = $("#question" + i).find("p").toArray();
@@ -632,6 +690,33 @@ function evaluateDD() {
 
 		}
 
+=======
+
+			// finde alle <p> Kinder der Frage
+			var antworten = $("#question" + i).find("p").toArray();
+
+			var gibMirPunkte = true;
+			//durchlaufe alle Antworten. Die ersten beiden Einträge werden übersprungen, da sie keine Antworten sind.
+			for (var j = 2; j < antworten.length - 2; j++) {
+				var antworttext = antworten[j].textContent;
+				// finde das Feld in dem die Antwort stehen sollte
+				var Feldnummer = richtig[j - 2];
+				var feld = document.getElementById("question" + i + "_blanc"
+						+ Feldnummer);
+				var feldtext = feld.value;
+				// vergleiche ob der Feldtext mit dem Antworttext übereinstimmt
+				if (antworttext !== feldtext) {
+					gibMirPunkte = false;
+				}
+
+			}
+			if (gibMirPunkte) {
+				score++;
+			}
+
+		}
+
+>>>>>>> Auswertung Lückentext ergänzt
 	}
 
 }
