@@ -35,8 +35,9 @@
 	type="text/javascript"
 	src="../dev_files/helper.js"></script>
 <link
-	rel="stylesheet" href="../../css/fonts.css"/>
-	<!--href="https://fonts.googleapis.com/css?family=Caveat+Brush"	rel="stylesheet">-->
+	rel="stylesheet"
+	href="../../css/fonts.css" />
+<!--href="https://fonts.googleapis.com/css?family=Caveat+Brush"	rel="stylesheet">-->
 
 <script>
 	//***********************
@@ -47,8 +48,8 @@
 
 	//***********************
 	//Hier bitte Werte eintragen!
-	var anzahlFragen = 5;
-	var maxScore = 10;
+	var anzahlFragen = 4;
+	var maxScore = 15;
 	//***********************
 
 	$(document)
@@ -57,7 +58,6 @@
 
 						//Demo Multiple Choice Aufgabe mit drei Attributen: Frage als String, Antworten als Array und Lösungen als Array mit 1=richtig, 0=falsch
 						createMC("TEST?", [ "A", "B", "C" ], [ 1, 1, 0 ]);
-						createMC("TEST2?", [ "D", "E", "F" ], [ 0, 1, 1 ]);
 						//Demo Single Choice Aufgabe mit drei Attributen: Frage als String, Antworten als Array und Lösungen als Array mit 1=richtig, 0=falsch
 						createSC("Meine SC Frage", [ "G", "H", "I" ],
 								[ 0, 1, 0 ]);
@@ -79,6 +79,9 @@
 										"aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." ],
 								[ "Antwort1", "Antwort2", "Antwort3",
 										"Antwort4" ], [ 4, 3, 2, 1 ]);
+					
+					
+					
 
 						showTheQuestion(count);
 					});

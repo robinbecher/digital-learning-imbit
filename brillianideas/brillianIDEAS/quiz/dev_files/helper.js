@@ -1,7 +1,7 @@
 var richtigArray = [];
 /**
  * eine Multiple Choice Frage anlegen
- *
+ * 
  * @param frage
  *            Frage als String
  * @param antworten
@@ -13,18 +13,13 @@ var richtigArray = [];
  */
 function createMC(frage, antworten, richtig) {
 
-	// for (var i = 0; i < richtig.length; i++) {
-	// 	richtigArray.push(richtig[i]);
-	// }
-    richtigArray.push(richtig);
-
-	console.log(richtigArray);
+	richtigArray.push(richtig);
 
 	var n = findQuestionNumber();
 
-    var questiondiv = createHeader(frage, n);
+	var questiondiv = createHeader(frage, n);
 
-    questiondiv.setAttribute("data-type","mc");
+	questiondiv.setAttribute("data-type", "mc");
 
 	var i;
 	for (i = 0; i < antworten.length; i++) {
@@ -48,7 +43,7 @@ function createMC(frage, antworten, richtig) {
 }
 /**
  * eine Single Choice Frage anglegen
- *
+ * 
  * @param frage
  *            Frage als String
  * @param antworten
@@ -60,15 +55,12 @@ function createMC(frage, antworten, richtig) {
  */
 function createSC(frage, antworten, richtig) {
 
-	// for (var i = 0; i < richtig.length; i++) {
-	// 	richtigArray.push(richtig[i]);
-	// }
-    richtigArray.push(richtig);
+	richtigArray.push(richtig);
 
 	var n = findQuestionNumber();
 
 	var questiondiv = createHeader(frage, n);
-    questiondiv.setAttribute("data-type","sc");
+	questiondiv.setAttribute("data-type", "sc");
 
 	var i;
 	for (i = 0; i < antworten.length; i++) {
@@ -93,7 +85,7 @@ function createSC(frage, antworten, richtig) {
 }
 /**
  * Eine Drag&Drop Frage anlegen
- *
+ * 
  * @param frage
  *            Frage als String
  * @param antworten
@@ -101,35 +93,34 @@ function createSC(frage, antworten, richtig) {
  * @param container
  *            Container in die gedropt werden soll als Array aus Strings
  * @param richtig
- *            Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
+ *            Lösung als Array. Der Arrayindex entspricht der Antwortnummer und
+ *            der eingetragene Wert dem erwarteten Feld
  * @returns ein <div> tag mit der Frage
  */
 function createDD(frage, antworten, container, richtig) {
 
-    richtigArray.push(richtig);
+	richtigArray.push(richtig);
 
 	var n = findQuestionNumber();
 
-    var questiondiv = createHeader(frage, n);
-    questiondiv.setAttribute("data-type","dd");
+	var questiondiv = createHeader(frage, n);
+	questiondiv.setAttribute("data-type", "dd");
 
-    var answersDiv = document.createElement("div");
-    answersDiv.id = "dd"+n+"_answers";
-    questiondiv.appendChild(answersDiv);
+	var answersDiv = document.createElement("div");
+	answersDiv.id = "dd" + n + "_answers";
+	questiondiv.appendChild(answersDiv);
 
-
-
-    var i;
-    for (i = 0; i < antworten.length; i++) {
-        var p = document.createElement("p");
-        p.id = "question" + n + "_answer" + i;
-        p.className = "drag";
-        p.draggable = "true";
-        p.setAttribute("ondragstart","drag(event)");
-        var pText = document.createTextNode(antworten[i]);
-        p.appendChild(pText);
-        answersDiv.appendChild(p);
-    }
+	var i;
+	for (i = 0; i < antworten.length; i++) {
+		var p = document.createElement("p");
+		p.id = "question" + n + "_answer" + i;
+		p.className = "drag";
+		p.draggable = "true";
+		p.setAttribute("ondragstart", "drag(event)");
+		var pText = document.createTextNode(antworten[i]);
+		p.appendChild(pText);
+		answersDiv.appendChild(p);
+	}
 
 	for (i = 0; i < container.length; i++) {
 		var box = document.createElement("div");
@@ -155,7 +146,7 @@ function createDD(frage, antworten, container, richtig) {
 }
 /**
  * Eine Lückentext Frage anlegen
- *
+ * 
  * @param frage
  *            Frage als String
  * @param text
@@ -164,20 +155,18 @@ function createDD(frage, antworten, container, richtig) {
  * @param antworten
  *            Antwortmöglichkeiten als Array aus Strings
  * @param richtig
- *            Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
+ *            Lösung als Array. Der Arrayindex entspricht der Antwortnummer und
+ *            der eingetragene Wert dem erwarteten Feld
  * @returns ein <div> tag mit der Frage
  */
 function createTQ(frage, text, antworten, richtig) {
 
-	// for (var i = 0; i < richtig.length; i++) {
-	// 	richtigArray.push(richtig[i]);
-	// }
-    richtigArray.push(richtig);
+	richtigArray.push(richtig);
 
 	var n = findQuestionNumber();
 
 	var questiondiv = createHeader(frage, n);
-    questiondiv.setAttribute("data-type","tq");
+	questiondiv.setAttribute("data-type", "tq");
 
 	var TextP = document.createElement("p");
 	TextP.id = "question" + n + "text";
@@ -220,7 +209,7 @@ function createTQ(frage, text, antworten, richtig) {
 }
 /**
  * Erstellt den Header einer Frage und den div für die Antwortmöglichkeiten
- *
+ * 
  * @param frage
  *            Text der Frage als String
  * @param n
@@ -249,13 +238,15 @@ function createHeader(frage, n) {
 	return questiondiv1;
 }
 
+/**
+ * 
+ * @returns niedrigste, noch nicht vergebene Fragennummer
+ */
 function findQuestionNumber() {
 	var weiter = true;
 	var n = 1;
-	console.log(document.getElementById("question" + n + "_answer1"));
 
 	while (weiter) {
-		console.log(document.getElementById("question" + n + "_answer1"));
 		if (document.getElementById("question" + n + "_answer1") !== null) {
 			n++;
 		} else {
@@ -265,82 +256,101 @@ function findQuestionNumber() {
 	return n;
 }
 
+/**
+ * Wertet die gegebenen Antworten aus und setzt score auf den entsprechenden
+ * Wert.
+ * 
+ */
 function evaluate() {
 
-    for (var i = 1; i < anzahlFragen; i++) {
+	// läuft durch alle Fragen
+	for (var i = 1; i <= anzahlFragen; i++) {
 
-        var question = document.getElementById("question" + i);
-        console.log(question);
-        if (question.getAttribute("data-type").localeCompare("mc") === 0 || question.getAttribute("data-type").localeCompare("sc") === 0) {
-            var childrenInput = $("#question" + i).find("input").toArray();
-            var richtig = richtigArray.shift();
+		var question = document.getElementById("question" + i);
 
-            var gibMirPunkte = true;
-            if (childrenInput !== null) {
-                for (var j = 0; j < childrenInput.length; j++) {
-                    var child = childrenInput[j];
-                    console.log(child);
-                    console.log(child.checked);
-                    console.log(richtig);
-                    if (!(child.checked && (richtig[j] === 1) || !child.checked && (richtig[j] === 0))) {
-                        gibMirPunkte = false;
-                    }
-                }
-                if (gibMirPunkte) {
-                    score++;
-                }
-            }
-        }
-        else if (question.getAttribute("data-type").localeCompare("dd") === 0) {
-            var draggables = $("#question" + i).find(".drag").toArray();
-            var gibMirPunkte=true;
-            var anzahlAntworten = draggables.length;
-            // var draggables = $(".drag").toArray();
-            console.log(draggables);
-            var richtig = richtigArray.shift();
-            //Use jQuery Object of Question for these operations
-            var question = $('#question'+i);
-            // var boxes = question.find("div").toArray();
-            var boxes = $("#question"+i).find(".drop").toArray();
+		// Falls die Frage eine Einfach- oder Mehrfachauswahl ist wird dieser
+		// Teil durchlaufen.
+		if (question.getAttribute("data-type").localeCompare("mc") === 0
+				|| question.getAttribute("data-type").localeCompare("sc") === 0) {
+			var childrenInput = $("#question" + i).find("input").toArray();
+			var richtig = richtigArray.shift();
 
-            for (var k = 0; k < draggables.length; k++) {
-                // var closest = draggables[k].closest("div");
-                var father = document.getElementById("question"+i+"_answer"+k).parentNode;
-                if (!father.isSameNode(boxes[richtig[k]-1])) {
-                    gibMirPunkte=false;
-                }
+			var gibMirPunkte = true;
+			if (childrenInput !== null) {
+				for (var j = 0; j < childrenInput.length; j++) {
+					var child = childrenInput[j];
+					if (!(child.checked && (richtig[j] === 1) || !child.checked
+							&& (richtig[j] === 0))) {
+						gibMirPunkte = false;
+					}
+				}
+				if (gibMirPunkte) {
+					score++;
+				}
+			}
+		}
 
-            }
+		// Falls die Frage eine Drag&Drop Aufgabe ist wird dieser Teil
+		// durchlaufen.
+		else if (question.getAttribute("data-type").localeCompare("dd") === 0) {
+			var draggables = $("#question" + i).find(".drag").toArray();
+			var gibMirPunkte = true;
+			var anzahlAntworten = draggables.length;
+			var richtig = richtigArray.shift();
+			var question = $('#question' + i);
+			var boxes = $("#question" + i).find(".drop").toArray();
 
-            if (gibMirPunkte){
-                score++;
-            }
+			for (var k = 0; k < draggables.length; k++) {
+				var father = document.getElementById("question" + i + "_answer"
+						+ k).parentNode;
+				if (!father.isSameNode(boxes[richtig[k] - 1])) {
+					gibMirPunkte = false;
+				}
 
-            //set the variable question to be the DOM representation of the element again (instead of jQuery)
-            var question = document.getElementById("question" + i);
-        }
+			}
 
-        else if (question.getAttribute("data-type").localeCompare("tq") === 0) {
+			if (gibMirPunkte) {
+				score++;
+			}
 
-            var richtig = richtigArray.shift();
+			// set the variable question to be the DOM representation of the
+			// element again (instead of jQuery)
+			var question = document.getElementById("question" + i);
+		}
 
+		// Falls die Frage ein Lückentext ist wird dieser Teil durchlaufen.
+		else if (question.getAttribute("data-type").localeCompare("tq") === 0) {
 
-        }
+			var question = document.getElementById("question" + i);
 
+			// lade die Lösungen zu dieser Frage in richtig
+			var richtig = richtigArray.shift();
 
-    }
+			// finde alle <p> Kinder der Frage
+			var antworten = $("#question" + i).find("p").toArray();
 
-}
+			var gibMirPunkte = true;
+			//durchlaufe alle Antworten. Die ersten beiden Einträge werden übersprungen, da sie keine Antworten sind.
+			for (var j = 2; j < antworten.length - 2; j++) {
+				var antworttext = antworten[j].textContent;
+				// finde das Feld in dem die Antwort stehen sollte
+				var Feldnummer = richtig[j - 2];
+				var feld = document.getElementById("question" + i + "_blanc"
+						+ Feldnummer);
+				var feldtext = feld.value;
+				// vergleiche ob der Feldtext mit dem Antworttext übereinstimmt
+				if (antworttext !== feldtext) {
+					gibMirPunkte = false;
+				}
 
-function evaluateDD() {
+			}
+			if (gibMirPunkte) {
+				score++;
+			}
 
-}
+		}
 
-function evaluateSC() {
-
-}
-
-function evaluateTQ() {
+	}
 
 }
 
@@ -401,8 +411,4 @@ function drop(ev) {
 	var data = ev.dataTransfer.getData("text");
 
 	ev.target.appendChild(document.getElementById(data));
-
-	console.log("ev: " + ev);
-	console.log("data: " + data);
-	console.log("target: " + ev.target);
 }
