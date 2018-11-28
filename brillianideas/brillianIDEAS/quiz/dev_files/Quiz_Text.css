@@ -8,15 +8,17 @@ input[type=text] {
 	border-bottom: red 2px dashed;
 	font-size: 28px;
 	background-color: rgba(255, 255, 255, 0);
-	width: 10%;
+	width: fit-content;
 	font-family: Caveat Brush;
 }
 
 .text_to_input {
 	float: left;
-	width: 10%;
+	width: fit-content;
+	padding-left: 20px;
 	color: #b11f39;
 	font-size: 28px;
+	color: #b11f39;
 }
 
 .text {
