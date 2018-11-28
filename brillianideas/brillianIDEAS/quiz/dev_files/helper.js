@@ -29,7 +29,7 @@ function createMC(frage, antworten, richtig) {
 		questionlabel.appendChild(questionlabeltext);
 		var questionlabelinput = document.createElement("input");
 		questionlabelinput.type = "checkbox";
-		questionlabelinput.id = "question" + n + "_answer" + (i + 1);
+		questionlabelinput.id = "question" + n + "_answer" + i;
 		questionlabel.appendChild(questionlabelinput);
 		var questionlabelspan = document.createElement("span");
 		questionlabelspan.className = "checkmark_check";
@@ -71,7 +71,7 @@ function createSC(frage, antworten, richtig) {
 		var questionlabelinput = document.createElement("input");
 		questionlabelinput.type = "radio";
 		questionlabelinput.name = "radio";
-		questionlabelinput.id = "question" + n + "_answer" + (i + 1);
+		questionlabelinput.id = "question" + n + "_answer" + i;
 		questionlabel.appendChild(questionlabelinput);
 		var questionlabelspan = document.createElement("span");
 		questionlabelspan.className = "checkmark";
@@ -172,7 +172,7 @@ function createTQ(frage, text, antworten, richtig) {
 	TextP.id = "question" + n + "text";
 
 	var i;
-	var j = 1;
+	var j = 0;
 	for (i = 0; i < text.length; i++) {
 		if (text[i] !== "") {
 			var TQText = document.createTextNode(text[i]);
@@ -303,7 +303,7 @@ function evaluate() {
 			for (var k = 0; k < draggables.length; k++) {
 				var father = document.getElementById("question" + i + "_answer"
 						+ k).parentNode;
-				if (!father.isSameNode(boxes[richtig[k] - 1])) {
+				if (!father.isSameNode(boxes[(richtig[k] - 1)])) {
 					gibMirPunkte = false;
 				}
 
@@ -330,13 +330,14 @@ function evaluate() {
 			var antworten = $("#question" + i).find("p").toArray();
 
 			var gibMirPunkte = true;
-			//durchlaufe alle Antworten. Die ersten beiden Einträge werden übersprungen, da sie keine Antworten sind.
-			for (var j = 2; j < antworten.length - 2; j++) {
+			// durchlaufe alle Antworten. Die ersten beiden Einträge werden
+			// übersprungen, da sie keine Antworten sind.
+			for (var j = 2; j < antworten.length; j++) {
 				var antworttext = antworten[j].textContent;
 				// finde das Feld in dem die Antwort stehen sollte
 				var Feldnummer = richtig[j - 2];
 				var feld = document.getElementById("question" + i + "_blanc"
-						+ Feldnummer);
+						+ (Feldnummer - 1));
 				var feldtext = feld.value;
 				// vergleiche ob der Feldtext mit dem Antworttext übereinstimmt
 				if (antworttext !== feldtext) {
