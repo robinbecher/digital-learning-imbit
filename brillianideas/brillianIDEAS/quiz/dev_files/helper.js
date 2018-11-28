@@ -177,6 +177,7 @@ function createTQ(frage, text, antworten, richtig) {
 		if (text[i] !== "") {
 			var TQText = document.createTextNode(text[i]);
 			TextP.appendChild(TQText);
+			TextP.className = "text";
 		} else {
 			var TQinput = document.createElement("input");
 			TQinput.className = "text_input";
