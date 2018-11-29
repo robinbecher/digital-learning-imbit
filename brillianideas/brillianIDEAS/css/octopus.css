@@ -54,8 +54,8 @@ body {
 /* Tooltip links */
 .tooltip .tooltiptext_l {
    visibility: hidden;
-    top: 60vh;
-    left: 20vw;
+    top: 68vh;
+    left: 15vw;
     font-family: Caveat Brush;
     font-size: 28px;
     color:black;
@@ -71,7 +71,7 @@ body {
 /* Tooltip rechts unten */
 .tooltip .tooltiptext_ru {
    visibility: hidden;
-    top: 60vh;
+    top: 65vh;
     left: 55vw;
     font-family: Caveat Brush;
     font-size: 28px;
@@ -88,8 +88,8 @@ body {
 /* Tooltip rechts oben */
 .tooltip .tooltiptext_ro {
    visibility: hidden;
-    top: 10vh;
-    left: 65vw;
+    top: 8vh;
+    left: 58vw;
     font-family: Caveat Brush;
     font-size: 28px;
     color:black;
@@ -115,32 +115,39 @@ body {
 }
 
 #octo_kopf {
-    top: 0;
-    left: 0;
-    max-height: 30vh;
+    position: absolute;
+	top: 0px;
+	left: 0;
+	width: 25vw;
+	height: 30vh;
     z-index:1;
 }
 
-#octo_bg_ltr{
-    top: 60vh;
-    /* width: 50vw; */
-    transform: translateY(-50%);
-    max-height: 58vh;
+#octo_arm_links{
+    position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 20vw;
+	height: 40vh;
+    transform: translateY(-25%);
 	z-index:1;
 }
 
-#octo_arm_3 {
-    top: 0;
-    right: -1vw;
-    max-width: 40vh;
+#octo_arm_rechts_oben {
+    position: absolute;
+	top: 0;
+	right: -10px;
+	width: 28vw;
+	height: 30vh;
     z-index:1;
 }
 
-#octo_bg_rtl{
+#octo_arm_rechts_unten{
+	position: absolute;
 	bottom: 0;
-	right: -1vw;
-	/* width: initial; */
-    max-width: 45vw;
+	right: -10px;
+	width: 40vw;
+	height: 30vh;
     z-index:1;
 }
 
