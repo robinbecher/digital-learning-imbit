@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<link
+	rel="shortcut icon"
+	href="img/favicon.ico"
+	type="image/x-icon">
+<meta charset="UTF-8">
+<title>Quiz</title>
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="main.css" />
+
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="Quiz_checkbox.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="Quiz_Drag.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="Quiz_Radiobutton.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="Quiz_Text.css" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	type="text/javascript"
+	src="helper.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Caveat+Brush"
+	rel="stylesheet">
+
+<script>
+	//***********************
+	//Diese Werte nicht verÃ¤ndern!
+	var count = 1;
+	var score = 0;
+	//***********************
+
+	//***********************
+	//Hier bitte Werte eintragen!
+	var anzahlFragen = 15;
+	var maxScore = 15;
+	//***********************
+
+	$(document)
+			.ready(
+					function() {
+
+					createSC("Für was steht die Abkürzung HTML?", [ "Hyper Text Markup Language", " Hyperlinks and Text Markup Language", "Home Tool Markup Language" ],
+								[ 1, 0, 0 ]);
+					createSC("Jede Webseite basiert auf HTML, man kann auch von einer HTML-Seite sprechen.", [ "Richtig", "Falsch"],[ 1, 0]);
+					createSC("HTML beschreibt...", [ "Wie der Inhalt einer Seite dargestellt/formatiert werden soll.", "Die Struktur und den Inhalt einer Seite.", "Wie eine Webseite erreicht werden kann." ],[ 0, 1, 0 ]);
+					createSC("Was ist der korrekte HTML Code um einen Hyperlink zu erstellen?", [ "<a>http://www.brillianideas.com</a>",
+"<a name=\"http://www.brillianideas.com\">brillianIDEAS.com</a>",
+ "<a url=\"http://www.brillianideas.com\">brillianIDEAS.com</a>",
+ "<a href=\"http://www.brillianideas.com\">brillianIDEAS</a>"],[ 0, 0, 0, 1 ]);
+					createMC("Wie wird ein HTML-Kommentar geöffnet und geschlossen?", [ "mit <// geöffnet", "mit /* geöffnet", "mit <-- geöffnet","mit > geschlossen", "mit */ geschlossen","mit --> geschlossen" ], [ 0, 0, 1, 0, 0, 1 ]);
+					createSC("Für was steht die Abkürzung CSS?", [ "Colorful Style Sheets", "Creative Style Sheets", "Cascading Style Sheets","Computer Style Sheets" ],
+								[ 0, 0, 1, 0 ]);
+					createSC("CSS beschreibt...", [ "Die Struktur einer Webseite.", "Wie der Inhalt einer Seite dargestellt/formatiert werden soll.", "Den Inhalt einer Webseite.","Die Browserkompatibilität einer Webseite." ],
+								[ 0, 1, 0, 0 ]);
+					createSC("An welcher Stelle eines HTML Dokuments kann man ein externes CSS Style Sheet integrieren?", [ "<body>", "<head>", "überall","am Ende des Dokuments." ],
+								[  0, 1, 0, 0 ]);
+					createSC("Wie ist das korrekte HTML um ein Texteingabefeld zu erstellen?", [ "<input type=\"textfield\">", "<textfield>", "<textinput type=\"text\">","<input type=\"text\">" ],
+								[ 0, 0, 0, 1 ]);
+					createSC("Wie kommentiert man in einem CSS Dokument?", [ "// this is a comment //", "*this is a comment", "// this is a comment","/* this is a comment */" ],
+								[ 0, 0, 0, 1 ]);
+					createSC("Wie ist eine CSS Regel aufgebaut?", [ "Selektor, Deklaration, Eigenschaft, Wert", "Selektor, Eigenschaft, Wert", "Variable, Wert","Selektor, Variable, Deklaration, Eigenschaft, Wert" ],
+								[ 1, 0, 0, 0 ]);
+					createSC("JavaScript ist das Gleiche wie Java.", [ "Richtig", "Falsch"],[ 0, 1]);
+					createSC("Beachtet JavaScript Groß-/Kleinschreibung?", [ "Ja", "Nein"],[ 1, 0]);	
+					createSC("Mit welchem HTML-Element starten wir JavaScript?", [ "<javascript>", "<js>","<scripting>","<script>"],[ 0, 0,0,1]);
+					createSC("JavaScript verwendet „loose typing“. Loose typing heißt…", [ "Variablennamen müssen nicht konkret deklariert werden.", "Verwendete Datentypen müssen nicht konkret deklariert werden.","Toleranz bei Rechtschreibfehlern"],[ 0, 1,0]);		
+
+						showTheQuestion(count);
+					});
+</script>
+
+
+</head>
+<body>
+
+	<video
+		id="video_background"
+		autoplay
+		muted
+		loop>
+		<source
+			src="img/Background.mp4"
+			type="video/mp4">
+	</video>
+
+
+	<div id="content">
+
+		<div
+			id="gz"
+			class="questionclass">
+			<p id="supergeil"></p>
+		</div>
+
+	</div>
+	<div id="next_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="next_button"
+				onclick="nextButtonClick()">Weiter</a>
+		</button>
+	</div>
+
+	<div id="back_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="back_button"
+				onclick="backButtonClick()">ZurÃ¼ck</a>
+		</button>
+	</div>
+
+	<div id="tl">
+		<img
+			id="tentakel_l"
+			src="img/tentakel_ltr.png">
+	</div>
+	<div id="tr">
+		<img
+			id="tentakel_r"
+			src="img/tentakel_rtl.png">
+	</div>
+
+</body>
+</html>
