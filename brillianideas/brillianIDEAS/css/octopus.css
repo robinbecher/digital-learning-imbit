@@ -46,11 +46,79 @@ body {
 	font-size: 5em;
 }
 
+/* Tooltip container */
+.tooltip {
+    width:1px;
+    height:1px;
+}
+/* Tooltip links */
+.tooltip .tooltiptext_l {
+   visibility: hidden;
+    top: 60vh;
+    left: 20vw;
+    font-family: Caveat Brush;
+    font-size: 28px;
+    color:black;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext_l {
+    visibility: visible;
+}
+
+/* Tooltip rechts unten */
+.tooltip .tooltiptext_ru {
+   visibility: hidden;
+    top: 60vh;
+    left: 55vw;
+    font-family: Caveat Brush;
+    font-size: 28px;
+    color:black;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext_ru {
+    visibility: visible;
+}
+
+/* Tooltip rechts oben */
+.tooltip .tooltiptext_ro {
+   visibility: hidden;
+    top: 10vh;
+    left: 65vw;
+    font-family: Caveat Brush;
+    font-size: 28px;
+    color:black;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext_ro {
+    visibility: visible;
+}
+
+#Titeltext {
+    top: 35vh;
+    left: 25vw;
+    width: 50vw;
+    text-align: center;
+    font-family: Caveat Brush;
+    font-size: 50px;
+    color:black;
+    position: absolute;
+    z-index: 3;
+}
+
 #octo_kopf {
     top: 0;
     left: 0;
     max-height: 30vh;
-    z-index:-1;
+    z-index:1;
 }
 
 #octo_bg_ltr{
@@ -58,14 +126,14 @@ body {
     /* width: 50vw; */
     transform: translateY(-50%);
     max-height: 58vh;
-	z-index:-1;
+	z-index:1;
 }
 
 #octo_arm_3 {
     top: 0;
     right: -1vw;
     max-width: 40vh;
-    z-index:-1;
+    z-index:1;
 }
 
 #octo_bg_rtl{
@@ -73,7 +141,7 @@ body {
 	right: -1vw;
 	/* width: initial; */
     max-width: 45vw;
-    z-index:-1;
+    z-index:1;
 }
 
 #arrowRight{
