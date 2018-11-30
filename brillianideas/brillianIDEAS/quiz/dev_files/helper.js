@@ -208,6 +208,145 @@ function createTQ(frage, text, antworten, richtig) {
 	contentdiv.append(questiondiv);
 
 }
+
+/**
+ * Eine Übersetzungsfrage anlegen
+ * 
+ * @param frage
+ *            Frage als String
+ * @param antworten
+ *            Antwortmöglichkeiten als Array aus Strings
+ * @param container
+ *            Container in die gedropt werden soll als Array aus Strings
+ * @param richtig
+ *            Lösung als Array. Der Arrayindex entspricht der Antwortnummer und
+ *            der eingetragene Wert dem erwarteten Feld
+ * @returns ein <div> tag mit der Frage
+ */
+function createTL(frage, antworten, container, richtig) {
+
+	richtigArray.push(richtig);
+
+	var n = findQuestionNumber();
+
+	var questiondiv = createHeader(frage, n);
+	questiondiv.setAttribute("data-type", "dd");
+
+	var answersDiv = document.createElement("div");
+	answersDiv.id = "dd" + n + "_answers";
+	questiondiv.appendChild(answersDiv);
+
+	var i;
+	for (i = 0; i < antworten.length; i++) {
+		var p = document.createElement("p");
+		p.id = "question" + n + "_answer" + i;
+		p.className = "drag";
+		p.draggable = "true";
+		p.setAttribute("ondragstart", "drag(event)");
+		var pText = document.createTextNode(antworten[i]);
+		p.appendChild(pText);
+		answersDiv.appendChild(p);
+	}
+
+	var table=document.createElement("table");
+	table.id="question" + n + "_table";
+	questiondiv.appendChild(table);
+	var tr1= document.createElement("tr");
+	table.appendChild(tr1);
+	var th1=document.createElement("th");
+	tr1.appendChild(th1);
+	var th1label=document.createTextNode("Deutsch");
+	th1.appendChild(th1label);
+	var th2=document.createElement("th");
+	tr1.appendChild(th2);
+	var th2label=document.createTextNode("Englisch");
+	th2.appendChild(th2label);
+	
+	
+	for (i = 0; i < container.length; i++) {
+		var zeile = document.createElement("tr");
+		table.appendChild(zeile);
+		var td1=document.createElement("td");
+		zeile.appendChild(td1);
+		var tdtext=document.createTextNode(container[i]);
+		td1.appendChild(tdtext);
+		var td2=document.createElement("td");
+		zeile.appendChild(td2);
+		var td2div=document.createElement("div");
+		td2div.id="question" + n + "_box" + i;
+		td2div.className="dropTable";
+		td2div.addEventListener('drop', function() {
+			drop(event)
+		});
+		td2div.addEventListener('dragover', function() {
+			allowDrop(event)
+		});
+		td2.appendChild(td2div);
+		table.appendChild(zeile);
+	}
+	var contentdiv = document.getElementById("content");
+	contentdiv.append(questiondiv);
+
+}
+
+/**
+ * Eine Reihenfolgenfrage anlegen
+ * 
+ * @param frage
+ *            Frage als String
+ * @param antworten
+ *            Antwortmöglichkeiten als Array aus Strings
+ * 
+ * @param richtig
+ *           Lösung als Array angeben 
+ *           Inhalt des Arrays ist die Angabe der Positionen jeder einzelnen Antwort als Integer
+ * @returns ein <div> tag mit der Frage
+ */
+function createOD(frage, antworten, richtig) {
+
+	richtigArray.push(richtig);
+
+	var n = findQuestionNumber();
+
+	var questiondiv = createHeader(frage, n);
+	questiondiv.setAttribute("data-type", "dd");
+
+	var answersDiv = document.createElement("div");
+	answersDiv.id = "dd" + n + "_answers";
+	questiondiv.appendChild(answersDiv);
+
+	var i;
+	for (i = 0; i < antworten.length; i++) {
+		var p = document.createElement("p");
+		p.id = "question" + n + "_answer" + i;
+		p.className = "drag";
+		p.draggable = "true";
+		p.setAttribute("ondragstart", "drag(event)");
+		var pText = document.createTextNode(antworten[i]);
+		p.appendChild(pText);
+		answersDiv.appendChild(p);
+	}
+
+	for (i = 0; i < antworten.length; i++) {
+		var box = document.createElement("div");
+		box.id = "question" + n + "_box" + i;
+		box.className = "dropOrder";
+		box.addEventListener('drop', function() {
+			drop(event)
+		});
+		box.addEventListener('dragover', function() {
+			allowDrop(event)
+		});
+		var p = document.createElement("p");
+		p.className = "box_text";
+		box.appendChild(p);
+		questiondiv.appendChild(box);
+	}
+
+	var contentdiv = document.getElementById("content");
+	contentdiv.append(questiondiv);
+
+}
 /**
  * Erstellt den Header einer Frage und den div für die Antwortmöglichkeiten
  * 
