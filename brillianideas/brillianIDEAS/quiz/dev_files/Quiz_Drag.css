@@ -1,4 +1,4 @@
-.drop {
+.fullBox {
 	width: 250px;
 	height: 370px;
 	/*border: 1px solid #aaaaaa;*/
@@ -9,6 +9,11 @@
 	font-size: 28px;
 	border: 3px solid #991B33;
 	border-radius: 10px;
+}
+
+.drop {
+	width: 250px;
+	height: 370px;
 }
 
 .drag {

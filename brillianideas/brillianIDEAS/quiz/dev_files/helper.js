@@ -123,6 +123,24 @@ function createDD(frage, antworten, container, richtig) {
 	}
 
 	for (i = 0; i < container.length; i++) {
+	    //fullBox
+	    var fullBox = document.createElement("div");
+	    fullBox.id = "question"+n+"_fullBox"+i;
+	    fullBox.className = "fullBox";
+
+	    //textBox
+        var textBox = document.createElement("div");
+        textBox.id = "question"+n+"_textBox"+i;
+        fullBox.appendChild(textBox);
+
+	    //p
+        var p = document.createElement("p");
+        p.className = "box_text";
+        var pText = document.createTextNode(container[i]);
+        p.appendChild(pText);
+        textBox.appendChild(p);
+
+        //box
 		var box = document.createElement("div");
 		box.id = "question" + n + "_box" + i;
 		box.className = "drop";
@@ -132,12 +150,10 @@ function createDD(frage, antworten, container, richtig) {
 		box.addEventListener('dragover', function() {
 			allowDrop(event)
 		});
-		var p = document.createElement("p");
-		p.className = "box_text";
-		var pText = document.createTextNode(container[i]);
-		p.appendChild(pText);
-		box.appendChild(p);
-		questiondiv.appendChild(box);
+
+
+        fullBox.appendChild(box);
+		questiondiv.appendChild(fullBox);
 	}
 
 	var contentdiv = document.getElementById("content");
@@ -547,6 +563,7 @@ function drag(ev) {
 
 function drop(ev) {
 	ev.preventDefault();
+
 
 	// data ist die ID des Elements, das verschoben wird
 	var data = ev.dataTransfer.getData("text");
