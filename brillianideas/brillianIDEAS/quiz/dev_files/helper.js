@@ -191,7 +191,7 @@ function createTQ(frage, text, antworten, richtig) {
 	var j = 0;
 	for (i = 0; i < text.length; i++) {
 		if (text[i] !== "") {
-			var TQText = document.createTextNode(text[i]);
+			var TQText = document.createTextNode(" "+text[i]+" ");
 			TextP.appendChild(TQText);
 			TextP.className = "text";
 		} else {
