@@ -56,7 +56,7 @@
 
 	//***********************
 	//Hier bitte Werte eintragen!
-	var anzahlFragen = 4;
+	var anzahlFragen = 6;
 	var maxScore = 15;
 	//***********************
 
@@ -87,6 +87,13 @@
 										"aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." ],
 								[ "Antwort1", "Antwort2", "Antwort3",
 										"Antwort4" ], [ 4, 3, 2, 1 ]);
+						//Demo Frage zur Reihenfolge mit 3 Attributen: Frage als STring, Antworten als Array und Lösungen als Array. Die Angegebene Zahl entspricht der Position des jeweiligen Elements. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
+						createOD("Frage zur Reihenfolge", [ "Test1", "Test2",
+								"Test3" ], [ 1, 2, 3 ]);
+						//Demo Übersetzungsfrage mit 4 Attributen: Frage als String, Antworten als Array, zu übersetzende Begriffe als Array und Lösung als Array.
+						createTL("Übersetzungsfrage", [ "Test1", "Test2",
+								"Test3" ], [ "Wort1", "Wort2", "Wort3" ], [ 3, 2,
+								1 ]);
 
 						showTheQuestion(count);
 					});
