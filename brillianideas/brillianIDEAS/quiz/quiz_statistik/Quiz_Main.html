@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<link
+	rel="shortcut icon"
+	href="../dev_files/img/favicon.ico"
+	type="image/x-icon">
+<meta charset="UTF-8">
+<title>Quiz</title>
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/main.css" />
+
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_checkbox.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Drag.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Radiobutton.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Text.css" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	type="text/javascript"
+	src="../dev_files/helper.js"></script>
+<link
+	rel="stylesheet"
+	href="../../css/fonts.css" />
+<!--href="https://fonts.googleapis.com/css?family=Caveat+Brush"	rel="stylesheet">-->
+
+<script>
+	//***********************
+	//Diese Werte nicht verändern!
+	var count = 1;
+	var score = 0;
+	//***********************
+
+	//***********************
+	//Hier bitte Werte eintragen!
+	var anzahlFragen = 4;
+	var maxScore = 15;
+	//***********************
+
+	$(document)
+			.ready(
+					function() {
+
+						//Demo Multiple Choice Aufgabe mit drei Attributen: Frage als String, Antworten als Array und Lösungen als Array mit 1=richtig, 0=falsch
+						createMC("Wie definiert man ein Ereignis?", [ "Eine Menge von Elementarereignissen", "Das Ergebnis einer Zuordnung", "Eine Teilmenge des Ergebnisraums", "Die Schnittmenge aller Zufallsexperimente" ], [ 1,0,1,0 ]);
+						//Demo Single Choice Aufgabe mit drei Attributen: Frage als String, Antworten als Array und Lösungen als Array mit 1=richtig, 0=falsch
+						createSC("Entlang den Ästen eines Wahrscheinlichkeitsbaums wird…", [ "addiert", "subtrahiert", "multipliziert", "dividiert" ],
+								[ 0, 0, 1, 0 ]);
+						createSC("Für das Würfeln mit zwei Würfeln ist die Wahrscheinlichkeiten des Ereignisses, dass die Augenzahl größer als 10 ist…", [ "1/10", "6/10", "1/12", "0" ],
+								[ 0, 0, 1, 0 ]);
+						createSC("Welche Arten von Hypothesen Tests gibt es?", [ "Relativer und Prozentualer Hypothesen Test", "Einseitiger und Zweiseitiger Hypothesen Test", "Statischer und Dynamischer Hypothesen Test", "Normalverteilter und Standardnormalverteilter Hypothesen Test" ],
+								[ 0, 1, 0, 0 ]);
+						createSC("Paul die Krake möchte nachweisen, dass seine 20 IT Services im Durchschnitt von mehr als 10 Mitarbeitern betreut werden.", [ "H0:μ≤20;H1:μ>20", "H0:μ≤10;H1:μ>10", "H0:μ>20;H1:μ≤20", "H0:μ>20;H1:μ>10" ],
+								[ 0, 1, 0, 0 ]);
+						createSC("Paul die Krake möchte die Kunden seines IT Dienstleistungs Unternehmens besser kennenlernen und stellt fest, dass die unterschiedlichen Unternehmen 140, 211, 127, 290, 195, 150 und 143 Mitarbeiter haben. Wie groß ist die Spannweite dieser Unternehmensgrößen?", [ "150", "1256", "179,4", "3"],
+								[ 1, 0, 0, 0 ]);
+						createSC("Wann wird der Satz von Bayer angewandt?", [ "Durch neu gewonnene Informationen können schon ermittelte Wahrscheinlichkeiten genauer bestimmt werden", "Durch verringerten Ergebnisraum können schon ermittelte Wahrscheinlichkeiten genauer bestimmt werden"],
+								[ 1, 0]);
+						createSC("Was ist der Unterschied zwischen einem Histogram und einem Säulendiagramm?", [ "Im Histogram müssen Anzahl der Säulen gleich der kumulierten Höhe der Säulen sein", "Im Histogramm sind die Säulen dreidimensional", "Im Histogramm sind die Achsen nicht beschriftet", "Im Histogram gibt es keine Lücken zwischen den Säulen"],
+								[ 0, 0, 0, 1]);
+						//Demo Drag&Drop Aufgabe mit 4 Attributen: Frage als String, Antworten als Array, Felder/Boxen als Array und Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
+						createDD("Das IT Service Unternehmen von Paul der Krake bekommt Rechnungen mit den folgenden Werten: 50€, 100€, 81€, 250€, 1000€, 44€, 250€. Ordnen Sie die Lagemaße korrekt zu.", [ "250", "100" , "254"], [ "Median",
+								"Mittelwert", "Modus" ], [ 3, 1, 2 ]);
+						//Demo Lückentext Aufgabe mit 4 Attributen: Frage als String, Lückentext als Array mit leerem String "" für jede Lücke, Antworten als Array und Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
+						createTQ(
+								"Der Gini-Koeffizient",
+								[
+										"Der Gini-Koeffizient wird durch die Abweichung der",
+										"",
+										"zu einer Diagonalen dargestellt. Die ",
+										"",
+										" dazwischen ist das Maß der Konzentration von Beobachtungswerten.",
+										"",
+										"Ist der Gini-Koeffizient 0 besteht maximale ",
+										"",
+										" ist der Gini-Koeffizient 1 besteht maximale" 
+										"",
+										"."],
+										
+								[ "Winkelhalbierenden", "Lorenzkurve", "Fläche", "Streuung",
+										"Konzentration", Gleichverteilung ], [ 0, 1, 2, 0, 4, 3  ]);
+
+						showTheQuestion(count);
+					});
+</script>
+
+
+</head>
+<body>
+
+	<video
+		id="video_background"
+		autoplay
+		muted
+		loop>
+		<source
+			src="../dev_files/img/Background.mp4"
+			type="video/mp4">
+	</video>
+
+
+	<div id="content">
+
+		<div
+			id="gz"
+			class="questionclass">
+			<p id="supergeil"></p>
+		</div>
+
+	</div>
+	<div id="next_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="next_button"
+				onclick="nextButtonClick()">Weiter</a>
+		</button>
+	</div>
+
+	<div id="back_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="back_button"
+				onclick="backButtonClick()">Zurück</a>
+		</button>
+	</div>
+
+	<div id="tl">
+		<img
+			id="tentakel_l"
+			src="../dev_files/img/tentakel_ltr.png">
+	</div>
+	<div id="tr">
+		<img
+			id="tentakel_r"
+			src="../dev_files/img/tentakel_rtl.png">
+	</div>
+
+</body>
+</html>
