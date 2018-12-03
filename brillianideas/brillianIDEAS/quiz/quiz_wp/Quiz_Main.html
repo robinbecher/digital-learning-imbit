@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<link
+	rel="shortcut icon"
+	href="../../img/favicon.ico"
+	type="image/x-icon">
+<meta charset="UTF-8">
+<title>Quiz</title>
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/main.css" />
+
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_checkbox.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Drag.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Radiobutton.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Text.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Table.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Order.css" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	type="text/javascript"
+	src="../dev_files/helper.js"></script>
+<link
+	rel="stylesheet"
+	href="../../css/fonts.css" />
+<!--href="https://fonts.googleapis.com/css?family=Caveat+Brush"	rel="stylesheet">-->
+
+<script>
+	//***********************
+	//Diese Werte nicht verändern!
+	var count = 1;
+	var score = 0;
+	//***********************
+
+	//***********************
+	//Hier bitte Werte eintragen!
+	var anzahlFragen = 15;
+	var maxScore = 15;
+	//***********************
+
+	$(document)
+			.ready(
+					function() {
+
+							createMC("Welche der folgenden Begriffe stellen Teilschritte der Wahrnehmung dar?", [ "Interpretation", "Anwendung", "Auswahl","Aufnahme","Verarbeitung", "Reflexion" ], [ 1, 0, 1, 1, 1, 0 ]);
+								
+							createSC("Was sagt das Gesetz der Nähe aus?", [ "Nah aneinander liegende Objekte werden automatisch von unserem Gehirn gruppiert", "Nah aneinander liegende Objekte wirken größer", "Je näher man am betrachteten Objekt steht, desto besser kann man die Proportionen abschätzen" ],[ 1, 0, 0 ]);
+							
+							createSC("Über wie viele Arten von Mechanorezeptoren verfügt die Haut? ", [ "4", "1", "3","7" ],[ 1, 0, 0, 0 ]);
+							
+							createSC("Welche der folgenden Aussagen beschreibt die Konsenstheorie am besten?", [ "Eine Aussage ist wahr, wenn sie für die Praxis fruchtbar und nützlich ist.", "Es kann nicht sicher festgestellt werden, ob eine Aussage wahr ist, aber sehr wohl, dass eine bestimmte Aussage falsch ist, nämlich wenn ein Experiment sie widerlegt.", "Eine Aussage ist war, wenn eine möglicherweise unendlich große Menge von Menschen unter idealen Kommunikationsbedingungen dieser Aussage zustimmen würde. " ],[ 0, 0, 1 ]);
+						
+							createSC("Welche Zellen sind für die Reizübertragung im Körper verantwortlich?", [ "Andrenerge Nervenzellen", "Neuronen", "Hensen-Zellen","Astrozyten" ],[ 0, 1, 0, 0 ]);
+							
+							createMC("Welche der folgenden Aussagen über Rezeptorzellen sind richtig?",["Rezeptorzellen sind Signalwandler","Rezeprozellen sind Codierer","Rezeptorzellen sind Interpret","Rezeptorzellen sind Verstärker", "Rezeptorzellen sind Boten"],[1,1,0,1,0]);
+							
+							createSC("Was besagt das Weber-Fechnersche Gesetz?", [ "Die subjektiv empfundene Stärke von Sinneseindrücken ist proportional zum Logarithmus der objektiven Intensität des physikalischen Reizes ", "Die subjektiv empfundene Stärke von Sinneseindrücken ist abhängig vom Alter der Testpersonen", "Es gibt keine Möglichkeit die subjektiv empfundene von Sinneseindrücken einzuordnen"],[ 1, 0, 0 ]);
+							
+							createSC("Was besagt die \"Motorische Theorie der Sprachwahrnehmung\" ?", [ "Die Sprachwahrnehmung hängt mit der Gestik zusammen", "Die Sprachwahrnehmung wir durch Motorik eingeschränkt", "Es gibt enge Verbindungen zwischen den Modulen zur Erzeugung und zur Wahrnehmung von Sprache " ],[ 0,  0, 1 ]);
+							
+							createDD("Ordnen sie die folgenden Funktionen in Virtuellen Welten den Kategorien zu", [ "Rendering", "Duftstoffe", "Stereo-Graphik","Tastempfindung","Hall-Effekte","Beschleunigungen","Kraftrückkopplung","Stereo-Klang" ], [ "Visuell","Akkustisch", "Haptisch","Olfaktorisch" ], [ 1, 4, 1, 3, 2, 3, 3, 2 ]);
+							
+							createOD("Ordnen sie die folgenden Sinne nach ihrem Einfluss", [ "Schmecken", "Riechen", "Sehen", "Hören",	"Tasten" ], [ 4, 3, 1, 2,5 ]);
+							
+							createSC("Welcher ist der älteste Sinn des Menschen?", [ "Geschmackssinn", "Geruchssinn", "Sehsinn", "Hörsinn",	"Tastsinn" ], [ 0,1,0,0,0 ]);
+							
+							//Demo Frage zur Reihenfolge mit 3 Attributen: Frage als STring, Antworten als Array und Lösungen als Array. Die Angegebene Zahl entspricht der Position des jeweiligen Elements. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
+							//createOD("Frage zur Reihenfolge", [ "Test1", "Test2",
+							//		"Test3" ], [ 1, 2, 3 ]);
+							//Demo Übersetzungsfrage mit 4 Attributen: Frage als String, Antworten als Array, zu übersetzende Begriffe als Array und Lösung als Array.
+							createSC("Was demonstriert der sogenannte McGurk-Effekt?", [ "Die Beeinflussung der Wahrnehmung von Sprachsignalen durch unbewusstes Lippenlesen", "Die Beeinflussung der Wahrnehmung von Sprachsignalen durch die Umgebung", "Die Beeinflussung der Wahrnehmung von Gesten durch die Lautstärke der parallel gehörten Sprachsignale","Keines der drei oberen" ],[ 1, 0, 0, 0 ]);
+							
+							createMC("Welche der folgenden Sinne sind von der „Kontextabhängigkeit der Wahrnehmung“ betroffen?", [ "Sehsinn", "Hörsinn", "Geschmackssinn"], [ 1, 1, 1]);
+							
+							createOD("Ordnen Sie die einzelnen Glieder der Kette des Wahrnehmungsprozesses nach ihrer Reihenfolge", [ "Gehirn","Reaktion", "Nervensystem", "Sinnesorgane","Empfindung","Bewertung"], [3, 6, 2,1,4,5 ]);
+							
+							
+							createTL("Englisch-Deutsch Vokabeln", [ "Stimuli", "Law of Similarity", "Virtual Realities","Perception","Body Sensation","Sensoric Adaption","Object Recognition","Optical Illusion","Binding Problem","Attentiveness" ], [ "Wahrnehmung", "Reize", "Virtuelle Welten", "Gesetz der Ähnlichkeit","Körperempfindung","Bindungsproblem","Aufmerksamkeit","Objekterkennung","Optische Täuschung","Sensorische Anpassung"], [ 2, 4, 3, 1,5,10,8,9,6,7]);
+							
+						
+							
+							showTheQuestion(count);
+					});
+</script>
+
+
+</head>
+<body>
+
+	<video
+		id="video_background"
+		autoplay
+		muted
+		loop>
+		<source
+			src="../../img/Background.mp4"
+			type="video/mp4">
+	</video>
+
+
+	<div id="content">
+
+		<div
+			id="gz"
+			class="questionclass">
+			<p id="supergeil"></p>
+		</div>
+
+	</div>
+	<div id="next_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="next_button"
+				onclick="nextButtonClick()">Weiter</a>
+		</button>
+	</div>
+
+	<div id="back_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="back_button"
+				onclick="backButtonClick()">Zurück</a>
+		</button>
+	</div>
+
+	<div id="tl">
+		<img
+			id="tentakel_l"
+			src="../../img/tentakel_ltr.png">
+	</div>
+	<div id="tr">
+		<img
+			id="tentakel_r"
+			src="../../img/tentakel_rtl.png">
+	</div>
+
+</body>
+</html>
