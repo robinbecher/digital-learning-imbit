@@ -46,124 +46,22 @@
 
 	//***********************
 	//Hier bitte Werte eintragen!
-	var anzahlFragen = 24;
-	var maxScore = 24;
+	var anzahlFragen = 30;
+	var maxScore = 30;
 	//***********************
 
 	$(document)
 			.ready(
 					function() {
-
-					/*	//Demo Multiple Choice Aufgabe mit drei Attributen: Frage als String, Antworten als Array und Lösungen als Array mit 1=richtig, 0=falsch
-						createMC("TEST?", [ "A", "B", "C" ], [ 1, 1, 0 ]);
-						createMC("TEST2?", [ "D", "E", "F" ], [ 0, 1, 1 ]);
-						//Demo Single Choice Aufgabe mit drei Attributen: Frage als String, Antworten als Array und Lösungen als Array mit 1=richtig, 0=falsch
-						createSC("Meine SC Frage", [ "G", "H", "I" ],
-								[ 0, 1, 0 ]);
-						//Demo Drag&Drop Aufgabe mit 4 Attributen: Frage als String, Antworten als Array, Felder/Boxen als Array und Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
-						createDD("ABCDEF", [ "Test1", "Test2" ], [ "Box1",
-								"Box2", "Box3" ], [ 3, 2 ]);
-						//Demo Lückentext Aufgabe mit 4 Attributen: Frage als String, Lückentext als Array mit leerem String "" für jede Lücke, Antworten als Array und Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
-						createTQ(
-								"Meine TQ Frage",
-								[
-										"Lorem ipsum dolor sit amet",
-										"",
-										"consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita",
-										"",
-										"kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-										"",
-										"ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore",
-										"",
-										"aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." ],
-								[ "Antwort1", "Antwort2", "Antwort3",
-										"Antwort4" ], [ 4, 3, 2, 1 ]);
-						
+									
 						//Frage 1
 						createSC("Relationale Datenbanken: Eine Zeile wird auch Attribut genannt und eine Spalte Tupel.", [ "Wahr", "Falsch" ],[ 0, 1 ]);
 
 						//Frage 2
-						createSC("Welcher Datenbankentyp wird am häufigsten verwendet?", [ "Objektorientierte Datenbanken", "Relationale Datenbanken" ],[ 0, 1 ]);
+						createMC("Was sind Datenbanktypen?", [ "Hierarchische Datenbanken", "ISO/OSI-Datenbanken", "Netzwerk-Datenbanken", "Relationale Datenbanken", "Objektorientierte Datenbanken", "XML-Datenbanken", "Algebra-Datenbanken" ], [ 1, 0, 1, 1, 1, 1, 0 ]);
 
 						//Frage 3
-						createSC("Es besteht eine Unverträglichkeit zwischen objektorientierten Programmiersprachen und dem Konzept der relationalen Datenbanken. Diese wird als Object-Relational Impedance Mismatch bezeichnet", [ "Wahr", "Falsch" ],[ 1, 0 ]);
-
-						//Frage 4
-						createSC("O/R Mapper...", [ "... mappen Objekte auf Relationen", "...mappen objektorientierte Datenbanken auf Relationenschemata" ],[ 1, 0 ]);
-
-						//Frage 5
-						createSC("Ist SQL eine deskriptive Sprache?", [ "Wahr", "Falsch" ],[ 1, 0 ]);
-						
-						//Frage 6
-						createSC("Ist SQL eine deklarative Sprache?", [ "Wahr", "Falsch" ],[ 1, 0 ]);
-
-						//Frage 7
-						createMC("Welches Verhalten ist bei Löschoperationen und Updates möglich?", [ "Cascade", "Set null", "Set default", "No action" ], [ 1, 1, 1, 1 ]);
-
-						//Frage 7
-						createSC("Mit welchem Schlüsselwort kann die Eindeutigkeit eines Wertes sichergestellt werden?", [ "CHECK", "UNIQUE", "ONLY" ],[ 0, 1, 0 ]);
-
-						//Frage 8
-						createMC("Was sind Aggregatfunktionen?", [ "PLUS", "MINUS", "AVG", "COUNT", "MAX", "MIN", "SUM", "DIVIDE" ], [ 0, 0, 1, 1, 1, 1, 1, 1, 0 ]);
-
-						//Frage 9
-						createMC("Alle Kundenname (Vor- und Nachname) aus der Relation 'Kunde' sollen ausgegeben werden. Kein Kundenname soll doppelt ausgegeben werden.", [ "SELECT DISTINCT Vorname, Nachname; FROM Kunde;", "SELECT Vorname, Nachname FROM Kunde;", "SELECT ONE Name FROM Kunde;", "SELECT DISTINCT Vorname, Nachname FROM Kunde;" ], [ 0, 0, 0, 1 ]);
-
-						//Frage 10
-						createDD("Data Definition Language und Data Manipulation Language: Ordne zu!", [ "Create", "Alter", "Insert", "Drop", "Update", "Delete" ], [ "DML","DDL" ], [ 2, 2, 1, 2, 1, 1 ]);
-
-						//Frage 11
-						//Frage mit Bildern
-
-						//Frage
-						createSC("Attribute beschreiben abstrakte oder physische Objekte der realen Welt.", [ "Wahr", "Falsch" ],[ 0, 1 ]);
-
-						//Frage
-						createSC("Beziehungen zweiten Grades werden als duale Beziehungen bezeichnet.", [ "Wahr", "Falsch" ],[ 0, 1 ]);
-
-						//Frage
-						createSC("Die Beziehung is-a stellt eine Aggregation dar und die part-of-Beziehung eine Generalisierung.", [ "Wahr", "Falsch" ],[ 0, 1 ]);			
-						
-						//Frage
-						createSC("Schwache Entitäten können nicht ohne ihre Eigentümerentität existieren.", [ "Wahr", "Falsch" ],[ 1, 0 ]);
-						
-						//Frage zu Reihenfolge
-						
-						//Frage Hauptspeicher
-						createMC("Wie werden Daten in den Hauptspeicher übertragen?", [ "Blockweise", "Seitenweise", "Je ein Datensatz" ], [ 1, 0, 0, ]);
-						
-						//Frage
-						createMC("Welche Anomalien können auftreten?", [ "Löschanomalien", "Updateanomalien", "Einfügeanomalien", "Cascadeanomalien" ], [ 1, 1, 1, 0 ]);
-
-						//Frage
-						createSC("Bei welcher Art der Datensatz-Speicherung werden Datensätze als Key-Value-Paare gespeichert?", [ "Fixlängen-Speicherung", "Speicherung in variabler Länge" ],[ 0, 1 ]);
-
-						//Frage
-						createSC("Wann muss auf alle Fälle die Organisationsform 'Spanned' verwendet werden?", [ "bfr=100", "bfr=10", "bfr=1", "bfr=0" ],[ 0, 0, 0, 1 ]);
-
-						//Frage
-						createMC("Aus welchen Operationen setzt sich die Lösch-Operatio bei B-Bäumen zusammen?", [ "Rotation", "Turn", "Merge", "Spin", "Delete", "Insert"], [ 1, 0, 1, 0, 0, , 0 ]);
-
-						//Frage
-						createSC("Die Ordnung eines B-Baumes in einem Computersystem kann nicht beliebig erhöht werden, da ein Knoten einem Block/einer Seite entspricht und Blöcke in einem Computersystem durch eine feste Größe begrenzt sind.", [ "Wahr", "Falsch" ] , [ 1, 0 ]);
-
-						//Frage
-						createSC("Wofür steht HANA?", [ "High Performance Analytic Application", "High Performance Analytic Appliance" ],[ 1, 0 ]);
-
-						//Frage
-						createSC("Was ist der Unterschied von HANA zu anderen relationalen Datenbanken (Oracle, MS-SQL, etc.)?", [ "HANA arbeitet spaltenorientiert, andere relationale Datenbanken arbeiten zeilenorientiert", "HANA arbeitet zeilenorientiert, andere relationale Datenbanken arbeiten spaltenorientiert" ] , [ 1, 0 ]);
-
-						//Frage
-						createSC("HANA ist eine In-Memory-Datenbank.", [ "Wahr", "Falsch" ] , [ 1, 0 ]); */
-						
-						//Frage 1
-						createSC("Relationale Datenbanken: Eine Zeile wird auch Attribut genannt und eine Spalte Tupel.", [ "Wahr", "Falsch" ],[ 0, 1 ]);
-
-						//Frage 2
-						createMC("Was sind Datenbankentypen?", [ "Hierarchische Datenbanken", "ISO/OSI-Datenbanken", "Netzwerk-Datenbanken", "Relationale Datenbanken", "Objektorientierte Datenbanken", "XML-Datenbanken", "Algebra-Datenbanken" ], [ 1, 0, 1, 1, 1, 1, 0 ]);
-
-						//Frage 3
-						createSC("Welcher Datenbankentyp wird am häufigsten verwendet?", [ "Objektorientierte Datenbanken", "Relationale Datenbanken" ],[ 0, 1 ]);
+						createSC("Welcher Datenbanktyp wird am häufigsten verwendet?", [ "Objektorientierte Datenbanken", "Relationale Datenbanken" ],[ 0, 1 ]);
 
 						//Frage 4
 						createSC("Es besteht eine Unverträglichkeit zwischen objektorientierten Programmiersprachen und dem Konzept der relationalen Datenbanken. Diese wird als Object-Relational Impedance Mismatch bezeichnet", [ "Wahr", "Falsch" ],[ 1, 0 ]);
@@ -205,6 +103,7 @@
 						createSC("Schwache Entitäten können nicht ohne ihre Eigentümerentität existieren.", [ "Wahr", "Falsch" ],[ 1, 0 ]);
 						
 						//Frage 17 zu Reihenfolge
+						createOD("Bringe die Speichersysteme in die richtige Reihenfolge bezüglich Kosten/Byte und Geschwindigkeit (absteigend) sowie Zugriffszeit und Speicherkapazität (aufsteigend).", [ "main memory", "register/cache", "magnetic disk", "optical disk", "magnetic tape", "flash memory" ], [2, 1, 4, 5, 6, 3 ]);
 						
 						//Frage 18 Hauptspeicher
 						createMC("Wie werden Daten in den Hauptspeicher übertragen?", [ "Blockweise", "Seitenweise", "Je ein Datensatz" ], [ 1, 0, 0, ]);
@@ -216,6 +115,7 @@
 						createSC("Was versteht man unter einem Primärschlüssel?", [ "Primärschlüssel einer Relation, der in einer anderen Relation platziert wird, um so eine Beziehung zwischen den Relationen herzustellen.", "Genau ein Kandidatenschlüssel wird als diese Art von Schlüssel festgelegt.", "Ein Schlüssel, der künstlich zur Relation hinzugefügt wird, um als Primärschlüssel zu fungieren.", "Eine Menge von non-null Attributen, von der die gesamt Attributmenge funktional abhängig ist." ],[ 0, 1, 0, 0 ]);
 
 						//Frage 21 Zuordnung
+						createTL("Heap-Datei: Ordne zu!", ["Aufwändig", "O(n)", "Einfach", "O(n)" ], ["Suche", "Einfügen", "Löschen", "Sortierte Ausgabe"], [ 4, 1, 2, 3]);
 						
 						//Frage 22
 						createSC("Bei welcher Art der Datensatz-Speicherung werden Datensätze als Key-Value-Paare gespeichert?", [ "Fixlängen-Speicherung", "Speicherung in variabler Länge" ],[ 0, 1 ]);
@@ -239,8 +139,10 @@
 						createSC("HANA ist eine In-Memory-Datenbank.", [ "Wahr", "Falsch" ] , [ 1, 0 ]);
 						
 						//Frage 29 Abbreviations
+						createTL("Abbreviations", ["Create, Read, Update, Delete", "Entity Relationship Modell", "Normalform", "Structured Query Language", "Database Management System", "Atomiticty, Consistency, Isolation, Duration"], ["ERM", "DBMS", "ACID", "SQL", "NF", "CRUD"], [ 6, 1, 5, 4, 2, 3]);
 						
 						//Frage 30 Zuordnung Deutsch-Englisch
+						createTL("Deutsch-Englisch Fachbegriffe", ["Normalform", "Fremdschlüssel", "Zusammengesetzter Schlüssel", "Primärschlüssel", "Kandidatenschlüssel", "Künstlicher Schlüssel"], ["Composite Key", "Candidate Key", "Primary Key", "Surrogate Key", "Foreign Key", "Normal Form"], [ 6, 5, 1, 3, 4, 5]);
 
 						showTheQuestion(count);
 					});
