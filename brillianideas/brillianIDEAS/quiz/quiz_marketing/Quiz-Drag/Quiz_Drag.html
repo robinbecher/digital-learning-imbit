@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>Quiz Drag</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <link rel="stylesheet" type="text/css" href="Quiz_Drag.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+
+</head>
+<body>
+
+<video id="video_background" autoplay muted loop> <source src="img/Background.mp4" type="video/mp4"></video>
+
+<div id="header">
+
+<p id="question">Quiz Frage</p>
+
+</div>
+<div id="content">
+
+    <div id="answers">
+        <p id="drag1" class="drag" draggable="true" ondragstart="drag(event)">Test1</p>
+        <p id="drag2" class="drag" draggable="true" ondragstart="drag(event)">Test2</p>
+        <p id="drag3" class="drag" draggable="true" ondragstart="drag(event)">Test3</p>
+        <p id="drag4" class="drag" draggable="true" ondragstart="drag(event)">Test4</p>
+    </div>
+
+    <div id="div1" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">Box1</p></div>
+    <div id="div2" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">Box1</p></div>
+    <div id="div3" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">Box1</p></div>
+    <div id="div4" class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"><p class="box_text">Box1</p></div>
+
+
+
+
+</div>
+<div id="next_button">
+    <button style="vertical-align:middle" class="button" type="button">Next</button>
+</div>
+    <div id="tl">
+        <img id="tentakel_l" src="img/tentakel_ltr.png">
+    </div>
+    <div id="tr">
+        <img id="tentakel_r" src="img/tentakel_rtl.png">
+    </div>
+
+</body>
+</html>
