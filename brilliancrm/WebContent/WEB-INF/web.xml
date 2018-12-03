@@ -88,8 +88,8 @@
 	<context-param>
 		<param-name>domain</param-name>
 		<!--<param-value>http://ec2-52-14-250-138.us-east-2.compute.amazonaws.com:8080</param-value>-->
-		<!-- PROD:  --> <param-value>brilliancrm.com:8080</param-value>
-		<!--<param-value>brillianideas.com:8080/brillianCRM/</param-value>-->
+		<!-- PROD:   <param-value>brilliancrm.com:8080</param-value>-->
+		<param-value>brillianideas.com:8080/brillianCRM/</param-value>
 	</context-param>
 	
 	<context-param>
@@ -124,8 +124,8 @@
 	</context-param>
 	
 	<context-param>
-		<description>Setting for SMTP TLS</description>
-		<param-name>smtptls</param-name>
+		<description>Setting for SMTP SSL</description>
+		<param-name>smtpssl</param-name>
 		<param-value>true</param-value>
 	</context-param>
 	
