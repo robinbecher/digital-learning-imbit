@@ -1,0 +1,423 @@
+html {
+	box-sizing: border-box;
+	font-family: 'Tinos';
+	color: var(--text);
+}
+
+body {
+	box-sizing: border-box;
+	font-family: 'Tinos';
+	color: var(--text);
+
+	/* top level grid */
+  display: grid;
+  grid-template-rows: 1fr 100px;
+  grid-template-columns: 100%;
+  grid-template-areas: "content"
+                        "launchbar";
+}
+
+#title a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.upper{
+	text-transform: uppercase;
+}
+
+.IDEAS{
+	font-size: 1.1153846153846153846153846153846em;
+}
+
+.containerold{ 
+	display: flex;
+	width: 33%;
+	align-items: center;
+	justify-content: center;
+	font-family: "Caveat Brush";
+	color: #991B33;
+	font-size: 5em;
+}
+
+.screen {
+	width: 100%;
+	display: flex;
+}
+.screentwo {
+	margin-top: 6vw;
+	width: 50%;
+	margin-left: 15%;
+	display: flex;
+}
+.screenthree {
+	margin-top: 6vw;
+	width: 50%;
+	margin-left: 35%;
+	display: flex;
+}
+.container {
+	position: relative;
+	max-width: 1400px;
+	margin: auto;
+	display: flex;
+	top: 16vw;
+	height: 13vw;
+	width: auto;
+	max-width: 13vw
+}
+
+.versetzen {
+	top: 10vw;
+}
+.doppeltversetzen {
+	top: 5vw;
+	margin-left: 5vw;
+}
+
+
+.dreifachversetzen {
+	top: -5vw;
+}
+
+.nachunten {
+	top: 22vw;
+}
+
+.laptop{
+	left: 40%;
+	top: 28vh;
+}
+
+.cursor{
+	top: 5vw;
+}
+
+.controller{
+	top: 40vh;
+}
+
+.joystick{
+	top: 11vw;
+}
+
+.kreuzkoenig{
+	top: -6vw;
+}
+
+.karodame{
+	top: 9vw;
+}
+
+.klecks {
+	top: -10%;
+	left: -10%;
+	max-width: 120%;
+	max-height: 120%;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spielfigur {
+	
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	max-width: 100%;
+	max-height: 60%;
+}
+
+.spielfigurklein {
+	position: absolute;
+	top: 20%;
+	left: 40%;
+	max-width: 100%;
+	max-height: 60%;
+}
+
+.snookerorange {
+	position: absolute;
+	top: 30%;
+	left: 40%;
+	max-width: 35%;
+}
+
+.gameboy {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	max-width: 140%;
+	max-height: 140%;
+}
+
+
+.zeigefinger {
+	position: absolute;
+	top: 20%;
+	left: 40%;
+	max-width: 100%;
+	max-height: 60%;
+}
+
+/* Tooltip container */
+.tooltip {
+    width:1px;
+    height:1px;
+}
+/* Tooltip links */
+.tooltip .tooltiptext_l {
+   visibility: visible;
+    top: 68vh;
+    left: 15vw;
+    font-family: Caveat Brush;
+    font-size: 28px;
+    color:black;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext_l {
+    visibility: visible;
+}
+
+/* Tooltip rechts unten */
+.tooltip .tooltiptext_ru {
+   visibility: hidden;
+    top: 40%;
+    left: 30%;
+    font-family: Caveat Brush;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.dart:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.wuerfel:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.schach:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.rubikscube:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.puzzle:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.kreuzkoenig:hover .tooltiptext_red {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.karodame:hover .tooltiptext_red {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+
+.snookerorangehover:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.mario:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.pacman:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+
+.joystick:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.controller:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+
+.laptop:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.gameboyhover:hover .tooltiptext_ru {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+.cursor:hover .tooltiptext_whitebg {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+
+
+
+
+/* Tooltip rechts unten */
+.tooltip .tooltiptext_whitebg {
+   visibility: hidden;
+    top: 40%;
+    left: 30%;
+    font-family: Caveat Brush;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container alt color: #941a32;*/
+.tooltip:hover .tooltiptext_whitebg {
+	visibility: visible;
+	color: #202020;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+
+/* Tooltip rechts unten */
+.tooltip .tooltiptext_red {
+   visibility: hidden;
+    top: 40%;
+    left: 30%;
+    font-family: Caveat Brush;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container;*/
+.tooltip:hover .tooltiptext_red {
+	visibility: visible;
+	color: #941a32;
+	font-size: 3vw;
+	text-indent: 0px;
+}
+
+
+/* Tooltip rechts unten */
+.tooltip .tooltiptext_wahrnpsycho {
+   visibility: hidden;
+    top: 40%;
+    left: 30%;
+    font-family: Caveat Brush;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container;*/
+.wahrpsycho:hover .tooltiptext_wahrnpsycho {
+	visibility: visible;
+	color: #f6f8f7;
+	font-size: 3vw;
+	text-indent: -9vw;
+}
+
+
+
+#Aufforderung {
+    top: 5vh;
+    left: 23vw;
+    width: 30vw;
+    text-align: center;
+    font-family: Caveat Brush;
+    font-size: 3vw;
+    color:black;
+    position: absolute;
+    z-index: 3;
+	background-color: linear-gradient(90deg, #1fb7b7, #000);
+	border: 3px solid #fff;
+	border-radius: 20px;
+	line-height: 3vw;
+}
+
+
+#octo_kopf {
+    position: absolute;
+	top: 0px;
+	left: 0;
+	width: 22vw;
+    z-index:1;
+}
+
+#octo_arm_links{
+    position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 15vw;
+	height: 30vh;
+    transform: translateY(-25%);
+	z-index:1;
+}
+
+
+
+#octo_arm_rechts_unten{
+	position: absolute;
+	bottom: 0;
+	right: -10px;
+	width: 40vw;
+	height: 30vh;
+    z-index:1;
+}
+
