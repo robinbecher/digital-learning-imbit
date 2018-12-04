@@ -45,7 +45,7 @@
 <link
 	rel="stylesheet"
 	href="../../css/fonts.css" />
-	href="../../css/fonts.css" />
+	
 	
 <script>
 	//***********************
@@ -89,7 +89,12 @@
 					createSC("Beachtet JavaScript Groß-/Kleinschreibung?", [ "Ja", "Nein"],[ 1, 0]);	
 					createSC("Mit welchem HTML-Element starten wir JavaScript?", [ "<javascript>", "<js>","<scripting>","<script>"],[ 0, 0,0,1]);
 					createSC("JavaScript verwendet \"loose typing\". Loose typing heißt?", [ "Variablennamen müssen nicht konkret deklariert werden.", "Verwendete Datentypen müssen nicht konkret deklariert werden.","Toleranz bei Rechtschreibfehlern"],[ 0, 1,0]);		
-
+						//Demo Übersetzungsfrage mit 4 Attributen: Frage als String, Antworten als Array, zu übersetzende Begriffe als Array und Lösung als Array.
+						createTL("Übersetzungsfrage", [ "array", "frame",
+								"form", "width", "heigth", "function" ], 
+								[ "Feld", "Formular", "Browserfenster", "H�he", "Breite", 
+								"Funktion" ], [ 1, 3,2,5,4,6]);
+								
 						showTheQuestion(count);
 					});
 </script>
