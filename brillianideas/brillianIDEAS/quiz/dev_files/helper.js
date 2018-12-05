@@ -246,10 +246,10 @@ function createTL(frage, antworten, container, richtig) {
 	var n = findQuestionNumber();
 
 	var questiondiv = createHeader(frage, n);
-	questiondiv.setAttribute("data-type", "dd");
+	questiondiv.setAttribute("data-type", "tl");
 
 	var answersDiv = document.createElement("div");
-	answersDiv.id = "dd" + n + "_answers";
+	answersDiv.id = "tl" + n + "_answers";
 	questiondiv.appendChild(answersDiv);
 
 	var i;
@@ -325,17 +325,17 @@ function createOD(frage, antworten, richtig) {
 	var n = findQuestionNumber();
 
 	var questiondiv = createHeader(frage, n);
-	questiondiv.setAttribute("data-type", "dd");
+	questiondiv.setAttribute("data-type", "od");
 
 	var answersDiv = document.createElement("div");
-	answersDiv.id = "dd" + n + "_answers";
+	answersDiv.id = "od" + n + "_answers";
 	questiondiv.appendChild(answersDiv);
 
 	var i;
 	for (i = 0; i < antworten.length; i++) {
 		var p = document.createElement("p");
 		p.id = "question" + n + "_answer" + i;
-		p.className = "drag";
+		p.className = "dragOrder";
 		p.draggable = "true";
 		p.setAttribute("ondragstart", "drag(event)");
 		var pText = document.createTextNode(antworten[i]);
@@ -354,7 +354,9 @@ function createOD(frage, antworten, richtig) {
 			allowDrop(event)
 		});
 		var p = document.createElement("p");
-		p.className = "box_text";
+		p.className = "box_textOrder";
+		var text = document.createTextNode(i+1);
+		p.appendChild(text);
 		box.appendChild(p);
 		questiondiv.appendChild(box);
 	}
@@ -455,6 +457,61 @@ function evaluate() {
 			var richtig = richtigArray.shift();
 			var question = $('#question' + i);
 			var boxes = $("#question" + i).find(".drop").toArray();
+
+			for (var k = 0; k < draggables.length; k++) {
+				var father = document.getElementById("question" + i + "_answer"
+						+ k).parentNode;
+				if (!father.isSameNode(boxes[(richtig[k] - 1)])) {
+					gibMirPunkte = false;
+				}
+
+			}
+
+			if (gibMirPunkte) {
+				score++;
+			}
+
+			// set the variable question to be the DOM representation of the
+			// element again (instead of jQuery)
+			var question = document.getElementById("question" + i);
+		}
+		
+		// Falls die Frage eine Reihenfolgen-Aufgabe ist wird dieser Teil
+		// durchlaufen.
+		else if (question.getAttribute("data-type").localeCompare("od") === 0) {
+			var draggables = $("#question" + i).find(".drag").toArray();
+			var gibMirPunkte = true;
+			var anzahlAntworten = draggables.length;
+			var richtig = richtigArray.shift();
+			var question = $('#question' + i);
+			var boxes = $("#question" + i).find(".dropOrder").toArray();
+
+			for (var k = 0; k < draggables.length; k++) {
+				var father = document.getElementById("question" + i + "_answer"
+						+ k).parentNode;
+				if (!father.isSameNode(boxes[(richtig[k] - 1)])) {
+					gibMirPunkte = false;
+				}
+
+			}
+
+			if (gibMirPunkte) {
+				score++;
+			}
+
+			// set the variable question to be the DOM representation of the
+			// element again (instead of jQuery)
+			var question = document.getElementById("question" + i);
+		}
+		// Falls die Frage eine Vokabel Aufgabe ist wird dieser Teil
+		// durchlaufen.
+		else if (question.getAttribute("data-type").localeCompare("tl") === 0) {
+			var draggables = $("#question" + i).find(".drag").toArray();
+			var gibMirPunkte = true;
+			var anzahlAntworten = draggables.length;
+			var richtig = richtigArray.shift();
+			var question = $('#question' + i);
+			var boxes = $("#question" + i).find(".dropTable").toArray();
 
 			for (var k = 0; k < draggables.length; k++) {
 				var father = document.getElementById("question" + i + "_answer"

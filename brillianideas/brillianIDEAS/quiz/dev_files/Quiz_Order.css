@@ -3,7 +3,7 @@
 	height: 40px;
 	/*border: 1px solid #aaaaaa;*/
 	float: none;
-	padding: 0px 20px 20px 20px;
+	padding: 0px 20px 0px 0px;
 	margin: 6px;
 	background: #eee;
 	font-size: 2.5em;
@@ -12,10 +12,11 @@
 
 }
 
-.drag {
+.dragOrder {
 	/* border: solid red 2px;*/
 	font-size: 2.5em;
 	width:10%;
+	height:1%;
 }
 
 #answers {
@@ -29,13 +30,15 @@
 }
 
 
-.box_text {
+.box_textOrder {
 	color: white;
+	width:15%;
 	margin-top: 0px;
 	background-color: #591220;
-	margin: 0px -20px 0px -20px;
-	padding-left: 10px;
+	margin: 0px 0px 0px 0px;
+	padding-left: 10px;	
+	height:100%;
 	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
+	border-bottom-left-radius: 7px;
 	border-bottom: #991B33 solid 3px;
 }
