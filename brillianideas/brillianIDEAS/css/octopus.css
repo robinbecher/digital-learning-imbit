@@ -57,7 +57,7 @@ body {
     top: 68vh;
     left: 15vw;
     font-family: Caveat Brush;
-    font-size: 28px;
+    font-size: 2.5em;
     color:black;
     position: absolute;
     z-index: 2;
@@ -74,7 +74,7 @@ body {
     top: 65vh;
     left: 55vw;
     font-family: Caveat Brush;
-    font-size: 28px;
+    font-size: 2.5em;
     color:black;
     position: absolute;
     z-index: 2;
@@ -88,10 +88,10 @@ body {
 /* Tooltip rechts oben */
 .tooltip .tooltiptext_ro {
    visibility: hidden;
-    top: 8vh;
+    top: 4vh;
     left: 58vw;
     font-family: Caveat Brush;
-    font-size: 28px;
+    font-size: 2.5em;
     color:black;
     position: absolute;
     z-index: 2;
@@ -108,7 +108,7 @@ body {
     width: 50vw;
     text-align: center;
     font-family: Caveat Brush;
-    font-size: 50px;
+    font-size: 3em;
     color:black;
     position: absolute;
     z-index: 3;

@@ -1,12 +1,12 @@
 #text {
-	font-size: 28px;
+	font-size: 2.5em;
 }
 
 input[type=text] {
 	color: #991B33;
 	border: solid 1px rgba(0, 0, 0, 0);
 	border-bottom: red 2px dashed;
-	font-size: 28px;
+	font-size: 2.5em;
 	background-color: rgba(255, 255, 255, 0);
 	width: fit-content;
 	font-family: Caveat Brush;
@@ -17,10 +17,10 @@ input[type=text] {
 	width: fit-content;
 	padding-left: 20px;
 	color: #b11f39;
-	font-size: 28px;
+	font-size: 2.5em;
 	color: #b11f39;
 }
 
 .text {
-	font-size: 28px;
+	font-size: 2.5em;
 }

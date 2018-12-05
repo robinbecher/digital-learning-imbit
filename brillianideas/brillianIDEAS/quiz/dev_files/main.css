@@ -62,7 +62,7 @@ a:visited {
 }
 
 .question {
-	font-size: 50px;
+	font-size: 3em;
 	margin-bottom: 1%;
 	padding-left: 1%;
 	width: 75%;
@@ -83,7 +83,7 @@ a:visited {
 
 #back_button_div {
 	position: absolute;
-	right: 220px;
+	right: 250px;
 	top: 60px;
 }
 
@@ -97,8 +97,7 @@ a:visited {
 	border: none;
 	color: #FFFFFF;
 	text-align: center;
-	font-size: 28px;
-	width: 100px;
+	font-size: 2.5em;
 	height: 50px;
 	margin: 5px;
 	position: sticky;
