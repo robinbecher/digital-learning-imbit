@@ -44,7 +44,14 @@ public class MailClient extends HttpServlet
 	 			 		
 	 		final String mailusername = sc.getInitParameter("mailuser");
 	 		final String mailpassword = sc.getInitParameter("mailpw");
-	 		
+
+			System.out.println(sc.getInitParameter("domain"));
+	 		System.out.println(sc.getInitParameter("smtpauth"));
+			System.out.println(sc.getInitParameter("smtptls"));
+			System.out.println(sc.getInitParameter("mailserver"));
+			System.out.println(sc.getInitParameter("mailport"));
+			System.out.println(sc.getInitParameter("mailuser"));
+			System.out.println(sc.getInitParameter("mailpw"));
 	 		
 	 		Session session = Session.getInstance(props,
 	 				  new javax.mail.Authenticator() {

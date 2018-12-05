@@ -1,3 +1,23 @@
+@font-face {
+
+	font-family: 'Tinos';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Tinos Regular'), local('Tinos-Regular'),
+	url('../fonts/tinos-v11-latin/tinos-v11-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('../fonts/tinos-v11-latin/tinos-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* caveat-brush-regular - latin */
+@font-face {
+	font-family: 'Caveat Brush';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Caveat Brush'), local('CaveatBrush-Regular'),
+	url('../fonts/caveat-brush-v3-latin/caveat-brush-v3-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('../fonts/caveat-brush-v3-latin/caveat-brush-v3-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 html {
 	box-sizing: border-box;
 	font-family: 'Tinos';
@@ -17,18 +37,6 @@ body {
                         "launchbar";
 }
 
-<<<<<<< HEAD
-/*
-#title{
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 5em;
-*/
-
-=======
->>>>>>> 7a205845fbf1be3dde0a1dc110a06735425fdc54
 #title a {
     text-decoration: none;
     color: var(--text);
@@ -67,8 +75,8 @@ body {
 }
 
 #start_bg_rtl{
-	bottom: 0px;
-	right: 0px;
+	bottom: 0;
+	right: -1vw;
 	width: initial;
 	max-width: 75vw;
 }
@@ -96,4 +104,24 @@ body {
 	z-index: 3;
 	overflow-x: scroll;
 	overflow-x: hidden;
+}
+
+/* Ab hier pulsierende Tentakel by A. Hager */
+
+
+#tentacle_img_small_launchbar {
+  animation: pulse 0.6s infinite;
+  animation-iteration-count: 8;
+  animation-direction: alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
 }

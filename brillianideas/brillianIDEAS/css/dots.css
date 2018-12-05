@@ -21,7 +21,7 @@ dotstyle ul {
 #dots {
     bottom: 1.25em;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 5vh;
     position: absolute;
     height: auto;
     background-color: transparent !important;
@@ -45,7 +45,7 @@ dotstyle ul {
     cursor: pointer;
     background-color: transparent !important;
     transition: width 0.3s, height 0.3s;
-    bottom: -50px;
+    bottom: -5vh;
 }
 
 .dotstyle li a {

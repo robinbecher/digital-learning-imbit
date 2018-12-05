@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<link
+	rel="shortcut icon"
+	href="../../img/favicon.ico"
+	type="image/x-icon">
+<meta charset="UTF-8">
+<title>UX Quiz</title>
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/main.css" />
+
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_checkbox.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Drag.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Radiobutton.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Text.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Table.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Order.css" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	type="text/javascript"
+	src="../dev_files/helper.js"></script>
+<link
+	rel="stylesheet"
+	href="../../css/fonts.css" />
+
+<script>
+	//***********************
+	//Diese Werte nicht verändern!
+	var count = 1;
+	var score = 0;
+	//***********************
+
+	//***********************
+	//Hier bitte Werte eintragen!
+	var anzahlFragen = 15;
+	var maxScore = 15;
+	//***********************
+
+	$(document)
+			.ready(
+					function() {
+
+						createSC("Wer gilt als Vater des Begriffs UX?", [ "Steve Jobs", "Donald Norman", "Charles Babbage","Steve Wozniak" ],[ 0, 1, 0, 0 ]);
+
+						createMC("Welche der folgenden Methoden werden zur Verbesserung der User Experience genutzt?", [ "Usability Testing", "Eyeball Tracking", "Storyboarding","Tagebuchstudien" ], [ 1, 1, 1, 1 ]);
+						
+						createDD("Entscheiden Sie welche Methoden der Nutzerbedarfsanalyse qualitativ und welche quantitativ sind?",["Erwartungen","Ermittlung numerischer Werte","Einstellungen","Verhaltensweisen","objektive Befunde\"zählen\"","subjektive Befunde\"befragen\""],["Quantitative Methoden","Qualitative Methoden"],[ 2, 1, 2, 2, 1, 1]);
+						
+						createMC("Was ist Teil von Usability Testing?", [ "Die Überprüfung von Systemkompatibilitäten", "Die Beobachtung der ersten Interaktion von Usern mit neuer Software", "Performance Tests","Tagebuchstudien" ], [ 0, 1, 0 ]);
+						
+						createSC("Wozu wurde Usability Testing entwickelt?", [ "Um eine intuitive Steuerung zu ermöglich", "Um zu testen ob Software funktioniert", "Um die Laufzeit von Software zu optimieren" ],[ 1, 0, 0 ]);
+						
+						createSC("Was versteht man unter dem Begriff Storyboarding?", [ "Die Erzählung einer Geschichte über das Nutzerverhalten", "Die sequentielle Aneinanderreihung von Bildern um Abläufe und Abhängigkeiten bereits im Voraus abzubilden", "Die Sammlung von Geschichten über Anwendungsmöglichkeiten welche auf einem Board gesammelt werden" ],[ 0, 1, 0 ]);
+						
+						createMC("Welche Vorteile bietet Sketching?", [ "Bietet die Möglichkeit schnell Konzepte zu erstellen", "Entwickelte Konzepte sind sofort in digitaler Form verfügbar", "Visualisierte Problemstellungen sind besser zu verstehen","Dient als Ergänzung der Protokolle von Meetings" ], [ 1, 0, 1, 1 ]);
+							
+						//Demo Frage zur Reihenfolge mit 3 Attributen: Frage als STring, Antworten als Array und Lösungen als Array. Die Angegebene Zahl entspricht der Position des jeweiligen Elements. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
+						createOD("Ordnen Sie die folgenden Schritte des Design Thinking Process nach ihrer Reihenfolge", [ "Emphatize", "Prototype","Test","Define","Ideate" ], [ 1, 4, 5, 2, 3]);
+						//Demo Drag&Drop Aufgabe mit 4 Attributen: Frage als String, Antworten als Array, Felder/Boxen als Array und Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
+						createDD("Entscheiden Sie welche Methoden zu welchem Design Thinking Schritt gehören", ["Idea Sharing","Mockups","Storyboards","Shadowing", "Interviews", "\"Yes and\" thinking"], [ "Prototype", "Emphatize", "Ideate"], [ 3, 1, 1, 2, 2, 3]);
+						
+						createMC("In welche Kategorien kann man die Methoden der UX-Evaluation einteilen?", ["Implizite Methoden","Reale Methoden","Visuelle Methoden","Substantielle Methoden","Virtuelle Methoden","Explizite Methoden","Objektive Methoden","Subjektive Methoden"], [1,0,0,0,0,1,0,0]);
+						
+						createDD("Ordnen Sie die folgenden Methoden ihrer jeweiligen Kategorie zu", ["Tagebuchstudien","Usability Testing","Eye-Tracking","Elektroenzephalografie", "Mitarbeiterbefragungen", "Usability Testing"], [ "Implizite Methoden", "Explizite Methoden"], [ 2, 2, 1, 1, 2, 2]);
+						
+						createSC("Wie verläuft typischerweise die Blickrichtung von Usern auf Websites?",["von oben nach unten","Es gibt keine typische Richtung","in F-Form"],[0,0,1]);
+						
+						createSC("Wo sollte das Suchfeld in einem Online Shop platziert sein?",["oben in der Mitte","rechts","links"],[1,0,0]);
+						
+						createSC("Wo sollte sich das Logo befinden?",["oben links","oben in der Mitte","oben rechts","an mehreren Stellen"],[1,0,0,0]);
+						//Demo Übersetzungsfrage mit 4 Attributen: Frage als String, Antworten als Array, zu übersetzende Begriffe als Array und Lösung als Array.
+						createTL("Ordnen Sie den deutschen Fachbegriffen ihre englischen Übersetzungen zu?",["Usability test","Consumer Insight","Attention Tracking","User Journey","Wireframe","User-Centered Design","Accessibility","Diary Study","Thinking Aloud","Onsite Questionnaire"],["Aufmerksamkeitsmessung","Lautes Denken","Nutzerwissen","Mitarbeiterbefragung","Drahtmodell","Nutzerorientierte Gestaltung","Endverbraucherreise","Tagebuchstudie","Barrierefreiheit","Benutzerfreundlichkeitstest"],[10,3,1,7,5,6,9,8,2,4]);
+						
+						showTheQuestion(count);
+					});
+</script>
+
+
+</head>
+<body>
+
+	<video
+		id="video_background"
+		autoplay
+		muted
+		loop>
+		<source
+			src="../../img/Background.mp4"
+			type="video/mp4">
+	</video>
+
+
+	<div id="content">
+
+		<div
+			id="gz"
+			class="questionclass">
+			<p id="supergeil"></p>
+		</div>
+
+	</div>
+	<div id="next_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="next_button"
+				onclick="nextButtonClick()">Weiter</a>
+		</button>
+	</div>
+
+	<div id="back_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="back_button"
+				onclick="backButtonClick()">Zurück</a>
+		</button>
+	</div>
+
+	<div id="tl">
+		<img
+			id="tentakel_l"
+			src="../../img/tentakel_ltr.png">
+	</div>
+	<div id="tr">
+		<img
+			id="tentakel_r"
+			src="../../img/tentakel_rtl.png">
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+.dropOrder {
+	width: 20%;
+	height: 40px;
+	/*border: 1px solid #aaaaaa;*/
+	float: none;
+	padding: 0px 20px 20px 20px;
+	margin: 6px;
+	background: #eee;
+	font-size: 2.5em;
+	border: 3px solid #991B33;
+	border-radius: 10px;
+
+}
+
+.drag {
+	/* border: solid red 2px;*/
+	font-size: 2.5em;
+	width:10%;
+}
+
+#answers {
+	/* border: solid green 3px;*/
+	margin-bottom: 3%;
+	float: left;
+	padding: 0px 20px 20px 20px;
+	width: 100px;
+	margin-right: 3%;
+	font-size: 2.5em;
+}
+
+
+.box_text {
+	color: white;
+	margin-top: 0px;
+	background-color: #591220;
+	margin: 0px -20px 0px -20px;
+	padding-left: 10px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom: #991B33 solid 3px;
+}

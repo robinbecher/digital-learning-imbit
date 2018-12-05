@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<link
+	rel="shortcut icon"
+	href="../../img/favicon.ico"
+	type="image/x-icon">
+<meta charset="UTF-8">
+<title>Investitionen Quiz</title>
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/main.css" />
+
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_checkbox.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Drag.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Radiobutton.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Text.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Table.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Order.css" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	type="text/javascript"
+	src="../dev_files/helper.js"></script>
+<link
+	rel="stylesheet"
+	href="../../css/fonts.css" />
+	
+<script>
+	//***********************
+	//Diese Werte nicht verändern!
+	var count = 1;
+	var score = 0;
+	//***********************
+
+	//***********************
+	//Hier bitte Werte eintragen!
+	var anzahlFragen = 15;
+	var maxScore = 15;
+	//***********************
+
+	$(document)
+			.ready(
+					function() {
+					
+					//Frage 1
+							createMC("Was kennzeichnet Investitionen?", [ "Langfristigkeit", "Kurzfristigkeit", "Mehrere Kapitalgeber", "Interdependenz", "Keine Kapitalbindung", "Hohe Kapitalbindung" ], [ 1, 0, 0, 1, 0, 1 ]);
+						
+						//Frage 2
+							createSC("Investitionsrechnungen orientieren sich immer an monetären Zielen.", [ "Wahr", "Falsch" ],
+									[ 1, 0 ]);
+									
+						//Frage 3
+							createSC("Wie ist eine Investition definiert?", [ "Eine betriebliche Tätigkeit, die zu unterschiedlichen Zeitpunkten t Aus- und Einzahlungen verursacht, wobei dieser Vorgang immer mit einer Auszahlung beginnt", "Mittel- bis langfristige Überlassung von Anlagengegenständen gegen Zahlung eines Nutzungsentgelts", "Ein Wertpapier eigener Art", "Zahlungsreihe, die in der Regel mit einer Einzahlung beginnt" ],
+									[ 1, 0, 0, 0 ]);
+						
+						// Frage 4
+							createDD("Um welche Investitionsart handelt es sich? Ziehe alle Elemente in das richtige Feld.", [ "Erwerb von Wertpapieren", "Kauf einer neuen Maschine", "Schulungen", "Marketing Maßnahmen", "Abschreibung", "Wartung", "Vertrieb", "Flugzeug", "Steuern", "Werbung", "Flughafengebühren", "Gepäckstück" ], [ "Spekulative Finanzinvestition",
+									"Immaterielle Sachinvestition", "Materielle Sachinvestition" ], [ 1, 3, 2, 2 ]);
+									
+						//Frage 5
+							createSC("Um welchen Investitionsanlass handelt es sich beim Ersatz von Arbeitskräften durch eine neue Maschine?", [ "Ersatzinvestition-identischer Ersatz", "Ersatzinvestition-Rationalisierungsinvestition", "Erweiterungsinvestition", "Einrichtungsinvestition" ],
+									[ 0, 1, 0, 0 ]);
+						
+						// Frage 6
+							createMC("Wähle die Vorteile der Kostenvergleichsrechnung.", [ "Einfache Anwendung", "Sagt aus, ob die Investition rentabel ist", "Berücksichtigt Qualitätsunterschiede", "Anwendbar bei Alternativenvergleich" ], [ 1, 0, 0, 1 ]);
+						
+						
+						//Frage 7
+							createSC("Bei der Kostenvergleichsrechnung sind die Kapitalkosten und Betriebskosten zu berücksichtigen.", [ "Wahr", "Falsch" ], [ 1, 0 ]);
+						
+						//Frage 8
+							createMC("Wähle die Vorteile der Gewinnvergleichsrechnung.", [ "Einfache Anwendung", "Einbeziehung des Erlöses einer Investition", "Berücksichtigt Qualitätsunterschiede", "Unproblematisch bei unterschiedlichen Nutzungsdauern" ], [ 1, 1, 0, 0 ]);
+								
+						
+						//Frage 9 
+							createTQ(
+									"Rentabilitätsrechnung und Amortisationsrechnung.",
+									[
+											"Die",
+											"",
+											"macht eine Aussage über",
+											"",
+											"des eingesetzten",
+											"",
+											". Die",
+											"",
+											"ergänzt die anderen statischen Verfahren um eine", 
+											"", "."
+											, ],
+									[  "Amortisationsrechnung", "Verzinsung", "Kapital", "Rentabilitätsrechnung", "Risikobetrachtung" 
+											 ], [ 4, 2, 3, 1, 5]);
+						
+						
+						//Frage 10
+							createSC("Welche Menge muss mindestens abgesetzt werden, damit keine Verluste erzielt werden?", [ "Keine", "Break-Even-Menge", "Maximale Produktionsmenge", "Minimale Produktionsmenge" ],
+									[ 0, 1, 0, 0 ]);
+						
+						//Frage 11
+							createSC("Der Gewinn bei Break-Even-Menge ist größer 0.", [ "Wahr", "Falsch" ],
+									[ 0, 1 ]);
+						
+						//Frage 12
+							createSC("Bei den dynamischen Investitionsrechnungen werden mehrere Perioden betrachtet.", [ "Wahr", "Falsch" ],
+									[ 1, 0 ]);
+						
+						//Frage 13						
+							createSC("Wie ist der Kapitalwert definiert?", [ "Positive Differenz aus Erträgen und Aufwendungen", "Gewinn nach Abzug von Steuern", "Kennziffer der dynamischen Investitionsrechnung - Summe der Barwerte einer Investition", "Summe der materiellen und immateriellen Güter eines Unternehmens" ],
+									[ 0, 0, 1, 0 ]);
+						//Frage 14
+							createDD("Statische oder dynamische Investionsrechenverfahren? Ziehe alle Elemente in das richtige Feld.", [ "Kostenvergleichsrechnung", "Dynamische Amortisationsdauer", "Gewinnvergleichsrechnung", "Annuitätenmethode", "Kapitalwertmethode", "Rentabilitätsrechnung", "Amortisationsrechnung", "Interner Zinsfuß" ], [ "Statische",
+									"Dynamische" ], [ 1, 2, 1, 2, 2, 1, 1, 2 ]);
+						
+						//Frage 15 - Englisch und Deutsch	
+					createTL("Übersetzungsfrage", [ "residual value", "net present value method", "internal rate of return method", "comparative profit method", "payback method", "comparative cost method","average return method" ], [ "Kapitalwertmethode", "Interne Zinsfußmethode",
+									"Restwert", "Kostenvergleichsrechnung", "Gewinnvergleichsrechnung", "Rentabilitätsvergleichung", "Amortisationsvergleichsrechnung" ], [ 2, 3, 1, 6, 4, 7, 5]);
+						
+						showTheQuestion(count);
+					});
+</script>
+
+
+</head>
+<body>
+
+	<video
+		id="video_background"
+		autoplay
+		muted
+		loop>
+		<source
+			src="../../img/Background.mp4"
+			type="video/mp4">
+	</video>
+
+
+	<div id="content">
+
+		<div
+			id="gz"
+			class="questionclass">
+			<p id="supergeil"></p>
+		</div>
+
+	</div>
+	<div id="next_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="next_button"
+				onclick="nextButtonClick()">Weiter</a>
+		</button>
+	</div>
+
+	<div id="back_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="back_button"
+				onclick="backButtonClick()">Zurück</a>
+		</button>
+	</div>
+
+	<div id="tl">
+		<img
+			id="tentakel_l"
+			src="../../img/tentakel_ltr.png">
+	</div>
+	<div id="tr">
+		<img
+			id="tentakel_r"
+			src="../../img/tentakel_rtl.png">
+	</div>
+
+</body>
+</html>
