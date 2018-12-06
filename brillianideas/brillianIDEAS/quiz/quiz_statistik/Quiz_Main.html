@@ -72,19 +72,19 @@
 								[ 0, 0, 1, 0 ]);
 						createSC("Welche Arten von Hypothesen Tests gibt es?", [ "Relativer und Prozentualer Hypothesen Test", "Einseitiger und Zweiseitiger Hypothesen Test", "Statischer und Dynamischer Hypothesen Test", "Normalverteilter und Standardnormalverteilter Hypothesen Test" ],
 								[ 0, 1, 0, 0 ]);
-						createSC("Paul die Krake möchte nachweisen, dass seine 20 IT Services im Durchschnitt von mehr als 10 Mitarbeitern betreut werden.", [ "H0:μ≤20;H1:μ>20", "H0:μ≤10;H1:μ>10", "H0:μ>20;H1:μ≤20", "H0:μ>20;H1:μ>10" ],
+						createSC("Die IMBIT Krake möchte nachweisen, dass ihre 20 IT-Services im Durchschnitt von mehr als 10 Mitarbeitern betreut werden.", [ "H0:μ≤20;H1:μ>20", "H0:μ≤10;H1:μ>10", "H0:μ>20;H1:μ≤20", "H0:μ>20;H1:μ>10" ],
 								[ 0, 1, 0, 0 ]);
-						createSC("Paul die Krake möchte die Kunden seines IT Dienstleistungs Unternehmens besser kennenlernen und stellt fest, dass die unterschiedlichen Unternehmen 140, 211, 127, 290, 195, 150 und 143 Mitarbeiter haben. Wie groß ist die Spannweite dieser Unternehmensgrößen?", [ "150", "1256", "179,4", "3"],
+						createSC("Die IMBIT Krake möchte die Kunden ihres IT IT-Unternehmens besser kennenlernen und stellt fest, dass die unterschiedlichen Unternehmen 140, 211, 127, 290, 195, 150 und 143 Mitarbeiter haben. Wie groß ist die Spannweite dieser Unternehmensgrößen?", [ "150", "1256", "179,4", "3"],
 								[ 1, 0, 0, 0 ]);
 						createSC("Wann wird der Satz von Bayer angewandt?", [ "Durch neu gewonnene Informationen können schon ermittelte Wahrscheinlichkeiten genauer bestimmt werden", "Durch verringerten Ergebnisraum können schon ermittelte Wahrscheinlichkeiten genauer bestimmt werden"],
 								[ 1, 0]);
 						createSC("Was ist der Unterschied zwischen einem Histogram und einem Säulendiagramm?", [ "Sagt aus wie schwer wiegend ein Fehler im Hypothesen Test wäre", "ist "Berechnet man mit dem Median", "Wird bei Hypothesen Tests als Fehler der ersten Art gewertet", "gibt bei einem Hypothesentest an wie hoch das Risiko ist, das man bereit ist einzugehen, eine falsche Entscheidung zu treffen ],
 								[ 0, 0, 0, 1]);
 						//Demo Drag&Drop Aufgabe mit 4 Attributen: Frage als String, Antworten als Array, Felder/Boxen als Array und Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
-						createDD("Das IT Service Unternehmen von Paul der Krake bekommt Rechnungen mit den folgenden Werten: 50€, 100€, 81€, 250€, 1000€, 44€, 250€. Ordnen Sie die Lagemaße korrekt zu.", [ "250", "100" , "254"], [ "Median",
+						createDD("Das IT-Unternehmen der IMBIT Krake bekommt Rechnungen mit den folgenden Werten: 50€, 100€, 81€, 250€, 1000€, 44€, 250€. Ordne die Lagemaße korrekt zu.", [ "250", "100" , "254"], [ "Median",
 								"Mittelwert", "Modus" ], [ 3, 1, 2 ]);
 								
-						createDD("Paul die Krake möchte sein Produktportfolio erweitern und macht dafür eine Umfrage wofür sich seine Kunden interessieren: Tabelle. Ordnen Sie die Wahrscheinlichkeiten korrekt zu.", [ "10/200=0.05", "(60/200)+(130/200)-(50/200)=0,7", "60/200=0,3"], [ "Ein Unternehmen ist an IoT Services interessiert", "Ein Produktionsunternehmen ist an IoT Services interessiert"
+						createDD("Die IMBIT Krake möchte ihr Produktportfolio erweitern und macht dafür eine Kundenumfrage. 10 Dienstleistungsunternehmen interessieren sich für IoT, 60 für Cloud. 50 Produktionsunternehmen interessieren sich für IoT, 80 für Cloud. Ordne die Wahrscheinlichkeiten korrekt zu.", [ "10/200=0.05", "(60/200)+(130/200)-(50/200)=0,7", "60/200=0,3"], [ "Ein Unternehmen ist an IoT Services interessiert", "Ein Produktionsunternehmen ist an IoT Services interessiert"
 								"Ein Unternehmen ist an IoT interessiert oder ist ein Produktionsunternehmen"], [ 1, 3, 2 ]);
 						//Demo Lückentext Aufgabe mit 4 Attributen: Frage als String, Lückentext als Array mit leerem String "" für jede Lücke, Antworten als Array und Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
 						createTQ(
@@ -94,25 +94,22 @@
 										"",
 										"zu einer Diagonalen dargestellt. Die ",
 										"",
-										" dazwischen ist das Maß der Konzentration von Beobachtungswerten.",
+										" dazwischen ist das Maß der Konzentration von Beobachtungswerten. Ist der Gini-Koeffizient 0 besteht maximale ",
 										"",
-										"Ist der Gini-Koeffizient 0 besteht maximale ",
-										"",
-										" ist der Gini-Koeffizient 1 besteht maximale" 
+										" ist der Gini-Koeffizient 1 besteht maximale",
 										"",
 										"."],
 										
-								[ "Winkelhalbierenden", "Lorenzkurve", "Fläche", "Streuung",
-										"Konzentration", Gleichverteilung ], [ 0, 1, 2, 0, 4, 3  ]);
+								[ "Lorenzkurve", "Konzentration", "Gleichverteilung", "Fläche" ], [ 1, 4, 3, 2 ]);
 										
 						//Demo Frage zur Reihenfolge mit 3 Attributen: Frage als STring, Antworten als Array und Lösungen als Array. Die Angegebene Zahl entspricht der Position des jeweiligen Elements. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
 						createOD("In Welcher Reihenfolge kann man die folgenden Werte berechnen?", [ "Standardabweichung","Varianz", "Durchschnitt"], [ 3, 1, 2 ]);
 						
 								
 						//Demo Übersetzungsfrage mit 4 Attributen: Frage als String, Antworten als Array, zu übersetzende Begriffe als Array und Lösung als Array.
-						createTL("Paul die Krake überlegt wie viele Stellen er für welche Positionen in seinem Dienstleistungsunternehmen ausschreiben muss. HR:2, Service Desk:5, Marketing:3, Sales:5, Buchhaltung:3, SAP Consultant:5, Einkauf:1, Network Engineer:3, Presales:3, Motivationstrainer:0, Controlling:3, Entwickler:5, Jurist:1, Praktikant:1.", 
+						createTL("Die IMBIT Krake möchte offene Stellen in seinem IT-Unternehmen besetzen. Sie sucht: HR:2, Service Desk:5, Marketing:3, Sales:5, Buchhaltung:3, SAP Consultant:5, Einkauf:1, Network Engineer:3, Presales:3, Motivationstrainer:0, Controlling:3, Entwickler:5, Jurist:1, Praktikant:1. " , 
 						[ "0", "1","2", "3", "4", "5"], [  "3", "1","4", "0", 2", "5" ], [ 2, 1, 5, 6, 4, 3 ]);
-						createTL("Ordnen Sie den Verteilungen ihre Schiefe zu. ", 
+						createTL("Ordnen Sie den Verteilungen ihre Schiefe zu.", 
 						[ "Symmetrisch", "Linksschief bzw. Rechtssteil","Rechtschief bzw. Linkssteil"], [  "größer als 0", "0","kleiner als 0" ], [ 2,3,1 ]);
 						createTL("Vokabeltest. Ordnen Sie die englischen Begriffe den deutschen Begriffen zu.", [ "Binomialverteilung", "Zufallsvariable", "Intervallschätzung","Hypothesentest", "Stichprobe", "Interquartilsabstand" , "arithmetisches Mittel", "Häufigkeitsverteilung", "Säulendiagramm", "Signifikanzniveau" ], 
 						[ "Sample", "Bar Graph","Random Variable", "Hypothesis Testing" "Interval Estimation", "Interquartile Range", "Significance Level","Binomial Distribution", "Arithmetic Mean", "Frequency Distribution"  ], [ 8,3,5,4,1,6,9,10,2,7 ]);
