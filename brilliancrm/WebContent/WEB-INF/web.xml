@@ -88,33 +88,32 @@
 	<context-param>
 		<param-name>domain</param-name>
 		<!--<param-value>http://ec2-52-14-250-138.us-east-2.compute.amazonaws.com:8080</param-value>-->
-		<!--&lt;!&ndash; PROD:  &ndash;&gt; <param-value>brilliancrm.com:8080</param-value>-->
-		<param-value>brillianideas.com:8080/brillianCRM</param-value>
+		<param-value>brillianideas.com:8080</param-value>
 	</context-param>
 	
 	<context-param>
 		<description>Mail-Server for outgoing mails</description>
 		<param-name>mailserver</param-name>
-		<param-value>smtp.mail.eu-west-1.awsapps.com</param-value>
+		<param-value>email-smtp.eu-west-1.amazonaws.com</param-value>
 	</context-param>
 	
 	<context-param>
 		<description>Mailport for SMTP-Server</description>
 		<param-name>mailport</param-name>
-		<param-value>465</param-value>
+		<param-value>587</param-value>
 	</context-param>
 	
 	<context-param>
 		<description>Mail-User for mailserver</description>
 		<param-name>mailuser</param-name>
-		<param-value>no-reply@brillianideas.com</param-value>
+		<param-value>AKIAIUWX7JV7PX76IU7A</param-value>
 		<!--  ALTERNATIVE: <param-value>no-reply@digital-learning-imbit.com</param-value> -->
 	</context-param>
 	
 	<context-param>
 		<description>Password for Mail-User</description>
 		<param-name>mailpw</param-name>
-		<param-value>wimbit16b!</param-value>
+		<param-value>AmHq2L7RjQJ6DO/yiHHrz8oPEBhIgrhk+9HII5aKNe2S</param-value>
 	</context-param>
 	
 	<context-param>
