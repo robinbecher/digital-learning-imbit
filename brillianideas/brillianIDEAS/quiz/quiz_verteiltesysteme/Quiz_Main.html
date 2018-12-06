@@ -67,28 +67,27 @@
 								[ 0, 1, 0]);
 					createSC("PHP ist eine serverseitige Programmiersprache, die HTML und CSS Code generieren kann.", [ "Richtig", "Falsch"],
 								[ 1, 0]);
-					createMC("Welche Angaben werden benötigt um eine Socket Verbindung zu einem Server herzustellen?", [ "IP-Adresse", "TCP-Portnummer", "MAC-Adresse","Server-Passwort" ], [ 1, 1, 0, 0 ]);
+					createMC("Welche Angaben werden benötigt, um eine Socket-Verbindung zu einem Server herzustellen?", [ "IP-Adresse", "TCP-Portnummer", "MAC-Adresse","Server-Passwort" ], [ 1, 1, 0, 0 ]);
 					createSC("Anschlussströme repräsentieren eine Verbindung zu einer Quelle oder einem Zielort (Datei, Socket, usw.).", [ "Richtig", "Falsch"],[ 1, 0]);	
 					
 					createSC("Verkettungsströme können selbst keine Verbindungen herstellen und müssen mit einem Anschlussstrom verkettet werden.", [ "Richtig", "Falsch"],[ 1, 0]);
-					createDD("Weisen Sie die Aussagen richtig zu!", [ "Skriptsprache", "von Webserver instanziiert und durchgeführt","serverseitig","vom Client geladen und ausgeführt","clientseitig","hat nichts zu tun mit Java","kann fast gesamte Java-API benutzen" ], [ "JavaScript","Java Applet", "Java Servlet" ], [1,3,2,2,1,1,2]);
+					createDD("Weise die Aussagen richtig zu!", [ "Skriptsprache", "von Webserver instanziiert und durchgeführt","serverseitig","vom Client geladen und ausgeführt","clientseitig","hat nichts zu tun mit Java","kann fast gesamte Java-API benutzen" ], [ "JavaScript","Java Applet", "Java Servlet" ], [1,3,2,2,1,1,2]);
 					createTQ(
-								"Füllen Sie die Lücken!",
+								"Fülle die Lücken!",
 								[
-										"$_POST ist eine ",""," Variable, die an jedem Punkt eines PHP-Skripts verfügbar ist. Sie enthält alle in das Formular eingegebenen Daten. Die Variable ist ",""," mit der",""," verknüpft, die vom HTML-Formular verwendet wird. Ist das method-Attribut des Formulars auf post gesetzt, stellt PHP dem Skript die",""," in den superglobalen Variablen $_POST zur Verfügung, aus der sie nach Bedarf abgerufen werden kann.",
-										"" ],
+										"$_POST ist eine ",""," Variable, die an jedem Punkt eines PHP-Skripts verfügbar ist. Sie enthält alle in das Formular eingegebenen Daten. Die Variable ist ",""," mit der",""," verknüpft, die vom HTML-Formular verwendet wird. Ist das Method-Attribut des Formulars auf POST gesetzt, stellt PHP dem Skript die",""," in den superglobalen Variablen $_POST zur Verfügung, aus der sie nach Bedarf abgerufen werden kann." ],
 								[ "Formularübermittlungsmethode", "Formulardaten", "superglobale","unmittelbar"
 										 ], [3,4,1,2]);	
 					createSC("jQuery ist eine...", [ "Programmiersprache", "JSON Library","JavaScript Library","Art, Warteschlangen (Querys) zu organisieren"],
 								[ 0,0, 1, 0]);
-					createSC("jQuery benutzt CSS Selektoren um Elemente auszuwählen.", [ "Richtig", "Falsch"],
+					createSC("jQuery benutzt CSS-Selektoren, um Elemente auszuwählen.", [ "Richtig", "Falsch"],
 								[ 1, 0]);	
 					createSC("Ist jQuery eine Library für client scripting oder server scripting?", [ "client scripting", "server scripting"],
 								[ 1, 0]);
-					createDD("Was machen folgende PHP-Funktionen?", [ "Führt eine SQL-Abfrage auf einer My-SQL-Datenbank durch.","Schließt eine Verbindung zu einer MySQL-Datenbank.", "Stellt unter Angabe der Verbindungsdaten eine Verdingung mit einer MySQL-Datenbank her." ], [ "mysqli_connect()",
+					createDD("Was machen folgende PHP-Funktionen?", [ "Führt eine SQL-Abfrage auf einer MySQL-Datenbank durch.","Schließt eine Verbindung zu einer MySQL-Datenbank.", "Stellt unter Angabe der Verbindungsdaten eine Verbindung mit einer MySQL-Datenbank her." ], [ "mysqli_connect()",
 								"mysqli_query()", "mysqli_close()" ], [2,3,1]);
 					createTQ(
-								"Füllen Sie die Lücken!",
+								"Fülle die Lücken!",
 								["Kontext-Initialisierungsparameter funktionieren genauso wie ","","-Initialisierungsparameter, jedoch mit dem Unterschied, dass Kontext-Parameter der gesamten ",""," zur Verfügung stehen, nicht bloß einem einzigen Servlet. Das heißt also, jedes Servlet und jede JSP der Anwendung hat automatisch Zugriff auf die ","","-Initialisierungsparameter."],
 								[ "Kontext", "Webanwendung", "Servlet" ], [3,2,1]);	
 					createSC("Der Servlet-Kontext-Listener wird nur benachrichtigt, wenn der Kontext initialisiert wird.", [ "Richtig", "Falsch"],
@@ -97,8 +96,10 @@
 								[ 1, 0]);
 								
 					//Demo Übersetzungsfrage mit 4 Attributen: Frage als String, Antworten als Array, zu übersetzende Begriffe als Array und Lösung als Array.
-						createTL("Übersetzungsfrage", [ "connection stream", "chain stream",
-								"value", "selector", "script", "declaration", "property" ], [ "Anschlussstrom", "Verkettungsstrom", "Selektor", "Deklaration", "Eigenschaft", "Wert", "Skript" ], [ 1, 2,6,3,7,4,5]);
+						createTL("Übersetzungsfrage", [ "connection stream", "chain stream","value", "selector", "script",
+														 "thread", "declaration", "property", "network", "listener" ], 
+								[ "Netzwerk", "Aktivit�tstr�ger","Anschlussstrom", "Empf�nger", "Verkettungsstrom",
+								 "Selektor", "Deklaration", "Eigenschaft", "Wert", "Skript" ], [ 3,5,9,6,10,2,7,8,1,4]);
 						
 
 
