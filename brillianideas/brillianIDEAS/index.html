@@ -43,65 +43,70 @@
 
 <body style="position: fixed;">
 
-    <!-- Bubbles, bubbles everywhere! ~RAHS -->
-    <video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0"> <source src="img/Background.mp4" type="video/mp4"> </video>
-        
-    <!-- <audio src="https://static1.squarespace.com/static/5a554c15a9db0978da5e344d/5a5e74a971c10b3c9180271d/5a5e953053450a8e4a196c52/1516148065957/HI+20070307+0925+15_00.mp3" preload="none" loop></audio> -->
+<!-- Bubbles, bubbles everywhere! ~RAHS -->
+<video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0"> <source src="img/Background.mp4" type="video/mp4"> </video>
 
-    <div id="container" style="display:block">
-        <!--<a href="#"><img id="arrowLeft" src="img/pfeil_rechts.png" alt="" style="transform: scaleX(-1);"></a>
-        <a href="#"></a>
-        <a href="#"><img id="arrowRight" src="img/pfeil_rechts.png" alt=""></a>-->
-        <div id='content'>
-        </div>
-        <ul id="dots" class="dotstyle dotstyle-fillup">
-            <li>
-                <a id="digitalLearning" href="content/digitalLearning.html"></a>
-            </li>
-            <li class="current home">
-                <a href="./content/startpage.htm"></a>
-            </li>
-            <li>
-                <a id="imbit" href="content/curriculum.html"></a>
-            </li>
-        </ul>
+<audio src=audio/whale.mp3 id="my_audio" loop="loop"></audio>
+<script type="text/javascript">
+    window.onload=function(){
+        document.getElementById("my_audio").play();
+    }
+</script>
+
+<div id="container" style="display:block">
+    <!--<a href="#"><img id="arrowLeft" src="img/pfeil_rechts.png" alt="" style="transform: scaleX(-1);"></a>
+    <a href="#"></a>
+    <a href="#"><img id="arrowRight" src="img/pfeil_rechts.png" alt=""></a>-->
+    <div id='content'>
     </div>
+    <ul id="dots" class="dotstyle dotstyle-fillup">
+        <li>
+            <a id="digitalLearning" href="content/digitalLearning.html"></a>
+        </li>
+        <li class="current home">
+            <a href="./content/startpage.htm"></a>
+        </li>
+        <li>
+            <a id="imbit" href="content/curriculum.html"></a>
+        </li>
+    </ul>
+</div>
 
-    <!--launchbar-->
-  <div id="launchbar" class="launchbar">
+<!--launchbar-->
+<div id="launchbar" class="launchbar">
 
-  <div id="rocketbar" class="rocketbar">
-    <!-- see comments in rocketbar.css -->
-    <div class="imbit">
-        <img id="tentacle_img_small_launchbar" class="img" src="img/launchbar_tentakel_u10.png" onclick="showRocketbar()">
+    <div id="rocketbar" class="rocketbar">
+        <!-- see comments in rocketbar.css -->
+        <div class="imbit">
+            <img id="tentacle_img_small_launchbar" class="img" src="img/launchbar_tentakel_u10.png" onclick="showRocketbar()">
             <img src="img/IMBIT.png" class="icon" alt="IMBIT Homepage" onclick="openTab('./#imbit');">
-      </div>
-      <div class="digitallearning">
+        </div>
+        <div class="digitallearning">
             <img src="img/digitalesLernen.png" class="icon" alt="digitales Lernen" onclick="openTab('./#digitalLearning');">
-      </div>
-      <div class="icm">
-        <a target="_blank" href="http://54.93.249.142:8080/brillianICM/"><img src="img/brillianicm.png" class="icon" alt="brillianICM"></a>
-      </div>
-      <div class="crm">
-        <a target="_blank" href="http://54.93.249.142:8080/brillianCRM/"><img src="img/brilliancrm.png" class="icon" alt="brillianCRM"></a>
-      </div>
-      <div class="wiki">
-        <a target="_blank" href="http://wiki.brillianideas.com"><img src="img/wiki.png" class="icon" alt="Cloud Wiki"></a>
-      </div>
-      <div class="interactive">
-       <img src="img/quiz.png" class="icon" alt="Quizzes" onmouseover="this.src='img/quiz_alt.png';" onmouseout="this.src='img/quiz.png';" onclick="window.open('content/octopus.html','_self')">
-      </div>
-      <div class="video">
-        <img src="img/newContent.png" class="icon" alt="New Content" onclick="window.open('newContent.html','_self')">
-       </div>
-      <div class="impressum">
-       <img src="img/impressum.png" class="icon" alt="Impressum" onclick="window.open('content/impressum.html','_self')">
-      </div>
+        </div>
+        <div class="icm">
+            <a target="_blank" href="http://brillianICM.com"><img src="img/brillianicm.png" class="icon" alt="brillianICM"></a>
+        </div>
+        <div class="crm">
+            <a target="_blank" href="http://brillianCRM.com"><img src="img/brilliancrm.png" class="icon" alt="brillianCRM"></a>
+        </div>
+        <div class="wiki">
+            <a target="_blank" href="http://wiki.brillianideas.com"><img src="img/wiki.png" class="icon" alt="Cloud Wiki"></a>
+        </div>
+        <div class="interactive">
+            <img src="img/quiz.png" class="icon" alt="Quizzes" onmouseover="this.src='img/quiz_alt.png';" onmouseout="this.src='img/quiz.png';" onclick="window.open('content/octopus.html','_self')">
+        </div>
+        <div class="video">
+            <img src="img/newContent.png" class="icon" alt="New Content" onclick="window.open('newContent.html','_self')">
+        </div>
+        <div class="impressum">
+            <img src="img/impressum.png" class="icon" alt="Impressum" onclick="window.open('content/impressum.html','_self')">
+        </div>
     </div>
-  </div>
+</div>
 
-  <!-- <div class="technical"></div> -->
-  
+<!-- <div class="technical"></div> -->
+
 </body>
 
 </html>

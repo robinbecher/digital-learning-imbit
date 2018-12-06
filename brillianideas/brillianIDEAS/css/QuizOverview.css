@@ -2,6 +2,8 @@ html {
 	box-sizing: border-box;
 	font-family: 'Tinos';
 	color: var(--text);
+	width: 300%;
+	height: 100%;
 }
 
 body {
@@ -415,6 +417,7 @@ body {
 #octo_arm_rechts_unten{
 	position: absolute;
 	bottom: 0;
+	left: 300%;
 	right: -10px;
 	width: 40vw;
 	height: 30vh;

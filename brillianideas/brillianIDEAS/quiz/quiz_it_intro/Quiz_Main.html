@@ -6,7 +6,7 @@
 	href="../../img/favicon.ico"
 	type="image/x-icon">
 <meta charset="UTF-8">
-<title>Quiz</title>
+<title>IT-Intro Quiz</title>
 <link
 	rel="stylesheet"
 	type="text/css"
@@ -123,14 +123,15 @@
 							[ "Verlustarme Datenkompression (Poor Lossless)", "Verlustbehaftete Datenkompression (Lossy)", "Verlustqualitative Datenkompression (Quality Lossy)", "Verlustsensitive Datenkompression (Sensitive Lossy)", "Verlustfreie Datenkompression (Lossless)", "Verlustreiche Datenkompression (Rich Lossless)"], 
 							[ 0, 1, 0, 0, 1, 0]);
 						//Frage 13
-						createSC("Wie weit reist das Licht innerhalb eines Zyklus eines 1GHz-Prozessors?", [ "Ungefähr 15 cm.", "Ungefähr 100 cm.", "Ungefähr 60 cm.", "Ungefähr 30 cm." ],
-							[ 0, 0, 0, 1 ]);
-						//Frage 14
 						createSC("Was ist ein Cache?", [ "Die technische Bezeichnung für die Druckerwarteschlange.", "Der Blockbereich eines Massenspeichers, der für die Verteilung von Prüfziffern zuständig ist.", "Ein Puffer-Speicher, der zwischen Systemen mit unterschiedlicher Geschwindigkeit vermittelt.", "Die Sicherheitsschaltung in einem Netzteil." ],
 							[ 0, 0, 1, 0 ]);
-						//Frage 15
+						//Frage 14
 						createSC("Was sind zeichenorientierte Geräte (character devices)?", [ "Zeichenorientierte Geräte übertragen nur ein Zeichen zur selben Zeit. Ein Beispiel ist das Keyboard.", "Zeichenorientierte Geräte sind Geräte zur Freihandgestaltung am Computer. Ein Beispiel ist der PC-Stift.", "Zeichenorientierte Geräte übertragen Zeichen in Matrixform. Ein Beispiel ist eine Analog-Digital-Matrix." ],
 							[ 1, 0, 0 ]);
+						//Frage 15
+						createTL("Ordne den deutschen Fachbegriffen ihre englischen Übersetzungen zu.", [ "Character Device", "Block Device", "Mainboard", "Runtime Environment", "Mantissa", "Cache", "Floating Point Number", "Source Code", "Main Memory", "Redundant Array of Independent Disks" ], 
+							[ "Hauptplatine", "Redundante Anordnung unabhängiger Festplatten", "zeichenorientiertes Gerät", "Laufzeitumgebung", "Mantisse", "blockorientiertes Gerät", "Puffer-Speicher", "Hauptspeicher", "Gleitkommazahl", "Quelltext" ], 
+							[ 3, 6,	1, 4, 5, 7, 9, 10, 8, 2]);
 
 						showTheQuestion(count);
 					});

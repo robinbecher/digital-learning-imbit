@@ -55,7 +55,7 @@
 
 	//***********************
 	//Hier bitte Werte eintragen!
-	var anzahlFragen = 14;
+	var anzahlFragen = 15;
 	var maxScore = 15;
 	//***********************
 
@@ -69,31 +69,30 @@
 								createMC("Welche Teilprozesse existieren im Capacity Management?", [ "Business Capacity", "Component Capacity", "Service Capacity", "Revenue Capacity" ], [ 1, 1, 1, 0 ]);
 						//Demo Single Choice Aufgabe mit drei Attributen: Frage als String, Antworten als Array und Lösungen als Array mit 1=richtig, 0=falsch
 						//createSC("Meine SC Frage", [ "G", "H", "I" ], [ 0, 1, 0 ]);
-								createSC("Wie verbindlich ist die Umsetzung von ITIL", [ "De-facto-Standard", "De-jure-Standard" ], [ 1, 0]);
-								createSC("Wer oder was kann ITIL zertifiziert sein?", [ "Programme", "IT-Infrastruktur", "Mitarbeiter", "Produkte"], [ 0, 0, 1, 0]);
-								createSC("Welche Alternative zu ITIL gibt es?", [ "COBIT", "ITMS", "IMBIT", "EBIT" ], [ 1, 0, 0 ,0 ]);
+								createSC("Die Umstzung von ITIL ist ein...", [ "De-facto-Standard", "De-jure-Standard", ], [ 1, 0]);
+								createSC("Continual Service Improvement beschäftigt sich nicht mit der Verbesserung der IT-Services, sondern der sie erbringenden Prozesse.", [ "Wahr", "Falsch"], [ 1, 0]);
+								createSC("Welche Alternative zu ITIL könnte die IMBIT Krake nutzen?", [ "COBIT", "ITMS", "IMBIT", "EBIT" ], [ 1, 0, 0 ,0 ]);
 								createSC("Was bestimmt den Nutzen eines IT Services?", [ "Service Entity & Timeframe", " Availability, Warranty  & Timeframe", "Utility, Warranty & Cost", "Cost, Utility & Availability" ], [ 0, 0, 1, 0 ]);
-								createSC("Nach welchem Kriterien sollte man den Service Catalogue sortieren?", [ "Technische Kriterien", "Logistische Kriterien", "Finanzielle Kriterien", "Kunden Kriterien" ], [ 0, 0, 0, 1 ]);
+								createSC("Nach welchen Kriterien sollte die IMBIT Krake den Service Catalogue sortieren?", [ "Technische Kriterien", "Logistische Kriterien", "Finanzielle Kriterien", "Kunden Kriterien" ], [ 0, 0, 0, 1 ]);
 						
 						//Demo Drag&Drop Aufgabe mit 4 Attributen: Frage als String, Antworten als Array, Felder/Boxen als Array und Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
 						//createDD("ABCDEF", [ "Test1", "Test2" ], [ "Box1","Box2", "Box3" ], [ 3, 2 ]);
-								createDD("Welche Typen von Service Providern gibt es", [ "Interner Service Provider","Externer Service Provider", "Shared Service Provider" ], [ "Typ I","Typ II", "Typ III" ], [ 1, 3, 2 ]);
-								createDD("Ordnen Sie dem Process Owner und Process Manager seine jeweiligen Aufgaben und Verantwortlichkeiten zu", [ "Prozess-Ziele festlegen","Einhaltung von KPI's überwachen","Definition des Prozesses", "Operative Ressourcenplanung"], [ "Process Owner","Process Manager" ], [ 2, 2, 1, 3, 1, 1, 4, 3, 2, 4, 3, 4 ]);
-								createDD("Ordnen Sie die folgenden Prozesse ihren ITIL Bänden zu:", [ "Service Level Management", "IT Service Continuity", "Service Portfolio Management", "Service Asset & Configuration Management" , "Financial Management", "Demand Management", "Incident Management", "Release Management", "Capacity Management", "Request Fulfillment", "Change Management", "Access Management" ], [ "Service Strategy","Service Design", "Service Transition", "Service Operation" ], [ 3, 2 ]);
-								createDD("Ordnen Sie die folgenden Rahmenvereinbarungen ihren jeweiligen Vertragspartner zu:", [ "Service Level Agreement (SLA)", "Operation Level Agreement (OLA)", "Underpinning Contract (UP)"], [ "Interne Einheiten","Kunden", "Lieferanten" ], [ 2, 1, 3 ]);
-								createDD("Ordnen Sie die folgenden Attribute den Asset Management und dem Configuration Management zu", [ "Personalnummer", "Standort", "Prozessor", "Abschreibungsbetrag",  "Betriebssystem", "Netzwerkanbindung", "Kostenstelle", "IT-Service" ], [ "Asset Management","Schnittstelle", "Configuration Management" ], [ 1, 2, 3, 1, 3, 3, 1, 2 ]);
+								createDD("Ordne dem Process Owner und Process Manager die jeweiligen Aufgaben und Verantwortlichkeiten zu", [ "Prozess-Ziele festlegen","Einhaltung von KPI's überwachen","Definition des Prozesses", "Operative Ressourcenplanung"], [ "Process Owner","Process Manager" ], [ 2, 2, 1, 3, 1, 1, 4, 3, 2, 4, 3, 4 ]);
+								createDD("Ordne die folgenden Prozesse ihren ITIL Bänden zu:", [ "Service Level Management", "IT Service Continuity", "Service Portfolio Management", "Service Asset & Configuration Management" , "Financial Management", "Demand Management", "Incident Management", "Release Management", "Capacity Management", "Request Fulfillment", "Change Management", "Access Management" ], [ "Service Strategy","Service Design", "Service Transition", "Service Operation" ], [ 3, 2 ]);
+								createDD("Ordne die folgenden Rahmenvereinbarungen ihren jeweiligen Vertragspartner zu:", [ "Service Level Agreement (SLA)", "Operation Level Agreement (OLA)", "Underpinning Contract (UP)"], [ "Interne Einheiten","Kunden", "Lieferanten" ], [ 2, 1, 3 ]);
+								createDD("Ordne die folgenden Attribute den Asset Management und dem Configuration Management zu", [ "Personalnummer", "Standort", "Prozessor", "Abschreibungsbetrag",  "Betriebssystem", "Netzwerkanbindung" "Kostenstelle", "IT-Service" ], [ "Asset Management","Schnittstelle", "Configuration Management" ], [ 1, 2, 3, 1, 3, 3, 1, 2 ]);
 								
 						//Demo Lückentext Aufgabe mit 4 Attributen: Frage als String, Lückentext als Array mit leerem String "" für jede Lücke, Antworten als Array und Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
 						createTQ( "Release Management",
 								[
-										"Das Release Management ist für die Implementierung zusammenhängender Veränderungsmaßnahmen verantwortlich. Dabei handelt es sich entweder für einen",
+										"Das Release Management ist für die Implementierung zusammenhängender Veränderungsmaßnahmen verantwortlich. Dabei handelt es sich entweder um einen",
 										"",
 										"bei dem eine vollständig zusammengestellte neue Version des Systems implementiert wird, einen",
 										"",
 										"bei dem nur Dateien, die sich seit dem letzen Release geändert haben implementiert werden oder einen",
 										"",
 										"bei dem mehrere unabhängige Releases zu einem Paket zusammengefasst werden.",
-										"" ],
+										],
 								[ "Full Release", "Package Release", "Delta Release"], [ 1, 3, 2 ]);
 								
 								createTQ( "Service Operation",
@@ -102,17 +101,17 @@
 										"",
 										"Service Desk bietet mit unabhängigen Ressourcen pro Standort oder Geschäftsbereich Anwendernähe, führt aber auch zu doppelten Prozessen. Ein",
 										"",
-										"Service Desk ist mit einer gesamtseitlichen Organisation für alle Standorte und Geschäftsbereiche eine kostengünstige und gleichmäßig Ausgelastete Variante, hat aber einen hohen Administrativen Aufwand. Ein",
+										"Service Desk ist mit einer gesamtseitlichen Organisation für alle Standorte und Geschäftsbereiche eine kostengünstige und gleichmäßig ausgelastete Variante, hat aber einen hohen administrativen Aufwand. Ein",
 										"",
 										"Service Desk ermöglicht mit einer zentralen Datenhaltung und dezentralen Mitarbeitern Kundennähe und gleichmäßige Auslastung und kann nach dem Follow-the-Sun-Prinzip organisiert werden.",
-										"" ],
+										 ],
 								[ "virtuelles", "lokales", "zentrales"], [ 3, 1, 2 ]);
 								
 								createOD("Recovery Management. Ordnen Sie die folgenden Wiederherstellungsoptionen für den Katastrophenfall nach vorraussichlicher Downtime", [ "Warm Standby", "Cold Standby",
 								"Immediate Recovery", "Hot Standby" ], [ 2, 1, 4, 3]);
 								
 								createTL("Vokabeltest. Ordnen Sie die englischen Begriffe den deutschen Begriffen zu.", [ "TCO (Total Cost of Ownership)", "Incident Management", "CI (Configuration Item)","Warranty", "Utility", "Downtime" , "Single Point of Failure", "RfC (Request for Change)", "Incident Report", "Process Owner" ], 
-									[ "Zweckmäßigkeit ", "Ticketdatensatz","Störungsmanagement", "Gebrauchstauglichkeit", "Konfigurationsobjekt", "Ausfallzeit", "Prozessverantwortlicher","Gesamtbetriebskosten", "einzelne Fehlerstelle", "Veränderungsantrag"  ], [ 8,3,5,4,1,6,9,10,2,7 ]);
+									[ "Zweckmäßigkeit ", "Ticketdatensatz","Störungsmanagement", "Gebrauchstauglichkeit" "Konfigurationsobjekt", "Ausfallzeit", "Prozessverantwortlicher","Gesamtbetriebskosten", "einzelne Fehlerstelle", "Veränderungsantrag"  ], [ 8,3,5,4,1,6,9,10,2,7 ]);
 						
 
 						showTheQuestion(count);
