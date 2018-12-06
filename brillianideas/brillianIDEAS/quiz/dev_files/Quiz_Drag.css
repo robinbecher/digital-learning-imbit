@@ -1,6 +1,5 @@
 .fullBox {
-	width: 250px;
-	height: 370px;
+	width: auto;
 	/*border: 1px solid #aaaaaa;*/
 	float: left;
 	padding: 0px 20px 20px 20px;
@@ -11,12 +10,15 @@
 }
 
 .drop {
-	width: 250px;
-	height: 370px;
+	width: auto;
+	min-height: 80px;
+	height: auto;
 }
 
 .drag {
 	/* border: solid red 2px;*/
+	text-shadow: 1px 1px 1px white;
+
 }
 
 #answers {
