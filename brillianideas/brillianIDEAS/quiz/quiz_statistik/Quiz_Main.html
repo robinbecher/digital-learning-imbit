@@ -82,6 +82,12 @@
 						//Demo Drag&Drop Aufgabe mit 4 Attributen: Frage als String, Antworten als Array, Felder/Boxen als Array und Lösung als Array. Der Arrayindex entspricht der Antwortnummer und der eingetragene Wert dem erwarteten Feld
 						createDD("Das IT-Unternehmen der IMBIT Krake bekommt Rechnungen mit den folgenden Werten: 50€, 100€, 81€, 250€, 1000€, 44€, 250€. Ordne die Lagemaße korrekt zu.", [ "250", "100" , "254"], [ "Median",
 								"Mittelwert", "Modus" ], [ 3, 1, 2 ]);
+						
+						createDD("Die IMBIT Krake möchte offene Stellen in seinem IT-Unternehmen besetzen. Sie sucht: HR:2, Service Desk:5, Marketing:3, Sales:5, Buchhaltung:3, SAP Consultant:5, Einkauf:1, Network Engineer:3, Presales:3, Motivationstrainer:0, Controlling:3, Entwickler:5, Jurist:1, Praktikant:1. " , 
+						[ "0", "1","2", "3", "4", "5"], [  "3", "1","4", "0", "2", "5" ], [ 2, 1, 5, 6, 4, 3 ]);
+						
+						createDD("Ordne den Verteilungen ihre Schiefe zu.", 
+						[ "Symmetrisch", "Linksschief bzw. Rechtssteil","Rechtschief bzw. Linkssteil"], [  "größer als 0", "0","kleiner als 0" ], [ 2,3,1 ]);
 								
 						createDD("Die IMBIT Krake möchte ihr Produktportfolio erweitern und macht dafür eine Kundenumfrage. 10 Dienstleistungsunternehmen interessieren sich für IoT, 60 für Cloud. 50 Produktionsunternehmen interessieren sich für IoT, 80 für Cloud. Ordne die Wahrscheinlichkeiten korrekt zu.", [ "10/200=0.05", "(60/200)+(130/200)-(50/200)=0,7", "60/200=0,3"], [ "Ein Unternehmen ist an IoT Services interessiert", "Ein Produktionsunternehmen ist an IoT Services interessiert",
 								"Ein Unternehmen ist an IoT interessiert oder ist ein Produktionsunternehmen"], [ 1, 3, 2 ]);
@@ -106,10 +112,7 @@
 						
 								
 						//Demo Übersetzungsfrage mit 4 Attributen: Frage als String, Antworten als Array, zu übersetzende Begriffe als Array und Lösung als Array.
-						createTL("Die IMBIT Krake möchte offene Stellen in seinem IT-Unternehmen besetzen. Sie sucht: HR:2, Service Desk:5, Marketing:3, Sales:5, Buchhaltung:3, SAP Consultant:5, Einkauf:1, Network Engineer:3, Presales:3, Motivationstrainer:0, Controlling:3, Entwickler:5, Jurist:1, Praktikant:1. " , 
-						[ "0", "1","2", "3", "4", "5"], [  "3", "1","4", "0", "2", "5" ], [ 2, 1, 5, 6, 4, 3 ]);
-						createTL("Ordnen Sie den Verteilungen ihre Schiefe zu.", 
-						[ "Symmetrisch", "Linksschief bzw. Rechtssteil","Rechtschief bzw. Linkssteil"], [  "größer als 0", "0","kleiner als 0" ], [ 2,3,1 ]);
+			
 						createTL("Vokabeltest. Ordnen Sie die englischen Begriffe den deutschen Begriffen zu.", [ "Binomialverteilung", "Zufallsvariable", "Intervallschätzung","Hypothesentest", "Stichprobe", "Interquartilsabstand" , "arithmetisches Mittel", "Häufigkeitsverteilung", "Säulendiagramm", "Signifikanzniveau" ], 
 						[ "Sample", "Bar Graph","Random Variable", "Hypothesis Testing", "Interval Estimation", "Interquartile Range", "Significance Level","Binomial Distribution", "Arithmetic Mean", "Frequency Distribution"  ], [ 8,3,5,4,1,6,9,10,2,7 ]);
 						showTheQuestion(count);
