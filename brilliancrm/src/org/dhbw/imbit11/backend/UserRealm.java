@@ -10,6 +10,9 @@ import java.util.ArrayList;
 
 import org.apache.shiro.realm.jdbc.JdbcRealm;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -377,9 +380,15 @@ public class UserRealm extends JdbcRealm {
 	 * 
 	 * @throws SQLException
 	 *             - returns a database access error
+	 * @throws IOException 
 	 */
-	protected boolean userExists(String email) throws SQLException {
+	protected boolean userExists(String email) throws SQLException, IOException {
+		
+		
+		
+		
 		Connection conn = dataSource.getConnection();
+		
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		boolean returnValue = false;
