@@ -196,7 +196,7 @@ function createTQ(frage, text, antworten, richtig) {
 			TextP.className = "text";
 		} else {
 			var TQinput = document.createElement("input");
-			TQinput.className = "text_input";
+//			TQinput.className = "text_input";
 			TQinput.type = "text";
 			TQinput.name = "question" + n + "_blanc" + j;
 			TQinput.id = "question" + n + "_blanc" + j;
@@ -380,7 +380,7 @@ function createHeader(frage, n) {
 	questiondiv1.className = "questionclass";
 	questiondiv1.id = "question" + n;
 
-	// Erster Header
+	// Header
 	var headerdiv1 = document.createElement("div");
 	headerdiv1.className = "header";
 	questiondiv1.appendChild(headerdiv1);

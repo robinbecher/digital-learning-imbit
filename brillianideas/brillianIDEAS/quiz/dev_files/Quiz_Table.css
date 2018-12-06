@@ -6,7 +6,6 @@
     padding: 0px 20px 20px 20px;
     margin: 10px;
     background: #eee;
-    font-size: 2.5em;
     border: 3px solid #991B33;
     border-radius: 10px;
 }
@@ -22,7 +21,6 @@
     padding: 0px 20px 20px 20px;
     width: 100px;
     margin-right: 3%;
-    font-size: 2.5em;
 }
 .box_text{
     color: white;
@@ -52,6 +50,5 @@ td {
 
 table, th, td {
 	border: 3px solid black;
-	font-size: 2.5em;
 	
 }
