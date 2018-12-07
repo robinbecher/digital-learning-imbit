@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<link
+	rel="shortcut icon"
+	href="../../img/favicon.ico"
+	type="image/x-icon">
+<meta charset="UTF-8">
+<title>Quiz</title>
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/main.css" />
+
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_checkbox.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Drag.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Radiobutton.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Text.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Table.css" />
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="../dev_files/Quiz_Order.css" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	type="text/javascript"
+	src="../dev_files/helper.js"></script>
+<link
+	rel="stylesheet"
+	href="../../css/fonts.css" />
+<!--href="https://fonts.googleapis.com/css?family=Caveat+Brush"	rel="stylesheet">-->
+
+<script>
+	//***********************
+	//Diese Werte nicht verändern!
+	var count = 1;
+	var score = 0;
+	//***********************
+
+	//***********************
+	//Hier bitte Werte eintragen!
+	var anzahlFragen = 15;
+	var maxScore = 15;
+	//***********************
+
+	$(document)
+			.ready(
+					function() {
+
+						//Frage 1
+						createTQ("Vervollständige die Definition zu Supply Chain Management",
+								[
+									"Supply Chain Management koordiniert",
+									"",
+									"und",
+									"",
+									"von Produktionsgütern in Unternehmen und",
+									"",
+									"."],
+								["unternehmensübergreifend", "Angebot", "Nachfrage"],
+								[3, 1, 2]);
+						
+						//Frage 2
+						createMC("Welcher Begriff gehört nicht zu den drei Key Flows des Supply Chain Managements?",
+								["Informationen", "Ressourcen", "Personal", "Finanzielle Mittel"],
+								[0, 0, 1, 0]);
+						
+						//Frage 3
+						create TQ("Was ist das Council of Supply Chain Management Professionals (CSCMP)?"
+								 [
+									 "Das CSCMP ist ein",
+									 "",
+									 "zum Thema Supply Chain Management. Das CSCMP fördert",
+									 "",
+									 "von Forschung und Wissen im Gebiet des",
+									 "",
+									 "."],
+								 ["die Verbesserung und Verbreitung", "Berufsverband", "Supply Chain Management"],
+								 [2, 1, 3]);
+						
+						//Frage 4
+						createTQ("Was beschreibt der Begriff Peitscheneffekt?",
+								[
+									"Der Peitscheneffekt beschreibt das Phänomen, dass",
+									"",
+									"von der Nachfrage der Kunden abweichen und die",
+									"",
+									"der Bestellungen zum Ursprung der"
+									"",
+									"vergrößert, ähnlich wie bei einer Peitsche."],
+								["Lieferkette", "Bestellungen bei Lieferanten", "Schwankung"],
+								[3, 1, 2]);
+						
+						//Frage 5
+						createMC("In welche Arten können Prozesse in einem Unternehmen eingeteilt werden?",
+								["wertschöpfend", "nicht wertschöpfend", "nicht wertschöpfend, aber notwendig"],
+								[1, 1, 1]);
+						
+						//Frage 6
+						createTQ("Erkläre den Begriff Lean Management",
+								[
+									"Bei Lean Management geht es darum, die gesamte",
+									"",
+									"so schlank wie möglich zu gestalten. Die Wertschöpfungskette soll so",
+									"",
+									"wie möglich sei und nach Möglichkeit keine nicht wertschöpfenden",
+									"",
+									"erhalten"],
+									
+								["effizient", "Prozesse", "Wertschöpfungskette"],
+								[2, 3, 1]);
+						
+						//Frage 7
+						createSC("Welcher dieser Begriffe gehört nicht zu den Inventartypen?",
+								["Rohwaren", "Fertigwaren", "Betriebsstoffe", "Kapital"],
+								[0, 0, 0, 1]);
+						
+						//Frage 8
+						createSC("Über welches IT-System findet der Informationsaustausch mit Kunden und Lieferanten statt?",
+								["ERP-System", "CRM-System", "EDI-System", "Dokumentenverwaltungssystem"],
+								[0, 0, 1, 0]);
+						
+						//Frage 9
+						createDD("Was sind die wertschöpfenden Aspekte von Lagerhaltung?",
+								["Kostenreduzierung", "Lieferzeitreduzierung", "Serviceverbesserung", "Qualitätsverbesserung", "Kundenzufriedenheit", "Steuerreduzierung"],
+								["wertschöpfend", "nicht wertschöpfend"],
+								[1, 1, 1, 1, 2, 2]);
+						
+						//Frage 10
+						createTQ("Was ist ein Milk Run?",
+								[
+									"Ein Milk Run ist, wenn",
+									"",
+									"mehrere Kunden mit",
+									"",
+									", oder bei mehreren Kunden Waren für",
+									"",
+									"abholt."],
+								["die eigene Produktion", "ein LKW", "Waren versorgt"],
+								[3, 1, 2]);
+						
+						//Frage 11
+						createMC("Kreuze die Begriffe an, die zu den 5P's einer Strategie zugeordnet werden können!",
+								["Plan", "Pattern", "Position", "Perspective", "Ploy"],
+								[1, 1, 1, 1, 1]);
+						
+						//Frage 12
+						
+						
+						//Frage 13
+						
+						
+						//Frage 14
+						
+						
+						//Frage 15
+						createTL("Ordne den folgenden Begriffen die korrekte Übersetzung zu",
+								[]
+							
+					
+
+						showTheQuestion(count);
+					});
+</script>
+
+
+</head>
+<body>
+
+	<video
+		id="video_background"
+		autoplay
+		muted
+		loop>
+		<source
+			src="../../img/Background.mp4"
+			type="video/mp4">
+	</video>
+
+
+	<div id="content">
+
+		<div
+			id="gz"
+			class="questionclass">
+			<p id="supergeil"></p>
+		</div>
+
+	</div>
+	<div id="next_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="next_button"
+				onclick="nextButtonClick()">Weiter</a>
+		</button>
+	</div>
+
+	<div id="back_button_div">
+		<button
+			style="vertical-align: middle"
+			class="button"
+			type="button">
+			<a
+				href="#"
+				id="back_button"
+				onclick="backButtonClick()">Zurück</a>
+		</button>
+	</div>
+
+	<div id="tl">
+		<img
+			id="tentakel_l"
+			src="../../img/tentakel_ltr.png">
+	</div>
+	<div id="tr">
+		<img
+			id="tentakel_r"
+			src="../../img/tentakel_rtl.png">
+	</div>
+
+</body>
+</html>
