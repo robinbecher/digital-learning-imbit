@@ -6,45 +6,46 @@
 	href="../../img/favicon.ico"
 	type="image/x-icon">
 <meta charset="UTF-8">
-<title>Finanzierung Quiz</title>
+<title>Quiz</title>
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/main.css" />
+	href="../quiz_finanzierung/main.css" />
 
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_checkbox.css" />
+	href="../quiz_finanzierung/Quiz_checkbox.css" />
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_Drag.css" />
+	href="../quiz_finanzierung/Quiz_Drag.css" />
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_Radiobutton.css" />
+	href="../quiz_finanzierung/Quiz_Radiobutton.css" />
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_Text.css" />
+	href="../quiz_finanzierung/Quiz_Text.css" />
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_Table.css" />
+	href="../quiz_finanzierung/Quiz_Table.css" />
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_Order.css" />
+	href="../quiz_finanzierung/Quiz_Order.css" />
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	type="text/javascript"
-	src="../dev_files/helper.js"></script>
+	src="helper.js"></script>
 <link
 	rel="stylesheet"
 	href="../../css/fonts.css" />
+<!--href="https://fonts.googleapis.com/css?family=Caveat+Brush"	rel="stylesheet">-->
 
 <script>
 	//***********************
@@ -79,9 +80,9 @@
 										"Mittelverwendung" ], [ 4, 2, 1, 3 ]);
 						createDD("Investition oder Finanzierung?", [ "Kauf einer neuen Maschine", "Aufnahme einer zweiten Hypothek", "Emission von jungen Aktien", "Kauf von Unternehmensanleihen", "Durchführen einer Kapitalerhöhung", "Einbehalten von Unternehmensgewinnen", "Erweiterung des Fuhrparks", "Mitarbeiter werden geschult" ], [ "Investition",
 								"Finanzierung" ], [ 1, 2, 2, 1, 2, 2, 1, 1 ]);
-						createDD("Eigenfinanzierung oder Fremdfinanzierung?", [ "Abschreibung", "Unternehmensanleihe", "Rückstellungen", "Kredit/Darlehen", "Einlagen von Gesellschaftern", "Desinvestition", "Factoring", "Einbehalten von Gewinnen", "Leasing", "Gesellschafter-/Schuldscheindarlehen" ], [ "Eigenfinanzierung",
+						createDD("Eigenfinanzierung oder Fremdfinanzierung?", [ "Abschreibung", "Unternehmensanleihe", "Rückstellungen", "Kredit/Darlehen", "Einlagen von Gesellschaftern", "Desinvestition", "Factoring", "Einbehalten von Gewinnen", "Leasing", "Gesellschafter-/ Schuldscheindarlehen" ], [ "Eigenfinanzierung",
 								"Fremdfinanzierung" ], [ 1, 2, 2, 2, 1, 1, 2, 1, 2, 2 ]);
-						createDD("Innenfinanzierung oder Außenfinanzierung?", [ "Abschreibung", "Unternehmensanleihe", "Rückstellungen", "Kredit/Darlehen", "Einlagen von Gesellschaftern", "Desinvestition", "Factoring", "Einbehalten von Gewinnen", "Leasing", "Gesellschafter-/Schuldscheindarlehen" ], [ "Innenfinanzierung",
+						createDD("Innenfinanzierung oder Außenfinanzierung?", [ "Abschreibung", "Unternehmensanleihe", "Rückstellungen", "Kredit/Darlehen", "Einlagen von Gesellschaftern", "Desinvestition", "Factoring", "Einbehalten von Gewinnen", "Leasing", "Gesellschafter-/ Schuldscheindarlehen" ], [ "Innenfinanzierung",
 								"Außenfinanzierung" ], [ 1, 2, 1, 2, 1, 1, 2, 1, 2, 2 ]);
 						createMC("Welche der folgenden Aussagen sind korrekt?", [ "Unternehmensanleihen gehören sowohl zur Eigenfinanzierung als auch zur Außenfinanzierung.", "Rückstellungen gehören sowohl zur Fremdfinanzierung als auch zur Innenfinanzierung.", "Einbehaltene Gewinne gehören sowohl zur Eigenfinanzierung als auch zur Innenfinanzierung.", "Desinvestitionen gehören sowohl zur Fremdfinanzierung als auch zur Außenfinanzierung." ], [ 0, 1, 1, 0 ]);
 						createSC("Welche der folgenden Aussagen über den Leverage-Effekt ist korrekt?", [ "Eine Erhöhung des Verschuldungsgrades führt zu einer höheren Eigenkapitalrendite, wenn die Gesamtkapitalrendite kleiner als der Fremdkapitalzins ist.", "Eine Senkung des Verschuldungsgrades führt zu einer höheren Eigenkapitalrendite, wenn die Gesamtkapitalrendite kleiner als der Fremdkapitalzins ist.", "Eine Erhöhung des Verschuldungsgrades führt zu einer höheren Eigenkapitalrendite, wenn die Gesamtkapitalrendite größer als der Fremdkapitalzins ist.", "Eine Senkung des Verschuldungsgrades führt zu einer höheren Eigenkapitalrendite, wenn die Gesamtkapitalrendite größer als der Fremdkapitalzins ist." ],
@@ -107,7 +108,7 @@
 										"",
 										"genannt, erhält der Inhaber keine Zinszahlungen",
 										"",
-										"sondern nur",
+										", sondern nur",
 										"",
 										". Der Kurs einer Null-Kupon-Anleihe unterliegt dem",
 										"",
@@ -119,7 +120,7 @@
 								[
 										"Genussscheine gehören weder zum Eigen- noch zum Fremdkapital, sondern zum",
 										"",
-										".Der Inhaber hat beispielsweise einen Anspruch auf Beteiligung am",
+										". Der Inhaber hat beispielsweise einen Anspruch auf Beteiligung am",
 										"",
 										"oder am Liquidationserlös. Gewöhnlich werden Genussscheine wie Fremdkapital behandelt, wodurch sich",
 										"",
@@ -149,7 +150,7 @@
 										"",
 										"entweder zu kaufen (",
 										"",
-										")oder zu verkaufen (",
+										") oder zu verkaufen (",
 										"",
 										")." ],
 								[ "Call", "Basispreis", "Put",
@@ -196,7 +197,7 @@
 										"aufgerufen." ],
 								[ "Schwarmfinanzierung", "Plattform", "Finanzierung",
 										"Beteiligung" ], [ 2, 3, 1, 4 ]);
-						createTL("Übersetzungsfrage", [ "stock", "bond", "interest rate", "warrant", "yield to maturity" ], [ "Anleihe", "Rendite bis Fälligkeit", "Aktie", "Zinssatz", "Optionsschein" ], [ 2, 5, 1, 3, 4 ]);
+						createTL("Übersetzungsfrage", [ "stock", "external financing", "bond", "equity financing", "interest rate", "financial planning", "internal financing", "warrant", "yield to maturity", "debt financing" ], [ "Anleihe", "Rendite bis Fälligkeit", "Aktie", "Zinssatz", "Innenfinanzierung", "Außenfinanzierung", "Eigenfinanzierung", "Fremdfinanzierung", "Optionsschein", "Finanzplanung" ], [ 3, 6, 1, 7, 4, 10, 5, 9, 2, 8 ]);
 
 						showTheQuestion(count);
 					});
