@@ -9,7 +9,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    text-shadow: 1px 1px grey;
+    text-shadow: 1px 1px 1px white;
 }
 
 /* Hide the browser's default radio button */
