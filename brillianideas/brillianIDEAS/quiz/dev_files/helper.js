@@ -70,7 +70,6 @@ function createSC(frage, antworten, richtig) {
 		questionlabel.appendChild(questionlabeltext);
 		var questionlabelinput = document.createElement("input");
 		questionlabelinput.type = "radio";
-		questionlabelinput.name = "radio";
 		questionlabelinput.id = "question" + n + "_answer" + i;
 		questionlabel.appendChild(questionlabelinput);
 		var questionlabelspan = document.createElement("span");
