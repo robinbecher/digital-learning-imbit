@@ -6,45 +6,46 @@
 	href="../../img/favicon.ico"
 	type="image/x-icon">
 <meta charset="UTF-8">
-<title>Bilanzierung Quiz</title>
+<title>Quiz</title>
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/main.css" />
+	href="../quiz_bilanzierung/main.css" />
 
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_checkbox.css" />
+	href="../quiz_bilanzierung/Quiz_checkbox.css" />
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_Drag.css" />
+	href="../quiz_bilanzierung/Quiz_Drag.css" />
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_Radiobutton.css" />
+	href="../quiz_bilanzierung/Quiz_Radiobutton.css" />
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_Text.css" />
+	href="../quiz_bilanzierung/Quiz_Text.css" />
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_Table.css" />
+	href="../quiz_bilanzierung/Quiz_Table.css" />
 <link
 	rel="stylesheet"
 	type="text/css"
-	href="../dev_files/Quiz_Order.css" />
+	href="../quiz_bilanzierung/Quiz_Order.css" />
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	type="text/javascript"
-	src="../dev_files/helper.js"></script>
+	src="helper.js"></script>
 <link
 	rel="stylesheet"
 	href="../../css/fonts.css" />
+<!--href="https://fonts.googleapis.com/css?family=Caveat+Brush"	rel="stylesheet">-->
 
 <script>
 	//***********************
@@ -96,7 +97,7 @@ $(document)
 										"",
 										"(z.B. Tilgung eines Kontokorrentkredits durch Aufnahme eines Darlehens). Eine Erfolgsbuchung kann das Eigenkapital entweder erhöhen \(",
 										"",
-										"\) oder mindern\(",
+										"\) oder mindern\ (",
 										"",
 										"\)."],
 								[ "Aktivtausch", "Aufwendung", "Bilanzverkürzung", "Ertrag", "Bilanzverlängerung",
@@ -105,7 +106,7 @@ $(document)
 						createSC("Was gehört nicht zu einem Jahresabschluss nach HGB?", [ "Bilanz", "Lagebericht", "Anhang (bei Kapitalgesellschaften)", "Gewinn – und Verlustrechnung" ],
 								[ 0, 1, 0, 0 ]);
 						createDD("Kapitalgesellschaft oder Personengesellschaft?", [ "KGaA", "KG", "OHG", "AG", "GmbH", "GbR" ], [ "Kapitalgesellschaft",
-								"Personengesellschaft" ], [ 1, 1, 2, 1, 2, 2 ]);
+								"Personengesellschaft" ], [ 1, 2, 2, 1, 1, 2 ]);
 						createTQ(
 								"Buchungstechnik",
 								[
@@ -129,21 +130,21 @@ $(document)
 								[
 										"Für Wertkorrekturen auf der Aktivseite gilt das",
 										"",
-										".Dabei gilt das strenge für das",
+										". Dabei gilt das strenge für das",
 										"",
 										"und das gemilderte für das",
 										"",
-										".Für Wertkorrekturen auf der Passivseite gilt hingegen das",
+										". Für Wertkorrekturen auf der Passivseite gilt hingegen das",
 										"",
 										"." ],
 								[ "Umlaufvermögen", "Höchstwertprinzip", "Niederstwertprinzip",
 										"Anlagevermögen" ], [ 2, 4, 1, 3 ]);
 						createMC("Welche Komponenten umfasst ein Konzernabschluss?", [ "Konzernlagebericht", "Konzernbilanz", "Konzerngewinn- und verlustrechnung", "Eigenkapitalspiegel", "Konzernanhang", "Kapitalflussrechnung", "Konzernsegmentbericht" ], [ 0, 1, 1, 1, 1, 1, 0 ]);
 						createMC("Welche Aussagen über HGB und IFRS sind korrekt?", [ "Für Vorräte gilt nach HGB das strenge Niederstwertprinzip (Abschreibungspflicht), während unter IFRS nur dann abgeschrieben werden muss, wenn die Erzeugnisse nicht mit Gewinn verkauft werden können.", "Sowohl unter HGB als auch unter IFRS dürfen Kosten der allgemeinen Verwaltung und der Aufwendungen für soziale Einrichtungen in die Herstellungskosten miteinberechnet werden.", "Das LiFo-Verfahren ist unter HGB zulässig, nicht aber unter IFRS.", "Nach einer außerplanmäßigen Abschreibung darf bei einer Wertaufholung unter HGB über die fortgeführten Anschaffungskosten zugeschrieben werden, unter IFRS nicht.", "Fremdkapitalkosten müssen unter IFRS in die Herstellungskosten miteinberechnet werden, während unter HGB ein Wahlrecht besteht." ], [ 1, 0, 1, 0, 1 ]);
-						createDD("Ordne folgende Kennzahlen richtig zu!", [ "Gewinn/durchschnittliches EK", "Fremdkapital/Gesamtkapital", "Fremdkapital/Eigenkapital",
-								"Jahresergebnis/Umsatzerlöse", "Jahresergebnis/durchschnittliches Gesamtkapital" ], [ "Verschuldungsgrad", "EK-Rentabilität", "ROI", "Fremdkapitalquote", "Umsatzrentabilität" ], [ 2, 4, 1, 5, 3 ]);
+						createDD("Ordne folgende Kennzahlen richtig zu!", [ "Gewinn / durchschnittliches EK", "Fremdkapital / Gesamtkapital", "Fremdkapital / Eigenkapital",
+								"Jahresergebnis / Umsatzerlöse", "Jahresergebnis / durchschnittliches Gesamtkapital" ], [ "Verschuldungsgrad", "EK-Rentabilität", "ROI", "Fremdkapitalquote", "Umsatzrentabilität" ], [ 2, 4, 1, 5, 3 ]);
 						createTL("Übersetzungsfrage", [ "debt",
-								"cashflow statement", "balance sheet", "expense", "equity", "income statement", "revenue" ], [ "Bilanz", "GuV", "Kapitalflussrechnung", "Ertrag", "Aufwand", "EK", "FK" ], [ 3, 6, 2, 7, 4, 5, 1 ]);
+								"cashflow statement", "current assets", "balance sheet", "expense", "equity", "fixed assets", "income statement", "balance sheet total", "revenue" ], [ "Bilanz", "GuV", "Kapitalflussrechnung", "Anlagevermögen", "Umlaufvermögen", "Ertrag", "Aufwendung", "Eigenkapital", "Fremdkapital", "Bilanzsumme" ], [9, 3, 5, 1, 7, 8, 4, 2, 10, 6 ]);
 						
 						showTheQuestion(count);
 					});
